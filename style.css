@@ -1,0 +1,46 @@
+header {
+    background-color: palevioletred;
+    color: cyan;
+    font: 2em/150% Papyrus;
+}
+
+footer {
+    padding: 2em;
+    background: url("flashing.gif");
+}
+
+body {
+    background-color:cyan;
+    color: deeppink;
+    margin: 7em;
+    max-width: 75em;
+}
+
+p {
+    color:green;
+    font: 1em/100% Papyrus;
+    padding-left: 2em;
+}
+
+#myname {
+    color: purple;
+}
+
+.peaches {
+    max-width: 50em;
+}
+
+.some_websites {
+    color: bisque;
+}
+
+h2 {
+    font: 1.5em/160% "Comic Sans MS";
+    color: black;
+}
+
+h3 {
+    font: 1em/150% "Comic Sans MS";
+    padding-left: 1em;
+}
+
