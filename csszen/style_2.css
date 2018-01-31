@@ -1,0 +1,109 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+
+/* basic elements */
+html {
+
+	}
+body { 
+    background: url(background_2.png);
+    background-size: 100px;
+	}
+
+h3 { 
+
+	}
+a:link { 
+
+	}
+a:visited { 
+
+	}
+a:hover, a:focus, a:active { 
+
+	}
+abbr {
+
+	}
+
+
+/* specific divs */
+.page-wrapper { 
+    display: flex;
+	}
+
+.intro { 
+    order: 4;
+    text-align: right;
+	}
+
+header h1 { 
+
+	}
+header h2 { 
+
+	}
+header {
+
+}
+
+.summary {
+
+	}
+.summary p {
+
+	}
+
+.preamble {
+
+	}
+.supporting {	
+
+	}
+
+footer { 
+	}
+footer a:link, footer a:visited { 
+	}
+
+.sidebar {
+    order: 1;
+	}
+.sidebar .wrapper { 
+
+	}
+.sidebar h3.select { 
+
+	}
+.sidebar h3.archives { 
+
+	}
+.sidebar h3.resources { 
+
+	}
+
+
+.sidebar ul {
+
+	}
+.sidebar li {
+
+	}
+.sidebar li a:link {
+
+	}
+.sidebar li a:visited {
+
+	}
+
+
+.extra1 {
+
+	}

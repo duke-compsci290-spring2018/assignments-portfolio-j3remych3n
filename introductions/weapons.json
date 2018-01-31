@@ -1,0 +1,12 @@
+"ROCK":{
+    "BEATS":{"SCISSOR"},
+    "LOSES":{"PAPER"}
+},
+"SCISSOR":{
+    "BEATS":{"PAPER"},
+    "LOSES":{"ROCK"}
+},
+"PAPER":{
+    "BEATS":{"ROCK"},
+    "LOSES":{"SCISSOR"}
+}

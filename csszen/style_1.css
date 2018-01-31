@@ -1,0 +1,116 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* This file based on 'Tranquille' by Dave Shea */
+/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+/* divides top part of screen with flexbox, row */
+.intro { 
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+	}
+
+/*selects font, and padding for main title*/
+header h1 {
+   
+    font: 325% Century  Gothic, Trebuchet MS, Arial, sans-serif;
+    text-transform: uppercase;
+    color: ghostwhite;
+    margin: 0.15em;
+    padding: 0.25em;
+    background: #171717;
+    text-align: center;
+	}
+
+/*places subtitle below main title*/
+header h2 { 
+    font: 150% Century  Gothic, Trebuchet MS, Arial, sans-serif;
+    margin: 0.3em;
+    padding: 0.2em;
+    background: #373737;
+    color: ghostwhite;
+    text-align: center;
+    text-overflow: ellipsis;    
+	}
+/*azure box on left*/
+h3{
+    font: 100% Century  Gothic, Trebuchet MS, Arial, sans-serif;
+    text-transform: bold;
+    font-weight: bold;
+}
+
+/*hidden*/
+.summary {
+    display: none;
+	}
+
+/*formats blue box*/
+.preamble {
+    background: #60bbaf;
+    padding: 0em;
+    margin: 0.45em;
+	}
+
+/* formats h3*/
+.preamble h3 {
+    text-align: center;
+    color:white;
+    padding: 0.3em;
+    margin: 0.1em;
+    text-transform: uppercase;
+    font-size: 32px;
+    padding-bottom: 0em;
+}
+
+/*changes margins for paragraph only*/
+.preamble p {
+    margin: 0.7em;
+}
+
+/**/
+.supporting {
+    padding: 0.1em;
+    margin: 0.1em;
+    display: flex;
+    flex-direction: row wrap;
+	}
+
+/**/
+.supporting > * {
+  flex: 1 100%;
+}
+
+/**/
+.supporting * {
+    padding: 0.2em;
+    margin: 0.3em;
+    background: grey;
+}
+
+/*turns text white for paragraph only*/
+.supporting * p{
+    color: white;
+}
+
+/*hidden*/
+.sidebar {
+    display:none;
+	}
+
+/*hidden*/
+.sidebar ul {
+display: none;
+	}
+
+/*hidden*/
+.extra1 {
+    display: none;
+	}
+
+p {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
