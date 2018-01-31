@@ -10,9 +10,9 @@ __Hours Worked:__ 3.5 hours
 __List of students consulted:__ Jarod Cahoon, Diane Hu
 __Online Resources:__ w3c tutorials, https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-__ Assets: __ A photo I took of my friend Andy's face
+__Assets:__ A photo I took of my friend Andy's face
 
-__ Bugs or concerns: __ no known bugs
+__Bugs or concerns:__ no known bugs
 
 ### Zen Garden 1
 I used this zen garden to experiment with Flexbox
