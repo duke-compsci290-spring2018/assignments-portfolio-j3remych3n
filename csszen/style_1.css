@@ -17,7 +17,7 @@
 /*selects font, and padding for main title*/
 header h1 {
    
-    font: 325% Century  Gothic, Trebuchet MS, Arial, sans-serif;
+    font: 325% "Century  Gothic", "Trebuchet MS", Arial, sans-serif;
     text-transform: uppercase;
     color: ghostwhite;
     margin: 0.15em;
@@ -28,7 +28,7 @@ header h1 {
 
 /*places subtitle below main title*/
 header h2 { 
-    font: 150% Century  Gothic, Trebuchet MS, Arial, sans-serif;
+    font: 150% "Century  Gothic", "Trebuchet MS", Arial, sans-serif;
     margin: 0.3em;
     padding: 0.2em;
     background: #373737;
@@ -38,8 +38,7 @@ header h2 {
 	}
 /*azure box on left*/
 h3{
-    font: 100% Century  Gothic, Trebuchet MS, Arial, sans-serif;
-    text-transform: bold;
+    font: 100% "Century  Gothic", "Trebuchet MS", Arial, sans-serif;
     font-weight: bold;
 }
 
@@ -76,7 +75,6 @@ h3{
     padding: 0.1em;
     margin: 0.1em;
     display: flex;
-    flex-direction: row wrap;
 	}
 
 /**/
@@ -112,5 +110,5 @@ display: none;
 	}
 
 p {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
