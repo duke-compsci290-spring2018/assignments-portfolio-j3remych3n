@@ -563,7 +563,7 @@ class Game {
     update() {
         this.collected.score = haberdash.hats.size();
         this.dropped.score = this.droppedHats;
-        if(haberdash.hats.size()>=20) {
+        if(haberdash.hats.size()>=WIN_THRESHOLD) {
             GAME_STATE = WIN;
         }
         else if(this.dropped.score >= LOSE_THRESHOLD){
