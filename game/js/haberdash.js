@@ -7,6 +7,7 @@
 * Font "Neuzeit Grotesk Light" published by URW++, designed by Wilhelm Pischner. I claim no ownership ofthis font.
 *
 */
+/*jshint esversion: 6 */
 
 // Useful constants
 const TEXT_COLOR = '#D7D2CB';
@@ -25,8 +26,7 @@ const HAT_W = 400;
 const HAT_H = parseInt(HAT_W/1.6);
 const HAT_SPEED = 5;
 const HAT_URI = "assets/hats/";
-const HAT_IMGS = ['0.png', '1.png', '2.png', '4.png', '5.png', '6.png']
-const NUM_HATS = HAT_IMGS.length;
+const HAT_IMGS = ['0.png', '1.png', '2.png', '4.png', '5.png', '6.png'];
 const HAT_SPAWN_Y = 0;
 
 const HABER_SPEED = 15;
@@ -155,10 +155,10 @@ class ResourceManager {
             console.log(url + ' loaded');
             // reset so it is only counted once (just in case)
             this.onload = null;
-        }
+        };
         img.onerror = function () {
             console.log('ERROR: could not load ' + url);
-        }
+        };
         img.src = url;
         this.numImagesLeftToLoad += 1;
         return img;
@@ -184,10 +184,10 @@ class ResourceManager {
             console.log(url + ' loaded');
             // reset so it is only counted once (just in case)
             this.oncanplay = null;
-        }
+        };
         snd.onerror = function () {
             console.log('ERROR: could not load ' + url);
-        }
+        };
         snd.src = url;
         this.numSoundsLeftToLoad += 1;
         return snd;
@@ -414,7 +414,7 @@ class Hat extends Sprite{
                     this.x -= this.dx;
                 }
             }
-            else if (!(this.y > HABER_Y + HAT_H/2)){
+            else if (this.y <= HABER_Y + HAT_H/2){
                 if (this.y < canvas.height - this.height) {
                     this.y += this.dy;
                 }
@@ -482,7 +482,7 @@ class Start extends Sprite{
     }
 
     draw (ctx) {
-        this.hover()
+        this.hover();
         ctx.drawImage(this.START_SPLASH, 0, 0, WINDOW_SIZE, WINDOW_SIZE);
     }
 
@@ -669,7 +669,7 @@ setInterval(function() {
     
     switch(GAME_STATE){
         case WIN:
-            game.win()
+            game.win();
             if(input.enterPressed){
                 game.reset();
                 GAME_STATE = IN_GAME;
@@ -693,4 +693,3 @@ setInterval(function() {
             break;
     }
 }, 1000/FPS);
-
