@@ -2,9 +2,26 @@ body {
     background: #464646;
 }
 
+@font-face{
+    font-family: n_g;
+    src: url("/assets/fonts/Neuzeit_Grotesk.otf")
+}
+
+#preloadfont {
+    font-family: n_g;
+    opacity:0;
+    height:0;
+    width:0;
+    display:inline-block;
+}
+
 @media only screen and (min-width: 600px) {
-    img, canvas {
+    img{
         width:49.5%;   
+    }
+    
+    canvas{
+        width: 49%;
     }
 }
 
