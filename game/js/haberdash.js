@@ -380,7 +380,7 @@ class HatStack {
 // Object to represent a singular Hat
 class Hat extends Sprite{
     constructor(xStart, imgs){
-        super(xStart, HAT_SPAWN_Y, HAT_W, HAT_H, -400, HAT_SPEED);
+        super(xStart, HAT_SPAWN_Y, HAT_W, HAT_H, -1000, HAT_SPEED);
         this.img = imgs[parseInt(Math.random() * imgs.length)];
         this.onHead = false;
         this.onGround = false;
