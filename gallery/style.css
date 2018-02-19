@@ -5,7 +5,14 @@ body {
     font-size: 30px;
 }
 
+h1{
+    font-weight: normal;
+    padding-left: 0.5em;
+    font-size: 45px;
+}
+
 footer {
     font-size: 12px;
+    padding-left: 2em;
     color: grey;
 }
