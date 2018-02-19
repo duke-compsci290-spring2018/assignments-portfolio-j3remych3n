@@ -13,7 +13,7 @@
 const TEXT_COLOR = '#D7D2CB';
 const FPS = 60;
 const WINDOW_SIZE = 1920;
-const WIN_THRESHOLD = 30;
+const WIN_THRESHOLD = 20;
 const LOSE_THRESHOLD = 10;
 const WIN = "WIN";
 const LOSE = "LOSE";
@@ -563,7 +563,7 @@ class Game {
     update() {
         this.collected.score = haberdash.hats.size();
         this.dropped.score = this.droppedHats;
-        if(haberdash.hats.size()>=22) {
+        if(haberdash.hats.size()>=WIN_THRESHOLD) {
             GAME_STATE = WIN;
         }
         else if(this.dropped.score >= LOSE_THRESHOLD){
