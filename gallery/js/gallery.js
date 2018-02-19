@@ -1,6 +1,6 @@
 function showMeTheMoney(){
 
-    
+
 }
 
 function setupCollection(jsonFile){
@@ -46,15 +46,18 @@ class ImageCollection{
         return subcollection;
     }
 
-    generateThumbnail(){
+    genThumbnail(){
         return this.imgs[parseInt(Math.random()*imgs.length)];
     }
+
+
 }
 
 class ImageSlides{
     constructor(){
         this.imgs = [];
         this.index = 1;
+        this.injectedImgs = [];
     }
 
     addImage(img){
@@ -62,11 +65,39 @@ class ImageSlides{
     }
 
     injectImage(img){
-        var injected = $('<img>').addClass("mySlides").attr({src: img.name});
-
+        var injected = $('<img>').addClass("mySlides").attr({src: IMAGES_URI + img.name});
+        this.injectImgs.push(injected);
+        return injected;
     }
 
+    injectIndicator(num){
+        return $('<span>').addClass("w3-badge demo w3-border").click(currentDiv(num));
+    // <span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>
+    }
 
+    inject(){
+        var counter = 1;
+        for(let img of this.imgs){
+            $("#slideshow").append(this.injectImage(img));
+            $("#indicator").append(this.injectIndicator(counter));
+            counter++;
+        }
+        this.showDivs(this.index);
+    }
+
+    showDivs(n){
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+    plusDivs(n){
+        showDivs(index += n);
+    }
 }
 
 class SelectionMenu{
@@ -111,7 +142,7 @@ class SmartImage {
         this.tags = imageTags;
     }
 
-    inject() {
+    injectionSnippet() {
         return $('<img>').addClass("col-5").attr({src: IMAGES_URI + this.name});
     }
 
