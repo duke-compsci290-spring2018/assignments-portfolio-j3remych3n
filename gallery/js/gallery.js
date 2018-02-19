@@ -1,27 +1,46 @@
 function showMeTheMoney(){
 
+    
+}
+
+function setupCollection(jsonFile){
+    reset();
+    $.each(jsonFile, function(key, val){
+        var caption = jsonFile[key]['caption'];
+        var tags = jsonFile[key]['tags'];
+        myCollection.add(new SmartImage(key, caption, tags));
+        myMenu.add(tags);
+    })
 }
 
 function loadJsonFile(uri){
     $.getJson(uri, {}, function(jsonFile){
-        showMeTheMoney(jsonFile);
+        setupCollection(jsonFile);
+        showMeTheMoney();
     })
+}
+
+function reset(){
+    myCollection = new ImageCollection();
+    mySlides = new ImageSlides();
+    myMenu = new SelectionMenu();
 }
 
 class ImageCollection{
     constructor(){
         this.imgs = [];
+        this.subcollections = [];
     }
 
-    add(){
-
+    add(img){
+        this.imgs.push(img);
     }
 
     buildSubcollection(tags){
-        var subcollection = [];
+        var subcollection = new ImageCollection();
         for(let img of this.imgs){
             if(img.belongs(tags)){
-                subcollection.push(img);
+                subcollection.add(img);
             }
         }
         return subcollection;

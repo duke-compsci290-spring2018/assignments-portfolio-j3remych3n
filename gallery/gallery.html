@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="author" content="Jeremy Chen">
         <title>Image Gallery</title>
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="gallery_favicon.png">
         <script src="js/gallery.js" async></script>
@@ -13,7 +14,19 @@
         <span id="hey">hey.</span>
     </h1>
     <body>
-        <img src="img/mbb1.jpeg">
+        <div class="container">
+            <div class="slides w3-content w3-display-container">
+                <div class="w3-center w3-display-bottommiddle" style="width:100%">
+                    <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
+                    <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+
+                </div>
+
+                <div class="w3-row-padding w3-section">
+
+                </div>
+            </div>
+        </div>
     </body>
     <footer>
         Images are created and owned by Jeremy Chen. All rights reserved.

@@ -11,6 +11,11 @@ h1{
     font-size: 45px;
 }
 
+.w3-content{
+    padding-left: 2em;
+    width: 80%;
+}
+
 footer {
     font-size: 12px;
     padding-left: 2em;
