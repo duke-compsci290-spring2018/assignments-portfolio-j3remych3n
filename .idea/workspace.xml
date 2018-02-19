@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/gallery/js/gallery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gallery/json/1.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gallery/json/2.json" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/gallery/gallery.html" afterPath="$PROJECT_DIR$/gallery/gallery.html" />
-      <change beforePath="$PROJECT_DIR$/gallery/js/1.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gallery/js/2.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gallery/js/3.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gallery/js/logic.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gallery/style.css" afterPath="$PROJECT_DIR$/gallery/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,8 +19,8 @@
       <file leaf-file-name="gallery.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            <state relative-caret-position="74">
+              <caret line="2" column="76" lean-forward="true" selection-start-line="2" selection-start-column="76" selection-end-line="2" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -246,12 +237,12 @@
       <updated>1519026751370</updated>
       <workItem from="1519026753967" duration="172000" />
       <workItem from="1519026974104" duration="2415000" />
-      <workItem from="1519068420744" duration="5346000" />
+      <workItem from="1519068420744" duration="5504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7933000" />
+    <option name="totallyTimeSpent" value="8091000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1908" y="0" width="1944" height="2082" extended-state="0" />
@@ -608,8 +599,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+        <state relative-caret-position="74">
+          <caret line="2" column="76" lean-forward="true" selection-start-line="2" selection-start-column="76" selection-end-line="2" selection-end-column="76" />
           <folding />
         </state>
       </provider>
