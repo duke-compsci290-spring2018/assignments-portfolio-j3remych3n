@@ -1,6 +1,25 @@
 function showMeTheMoney(){
     mySlides.inject();
     myMenu.inject();
+    myCollection.inject();
+    $('.check').on('change', function(){
+        if(this.checked){
+            console.log($(this).attr("id"));
+            console.log(($(this).attr("id")));
+            myMenu.select(($(this).attr("id")));
+        } else {
+            myMenu.deselect(($(this).attr("id")));
+        }
+        $('#gallery').empty();
+        if(myMenu.selected.length > 0){
+            console.log(myMenu.selected);
+            console.log(myCollection.buildSubcollection(myMenu.selected));
+            myCollection.buildSubcollection(myMenu.selected).inject();
+        }
+        else{
+            myCollection.inject();
+        }
+    });
 }
 
 function defaultLoad(filename){
@@ -14,10 +33,11 @@ function setupCollection(jsonFile){
         var tags = jsonFile[key]['tags'];
         var img = new SmartImage(key, caption, tags);
         myCollection.add(img);
-        mySlides.add(img);
         myMenu.add(tags);
-        console.log(myMenu);
     });
+    for(let tag of myMenu.selections){
+        mySlides.add(myCollection.buildSubcollection([tag]).genThumbnail(tag));
+    }
 }
 
 function loadJsonFile(uri){
@@ -37,9 +57,8 @@ function reset(){
 class ImageCollection{
     constructor(){
         this.imgs = [];
-        this.subcollections = [];
+        this.subcollection = [];
     }
-
     add(img){
         this.imgs.push(img);
     }
@@ -47,6 +66,7 @@ class ImageCollection{
     buildSubcollection(tags){
         var subcollection = new ImageCollection();
         for(let img of this.imgs){
+            // console.log(img);
             if(img.belongs(tags)){
                 subcollection.add(img);
             }
@@ -54,8 +74,35 @@ class ImageCollection{
         return subcollection;
     }
 
-    genThumbnail(){
-        return this.imgs[parseInt(Math.random()*imgs.length)];
+    genThumbnail(tag){
+        var orig =  this.imgs[parseInt(Math.random()*(this.imgs.length))];
+        var thumb = new SmartImage(orig.name, orig.caption, [tag]);
+        return thumb;
+    }
+
+    injectImage(img){
+        return img.injectionSnippet().addClass("img-fluid mx-auto d-block");
+    }
+
+    injectModal(img){
+        var cont = $("<div>").addClass("modal").attr("id", "myModal");
+        cont.append($("<span>").html("&times;").addClass("close"));
+        cont.append(this.injectImage(img));
+        cont.append($("<div>").html(img.caption).addClass("caption"));
+        return cont;
+    }
+
+    injectImageDiv(ii, im){
+        var cont = $("<div>").addClass("col-lg-4 col-md-10 col-sm-12").attr("id", "gal_el");
+        cont.append(ii);
+        cont.append(im);
+        return cont;
+    }
+
+    inject(){
+        for(let img of this.imgs){
+            $("#gallery").append(this.injectImageDiv(this.injectImage(img), this.injectModal(img)));
+        }
     }
 }
 
@@ -93,7 +140,13 @@ class ImageSlides{
 
     inject(){
         for(let img of this.imgs){
-            $("#slideshow").append(this.injectImage(img));
+            $("#slideshow").append(this.injectImage(img).click(function(){
+                myMenu.clear();
+                myMenu.select(mySlides.imgs[mySlides.index-1].tags);
+                console.log(myMenu.selected);
+                $("#gallery").empty();
+                myCollection.buildSubcollection(myMenu.selected).inject();
+            }));
         }
 
 
@@ -142,6 +195,7 @@ class SelectionMenu{
     }
 
     inject(){
+        $("#menu").empty();
         for(let choice of this.selections){
             $("#menu").append(this.injectionSnippet(choice));
             $("#menu").append(this.labelSnippet(choice));
@@ -176,6 +230,10 @@ class SelectionMenu{
 
     deselect(choice) {
         this.selected.splice(this.selected.indexOf(choice), 1);
+    }
+
+    clear(){
+        this.selected = [];
     }
 }
 
@@ -230,4 +288,5 @@ var jsonFile;
 var myCollection = new ImageCollection();
 var mySlides = new ImageSlides();
 var myMenu = new SelectionMenu();
-$("#load").click(defaultLoad('2.json'));
+$("#load").click(defaultLoad('1.json'));
+

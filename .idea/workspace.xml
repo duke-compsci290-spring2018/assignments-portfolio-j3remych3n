@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/gallery/gallery.html" afterPath="$PROJECT_DIR$/gallery/gallery.html" />
       <change beforePath="$PROJECT_DIR$/gallery/js/gallery.js" afterPath="$PROJECT_DIR$/gallery/js/gallery.js" />
       <change beforePath="$PROJECT_DIR$/gallery/style.css" afterPath="$PROJECT_DIR$/gallery/style.css" />
@@ -22,8 +21,8 @@
       <file leaf-file-name="gallery.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+            <state relative-caret-position="1110">
+              <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -39,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="1.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gallery/json/1.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="74">
@@ -49,14 +48,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gallery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
+      <file leaf-file-name="lifeandscience.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/responsive/lifeandscience.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="999">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <element signature="n#SmartImage#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="556">
+              <caret line="30" column="77" lean-forward="false" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="77" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,8 +74,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gallery/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1184">
-              <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+            <state relative-caret-position="930">
+              <caret line="54" column="6" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -90,6 +87,18 @@
             <state relative-caret-position="444">
               <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gallery.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="562">
+              <caret line="146" column="38" lean-forward="false" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
+              <folding>
+                <element signature="n#SmartImage#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,14 +116,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>plusdivs</find>
-      <find>slideind</find>
       <find>showdivs</find>
       <find>length</find>
       <find>console.lo</find>
       <find>help</find>
       <find>currentdiv</find>
-      <find>click</find>
       <find>plusdi</find>
       <find>shodivs</find>
       <find>slideIndex</find>
@@ -122,8 +128,24 @@
       <find>choie</find>
       <find>col</find>
       <find>inject</find>
-      <find>inject(</find>
       <find>injectimage</find>
+      <find>img</find>
+      <find>injectedimgs</find>
+      <find>html</find>
+      <find>modal</find>
+      <find>checkbox</find>
+      <find>selectionmenu</find>
+      <find>myMenu</find>
+      <find>genthumbnail</find>
+      <find>myslides</find>
+      <find>inject()</find>
+      <find>genThumbnail</find>
+      <find>console.log</find>
+      <find>select(</find>
+      <find>inject(</find>
+      <find>SelectionMenu</find>
+      <find>showmeth</find>
+      <find>click</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,8 +179,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="776" />
-    <option name="y" value="-21" />
+    <option name="x" value="1314" />
+    <option name="y" value="-20" />
     <option name="width" value="1944" />
     <option name="height" value="2082" />
   </component>
@@ -264,12 +286,12 @@
       <updated>1519026751370</updated>
       <workItem from="1519026753967" duration="172000" />
       <workItem from="1519026974104" duration="2415000" />
-      <workItem from="1519068420744" duration="19261000" />
+      <workItem from="1519068420744" duration="26888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21848000" />
+    <option name="totallyTimeSpent" value="29475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -583,14 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/responsive/lifeandscience.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gallery/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -610,37 +624,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
+    <entry file="file://$PROJECT_DIR$/gallery/json/1.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        <state relative-caret-position="74">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/responsive/lifeandscience.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="30" column="77" lean-forward="false" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gallery/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+        <state relative-caret-position="930">
+          <caret line="54" column="6" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="562">
+          <caret line="146" column="38" lean-forward="false" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
           <folding>
             <element signature="n#SmartImage#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gallery/json/1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
