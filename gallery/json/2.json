@@ -1,9 +1,10 @@
 {
-  "awaaz_01.jpg": {"caption": "Red figures", "tags": ["Awaaz", "Best", "Portraits"]},
-  "awaaz_02.jpg": {"caption": "Sabrasura", "tags": ["Awaaz", "Best", "Portraits"]},
-  "dfx_01.jpg": {"caption": "Red and Blue", "tags": ["Portraits", "DFX", "Best"]},
-  "dfx_02.jpg": {"caption": "Olive", "tags": ["Portraits", "DFX", "Best"]},
-  "dfx_03.jpg": {"caption": "Thrasher", "tags": ["Portraits", "DFX", "Best"]},
-  "misc_01.jpg": {"caption": "Quick break", "tags": ["Portraits", "Best"]},
-  "misc_02.jpg": {"caption": "I don't wanna study no more", "tags": ["Portraits", "Best"]}
+  "Election Graphic.jpg": {"caption": "2016 Election graphic for the Chronicle", "tags": ["Chronicle"]},
+  "FBLA Concept.jpg": {"caption": "Old cover concept for FBLA", "tags": ["Misc", "Covers"]},
+  "Internet Connection Graphic.jpg": {"caption": "DukeBlue Chron graphic", "tags": ["Chronicle"]},
+  "MBB 1k Wins Timeline.png": {"caption": "MBB Coach K 1k wins special", "tags": ["Chronicle"]},
+  "Political Donations.jpg": {"caption": "Cover Special for Chron", "tags": ["Chronicle", "Covers"]},
+  "Res Novae Cover.jpg": {"caption": "Cover Special for HS publication", "tags": ["Misc", "Covers"]},
+  "Simple Homepage.jpg": {"caption": "UI concept for startup", "tags": ["Misc"]},
+  "FRAT.jpg": {"caption": "Mock fraternity composite", "tags": ["Chronicle", "Covers"]}
 }
