@@ -1,6 +1,9 @@
 function showMeTheMoney(){
+    mySlides.inject();
+}
 
-
+function defaultLoad(filename){
+    loadJsonFile(JSON_URI + filename);
 }
 
 function setupCollection(jsonFile){
@@ -8,19 +11,23 @@ function setupCollection(jsonFile){
     $.each(jsonFile, function(key, val){
         var caption = jsonFile[key]['caption'];
         var tags = jsonFile[key]['tags'];
-        myCollection.add(new SmartImage(key, caption, tags));
+        var img = new SmartImage(key, caption, tags);
+        myCollection.add(img);
+        mySlides.add(img);
         myMenu.add(tags);
-    })
+        // console.log(key);
+    });
 }
 
 function loadJsonFile(uri){
-    $.getJson(uri, {}, function(jsonFile){
+    $.getJSON(uri, {}, function(jsonFile){
         setupCollection(jsonFile);
         showMeTheMoney();
-    })
+    });
 }
 
 function reset(){
+    jsonFile = undefined;
     myCollection = new ImageCollection();
     mySlides = new ImageSlides();
     myMenu = new SelectionMenu();
@@ -49,8 +56,6 @@ class ImageCollection{
     genThumbnail(){
         return this.imgs[parseInt(Math.random()*imgs.length)];
     }
-
-
 }
 
 class ImageSlides{
@@ -60,19 +65,29 @@ class ImageSlides{
         this.injectedImgs = [];
     }
 
-    addImage(img){
-        this.slides.push(img);
+    add(img){
+        this.imgs.push(img);
+    }
+
+    get index() {
+        return this._index;
+    }
+
+    set index(i){
+        this._index = i;
     }
 
     injectImage(img){
-        var injected = $('<img>').addClass("mySlides").attr({src: IMAGES_URI + img.name});
-        this.injectImgs.push(injected);
+        var injected = img.injectionSnippet().addClass("mySlides");
+        this.injectedImgs.push(injected);
         return injected;
     }
 
     injectIndicator(num){
-        return $('<span>').addClass("w3-badge demo w3-border").click(currentDiv(num));
-    // <span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>
+        return $("<span>").addClass("w3-badge demo w3-border").click(function(n){
+            mySlides.showDivs(n);
+        });
+        // return $("<span>").addClass("w3-badge demo w3-border").click(currentDiv(num));
     }
 
     inject(){
@@ -82,22 +97,35 @@ class ImageSlides{
             $("#indicator").append(this.injectIndicator(counter));
             counter++;
         }
+
+        $("#slideshow").append($('<button>').html("&#10094;").addClass("w3-button w3-black w3-display-left").on("click", function(){
+            plusDivs(-1);
+        }));
+        $("#slideshow").append($('<button>').addClass("w3-button w3-black w3-display-right").html("&#10095;").on("click", function(){
+            plusDivs(1);
+        }));
+
         this.showDivs(this.index);
     }
 
     showDivs(n){
         var i;
         var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length} ;
+        if (n > x.length) {this.index = 1}
+        if (n < 1) {this.index = x.length} ;
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
         }
-        x[slideIndex-1].style.display = "block";
+        x[this.index-1].style.display = "block";
     }
-    plusDivs(n){
-        showDivs(index += n);
-    }
+}
+
+function currentDiv(n) {
+    mySlides.showDivs(n);
+}
+
+function plusDivs(n){
+    mySlides.showDivs(mySlides.index += n);
 }
 
 class SelectionMenu{
@@ -143,7 +171,7 @@ class SmartImage {
     }
 
     injectionSnippet() {
-        return $('<img>').addClass("col-5").attr({src: IMAGES_URI + this.name});
+        return $('<img>').addClass("col-sm-11 col-md-11 col-lg-12").attr({src: IMAGES_URI + this.name});
     }
 
     belongs(ts){
@@ -182,7 +210,8 @@ class SmartImage {
 
 const IMAGES_URI = "img/";
 const JSON_URI = "json/";
-// var myJson;
+var jsonFile;
 var myCollection = new ImageCollection();
 var mySlides = new ImageSlides();
 var myMenu = new SelectionMenu();
+$("#load").click(defaultLoad('1.json'));

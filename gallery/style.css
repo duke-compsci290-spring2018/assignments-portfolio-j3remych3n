@@ -7,17 +7,15 @@ body {
 
 h1{
     font-weight: normal;
+    padding-top: 0.5em;
     padding-left: 0.5em;
     font-size: 45px;
 }
 
-.w3-content{
-    padding-left: 2em;
-    width: 80%;
-}
-
 footer {
-    font-size: 12px;
-    padding-left: 2em;
+    font-size: 15px;
+    float:right;
+    padding-right: 6.6em;
+    padding-top:6em;
     color: grey;
 }
