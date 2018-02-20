@@ -39,8 +39,6 @@ function loadOtherJson(){
 
 function setupCollection(jsonFile){
     reset();
-    myMenu.clear();
-    mySlides.clear();
     myMenu.selections = [];
     $.each(jsonFile, function(key, val){
         var caption = jsonFile[key]['caption'];
@@ -69,18 +67,8 @@ function reset(){
     myMenu.clear();
     $("#menu").empty();
     $("#gallery").empty();
-    $("#slideshow").empty();
-    $("<span>").remove();
-    // $(".mySlides").remove();
-    // $("#indicator").remove();
     $(".w3-left").remove();
     $(".w3-right").remove();
-    // $("#indicator").empty();
-    // jsonFile = undefined;
-    // myCollection = new ImageCollection();
-    // mySlides = new ImageSlides();
-
-    // myMenu = new SelectionMenu();
 }
 
 class ImageCollection{
