@@ -92,10 +92,10 @@ class ImageCollection{
         return cont;
     }
 
-    injectImageDiv(ii, im){
+    injectImageDiv(ii, img){
         var cont = $("<div>").addClass("col-lg-4 col-md-10 col-sm-12").attr("id", "gal_el").click(function(){
             // cont.append(im);
-            modalViewer(this);
+            modalViewer(img);
         });;
         cont.append(ii);
         console.log(cont);
@@ -104,7 +104,7 @@ class ImageCollection{
 
     inject(){
         for(let img of this.imgs){
-            $("#gallery").append(this.injectImageDiv(this.injectImage(img), this.injectModal(img)));
+            $("#gallery").append(this.injectImageDiv(this.injectImage(img), img));
             // $("#gallery").append(this.injectModal(img));
         }
     }
@@ -288,6 +288,7 @@ class SmartImage {
 
 function modalViewer(img) {
     modal.style.display = "block";
+    console.log(img.name);
     modalImg.src = IMAGES_URI + img.name;
     modalCap.innerHTML = img.caption;
     console.log("click");

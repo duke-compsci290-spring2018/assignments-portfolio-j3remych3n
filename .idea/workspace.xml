@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/gallery/gallery.html" afterPath="$PROJECT_DIR$/gallery/gallery.html" />
       <change beforePath="$PROJECT_DIR$/gallery/js/gallery.js" afterPath="$PROJECT_DIR$/gallery/js/gallery.js" />
     </list>
@@ -20,8 +21,8 @@
       <file leaf-file-name="gallery.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1184">
-              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="1295">
+              <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
               <folding>
                 <element signature="e#1259#1266#1" expanded="true" />
               </folding>
@@ -95,9 +96,11 @@
       <file leaf-file-name="gallery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6354">
-              <caret line="97" column="23" lean-forward="false" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="1000">
+              <caret line="106" column="79" lean-forward="false" selection-start-line="106" selection-start-column="79" selection-end-line="106" selection-end-column="79" />
+              <folding>
+                <element signature="n#SmartImage#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.lo</find>
       <find>help</find>
       <find>currentdiv</find>
       <find>plusdi</find>
@@ -155,6 +157,7 @@
       <find>modal</find>
       <find>.click</find>
       <find>injectionsnippet</find>
+      <find>modalviewer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -294,12 +297,12 @@
       <updated>1519026751370</updated>
       <workItem from="1519026753967" duration="172000" />
       <workItem from="1519026974104" duration="2415000" />
-      <workItem from="1519068420744" duration="28942000" />
+      <workItem from="1519068420744" duration="29042000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31529000" />
+    <option name="totallyTimeSpent" value="31629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1908" y="0" width="1944" height="2082" extended-state="0" />
@@ -389,7 +392,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#SmartImage#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -666,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="1295">
+          <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
           <folding>
             <element signature="e#1259#1266#1" expanded="true" />
           </folding>
@@ -676,9 +681,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6354">
-          <caret line="97" column="23" lean-forward="false" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="1000">
+          <caret line="106" column="79" lean-forward="false" selection-start-line="106" selection-start-column="79" selection-end-line="106" selection-end-column="79" />
+          <folding>
+            <element signature="n#SmartImage#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
