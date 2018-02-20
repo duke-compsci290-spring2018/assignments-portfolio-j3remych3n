@@ -1,8 +1,7 @@
 function showMeTheMoney(){
-    mySlides.inject();
-    myMenu.inject();
     myCollection.inject();
-    console.log(mySlides);
+    myMenu.inject();
+    mySlides.inject();
     $('.check').on('change', function(){
         if(this.checked){
             myMenu.select(($(this).attr("id")));
@@ -52,13 +51,14 @@ function setupCollection(jsonFile){
         myMenu.add(tags);
     });
     for(let tag of myMenu.selections){
+        console.log(tag);
         mySlides.add(myCollection.buildSubcollection([tag]).genThumbnail(tag));
     }
 }
 
 function loadJsonFile(uri){
-    $.getJSON(uri, {}, function(jsonFile){
-        setupCollection(jsonFile);
+    $.getJSON(uri, {}, function(f){
+        setupCollection(f);
         showMeTheMoney();
     });
 }
@@ -70,6 +70,11 @@ function reset(){
     $("#menu").empty();
     $("#gallery").empty();
     $("#slideshow").empty();
+    $("<span>").remove();
+    // $(".mySlides").remove();
+    // $("#indicator").remove();
+    $(".w3-left").remove();
+    $(".w3-right").remove();
     // $("#indicator").empty();
     // jsonFile = undefined;
     // myCollection = new ImageCollection();
@@ -83,6 +88,7 @@ class ImageCollection{
         this.imgs = [];
         this.subcollection = [];
     }
+
     add(img){
         this.imgs.push(img);
     }
@@ -142,7 +148,6 @@ class ImageSlides{
     constructor(){
         this.imgs = [];
         this.index = 1;
-        this.injectedImgs = [];
     }
 
     add(img){
@@ -159,7 +164,6 @@ class ImageSlides{
 
     injectImage(img){
         var injected = img.injectionSnippet().addClass("col-12 mySlides");
-        this.injectedImgs.push(injected);
         return injected;
     }
 
@@ -171,11 +175,10 @@ class ImageSlides{
     }
 
     inject() {
-        // $("#indicator").empty();
-        // $("#slideshow").empty();
+        this.index = 1;
+        $("#indicator").empty();
         for (let img of this.imgs) {
             $("#slideshow").append(this.injectImage(img).click(function () {
-                console.log(this.injectImage(img));
                 myMenu.clear();
                 myMenu.select(mySlides.imgs[mySlides.index - 1].tags);
                 $("#gallery").empty();
@@ -193,20 +196,19 @@ class ImageSlides{
         }))
         for (var i = 1; i <= this.imgs.length; i++) {
             $("#indicator").append(this.injectIndicator(i));
+            console.log(i);
         }
+        console.log(this.index);
         this.showDivs(this.index);
-
     }
 
 
     clear(){
         this.imgs = [];
-        this.injectedImgs = [];
         this.index = 1;
     }
 
     showDivs(n){
-        console.log($(".mySlides"));
         var i;
         var x = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("demo");
@@ -218,6 +220,10 @@ class ImageSlides{
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" w3-white", "");
         }
+        console.log("errything is fine");
+        /*
+        * THIS IS SO BROKEN I HATE MYSELF
+         */
         x[this.index-1].style.display = "block";
         dots[this.index-1].className += " w3-white";
     }
