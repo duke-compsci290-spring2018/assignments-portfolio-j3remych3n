@@ -2,6 +2,7 @@ function showMeTheMoney(){
     mySlides.inject();
     myMenu.inject();
     myCollection.inject();
+    console.log(mySlides);
     $('.check').on('change', function(){
         if(this.checked){
             myMenu.select(($(this).attr("id")));
@@ -27,22 +28,26 @@ function loadJson(file){
 }
 
 function loadOtherJson(){
+    reset();
     if(curJsonInd < AVAILABLE_JSON.length-1){
         curJsonInd++;
     }
     else{
         curJsonInd = 0;
     }
-    console.log(curJsonInd);
     loadJson(AVAILABLE_JSON[curJsonInd]);
 }
 
 function setupCollection(jsonFile){
     reset();
+    myMenu.clear();
+    mySlides.clear();
+    myMenu.selections = [];
     $.each(jsonFile, function(key, val){
         var caption = jsonFile[key]['caption'];
         var tags = jsonFile[key]['tags'];
         var img = new SmartImage(key, caption, tags);
+        console.log(caption + " " + tags + " " + img);
         myCollection.add(img);
         myMenu.add(tags);
     });
@@ -59,13 +64,18 @@ function loadJsonFile(uri){
 }
 
 function reset(){
+    myCollection.clear();
+    mySlides.clear();
+    myMenu.clear();
     $("#menu").empty();
     $("#gallery").empty();
     $("#slideshow").empty();
+    // $("#indicator").empty();
     // jsonFile = undefined;
-    myCollection = new ImageCollection();
-    mySlides = new ImageSlides();
-    myMenu = new SelectionMenu();
+    // myCollection = new ImageCollection();
+    // mySlides = new ImageSlides();
+
+    // myMenu = new SelectionMenu();
 }
 
 class ImageCollection{
@@ -75,6 +85,11 @@ class ImageCollection{
     }
     add(img){
         this.imgs.push(img);
+    }
+
+    clear(){
+        this.imgs = [];
+        this.subcollection = [];
     }
 
     buildSubcollection(tags){
@@ -155,14 +170,14 @@ class ImageSlides{
         // return $("<span>").addClass("w3-badge demo w3-border").click(currentDiv(num));
     }
 
-    inject(){
+    inject() {
         // $("#indicator").empty();
         // $("#slideshow").empty();
-        for(let img of this.imgs){
-            $("#slideshow").append(this.injectImage(img).click(function(){
+        for (let img of this.imgs) {
+            $("#slideshow").append(this.injectImage(img).click(function () {
+                console.log(this.injectImage(img));
                 myMenu.clear();
-                myMenu.select(mySlides.imgs[mySlides.index-1].tags);
-                console.log(myMenu.selected);
+                myMenu.select(mySlides.imgs[mySlides.index - 1].tags);
                 $("#gallery").empty();
                 myCollection.buildSubcollection(myMenu.selected[0]).inject();
             }));
@@ -170,19 +185,28 @@ class ImageSlides{
 
 
         $("#slideshow").append($('<div>')).addClass("w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle").attr("id", "indicator");
-        $("#indicator").append($('<div>').html("&#10094;").addClass("w3-left w3-hover-text-khaki").on("click", function(){
+        $("#indicator").append($('<div>').html("&#10094;").addClass("w3-left w3-hover-text-khaki").on("click", function () {
             plusDivs(-1);
         }))
-        $("#indicator").append($('<div>').html("&#10095;").addClass("w3-right w3-hover-text-khaki").on("click", function(){
+        $("#indicator").append($('<div>').html("&#10095;").addClass("w3-right w3-hover-text-khaki").on("click", function () {
             plusDivs(1);
         }))
-        for(var i = 1; i<=this.imgs.length; i++){
+        for (var i = 1; i <= this.imgs.length; i++) {
             $("#indicator").append(this.injectIndicator(i));
         }
         this.showDivs(this.index);
+
+    }
+
+
+    clear(){
+        this.imgs = [];
+        this.injectedImgs = [];
+        this.index = 1;
     }
 
     showDivs(n){
+        console.log($(".mySlides"));
         var i;
         var x = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("demo");
@@ -211,6 +235,11 @@ class SelectionMenu{
     constructor(){
         this.selections = [];
         this.selected = [];
+    }
+
+    clear(){
+        this.selections = [];
+        this.seleced = [];
     }
 
     inject(){
@@ -324,7 +353,7 @@ jsonSwitch.onclick = function(){
     console.log("clicked");
     loadOtherJson();
 };
-var jsonFile;
+// var jsonFile;
 var myCollection = new ImageCollection();
 var mySlides = new ImageSlides();
 var myMenu = new SelectionMenu();
