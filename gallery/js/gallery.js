@@ -1,5 +1,6 @@
 function showMeTheMoney(){
     mySlides.inject();
+    myMenu.inject();
 }
 
 function defaultLoad(filename){
@@ -15,7 +16,7 @@ function setupCollection(jsonFile){
         myCollection.add(img);
         mySlides.add(img);
         myMenu.add(tags);
-        // console.log(key);
+        console.log(myMenu);
     });
 }
 
@@ -78,7 +79,7 @@ class ImageSlides{
     }
 
     injectImage(img){
-        var injected = img.injectionSnippet().addClass("mySlides");
+        var injected = img.injectionSnippet().addClass("col-12 mySlides");
         this.injectedImgs.push(injected);
         return injected;
     }
@@ -91,32 +92,38 @@ class ImageSlides{
     }
 
     inject(){
-        var counter = 1;
         for(let img of this.imgs){
             $("#slideshow").append(this.injectImage(img));
-            $("#indicator").append(this.injectIndicator(counter));
-            counter++;
         }
 
-        $("#slideshow").append($('<button>').html("&#10094;").addClass("w3-button w3-black w3-display-left").on("click", function(){
-            plusDivs(-1);
-        }));
-        $("#slideshow").append($('<button>').addClass("w3-button w3-black w3-display-right").html("&#10095;").on("click", function(){
-            plusDivs(1);
-        }));
 
+        $("#slideshow").append($('<div>')).addClass("w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle").attr("id", "indicator");
+        $("#indicator").append($('<div>').html("&#10094;").addClass("w3-left w3-hover-text-khaki").on("click", function(){
+            plusDivs(-1);
+        }))
+        $("#indicator").append($('<div>').html("&#10095;").addClass("w3-right w3-hover-text-khaki").on("click", function(){
+            plusDivs(1);
+        }))
+        for(var i = 1; i<=this.imgs.length; i++){
+            $("#indicator").append(this.injectIndicator(i));
+        }
         this.showDivs(this.index);
     }
 
     showDivs(n){
         var i;
         var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
         if (n > x.length) {this.index = 1}
-        if (n < 1) {this.index = x.length} ;
+        if (n < 1) {this.index = x.length}
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
         }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
         x[this.index-1].style.display = "block";
+        dots[this.index-1].className += " w3-white";
     }
 }
 
@@ -134,10 +141,19 @@ class SelectionMenu{
         this.selected = [];
     }
 
-    show(){
-        for(let choice of selections){
-
+    inject(){
+        for(let choice of this.selections){
+            $("#menu").append(this.injectionSnippet(choice));
+            $("#menu").append(this.labelSnippet(choice));
         }
+    }
+
+    injectionSnippet(choice){
+        return $('<input>').addClass("check").attr({type: "checkbox", id: choice});
+    }
+
+    labelSnippet(choice){
+        return $('<label>').html(choice).attr({for: choice});
     }
 
     get selected(){
@@ -171,7 +187,7 @@ class SmartImage {
     }
 
     injectionSnippet() {
-        return $('<img>').addClass("col-sm-11 col-md-11 col-lg-12").attr({src: IMAGES_URI + this.name});
+        return $('<img>').attr({src: IMAGES_URI + this.name});
     }
 
     belongs(ts){
@@ -214,4 +230,4 @@ var jsonFile;
 var myCollection = new ImageCollection();
 var mySlides = new ImageSlides();
 var myMenu = new SelectionMenu();
-$("#load").click(defaultLoad('1.json'));
+$("#load").click(defaultLoad('2.json'));

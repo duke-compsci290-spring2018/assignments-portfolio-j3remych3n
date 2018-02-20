@@ -4,7 +4,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Jeremy Chen">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Image Gallery</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="gallery_favicon.png">
@@ -16,14 +18,10 @@
     </h1>
     <body>
         <div class="container">
-            <div class="w3-content w3-display-container" id="slideshow">
-                <div class="w3-center w3-display-bottommiddle" style="width:80%" id="indicator">
-                    <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
-                    <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
-
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 w3-content w3-display-container" id="slideshow">
                 </div>
-                <div class="w3-row-padding w3-section">
-
+                <div id="menu">
                 </div>
             </div>
         </div>
