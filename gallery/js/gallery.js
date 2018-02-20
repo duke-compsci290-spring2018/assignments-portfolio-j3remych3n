@@ -94,7 +94,8 @@ class ImageCollection{
 
     injectImageDiv(ii, im){
         var cont = $("<div>").addClass("col-lg-4 col-md-10 col-sm-12").attr("id", "gal_el").click(function(){
-            cont.append(im);
+            // cont.append(im);
+            modalViewer(this);
         });;
         cont.append(ii);
         console.log(cont);
@@ -285,8 +286,22 @@ class SmartImage {
     }
 }
 
+function modalViewer(img) {
+    modal.style.display = "block";
+    modalImg.src = IMAGES_URI + img.name;
+    modalCap.innerHTML = img.caption;
+    console.log("click");
+}
+
 const IMAGES_URI = "img/";
 const JSON_URI = "json/";
+var modal = $("#myModal")[0];
+var modalImg = $("#img01")[0];
+var modalCap = $("#modal-caption")[0];
+var span = $(".close")[0];
+span.onclick = function(){
+    modal.style.display = "none";
+};
 var jsonFile;
 var myCollection = new ImageCollection();
 var mySlides = new ImageSlides();
