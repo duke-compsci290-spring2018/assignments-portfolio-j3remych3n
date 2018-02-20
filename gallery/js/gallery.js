@@ -85,23 +85,26 @@ class ImageCollection{
     }
 
     injectModal(img){
-        var cont = $("<div>").addClass("modal").attr("id", "myModal");
+        var cont = $("<div>").addClass("modal").attr("id", "myModal").attr("style", "block");
         cont.append($("<span>").html("&times;").addClass("close"));
-        cont.append(this.injectImage(img));
+        cont.append(img.injectionSnippet().attr("id", "img01"));
         cont.append($("<div>").html(img.caption).addClass("caption"));
         return cont;
     }
 
     injectImageDiv(ii, im){
-        var cont = $("<div>").addClass("col-lg-4 col-md-10 col-sm-12").attr("id", "gal_el");
+        var cont = $("<div>").addClass("col-lg-4 col-md-10 col-sm-12").attr("id", "gal_el").click(function(){
+            cont.append(im);
+        });;
         cont.append(ii);
-        cont.append(im);
+        console.log(cont);
         return cont;
     }
 
     inject(){
         for(let img of this.imgs){
             $("#gallery").append(this.injectImageDiv(this.injectImage(img), this.injectModal(img)));
+            // $("#gallery").append(this.injectModal(img));
         }
     }
 }
@@ -145,7 +148,7 @@ class ImageSlides{
                 myMenu.select(mySlides.imgs[mySlides.index-1].tags);
                 console.log(myMenu.selected);
                 $("#gallery").empty();
-                myCollection.buildSubcollection(myMenu.selected).inject();
+                myCollection.buildSubcollection(myMenu.selected[0]).inject();
             }));
         }
 

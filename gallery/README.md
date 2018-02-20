@@ -13,6 +13,6 @@ __List of students consulted:__ Jarod Cahoon, Diane Hu
 
 __Online Resources:__ w3c tutorials
 
-__Assets:__ All my own
+__Assets:__ All my own, some code snippets taken from W3C tutorial exampls
 
-__Bugs or concerns:__ 
+__Bugs or concerns:__ Modal is not fully functioning
