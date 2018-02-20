@@ -178,10 +178,10 @@ class ImageSlides{
         $("#slideshow").append($('<div>')).addClass("w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle").attr("id", "indicator");
         $("#indicator").append($('<div>').html("&#10094;").addClass("w3-left w3-hover-text-khaki").on("click", function () {
             plusDivs(-1);
-        }))
+        }));
         $("#indicator").append($('<div>').html("&#10095;").addClass("w3-right w3-hover-text-khaki").on("click", function () {
             plusDivs(1);
-        }))
+        }));
         for (var i = 1; i <= this.imgs.length; i++) {
             $("#indicator").append(this.injectIndicator(i));
             console.log(i);
@@ -200,8 +200,8 @@ class ImageSlides{
         var i;
         var x = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("demo");
-        if (n > x.length) {this.index = 1}
-        if (n < 1) {this.index = x.length}
+        if (n > x.length) {this.index = 1;}
+        if (n < 1) {this.index = x.length;}
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
         }

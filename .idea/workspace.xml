@@ -82,8 +82,8 @@
       <file leaf-file-name="gallery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-252">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="1110">
+              <caret line="212" column="41" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="355" selection-end-column="0" />
               <folding>
                 <element signature="n#SmartImage#0" expanded="false" />
               </folding>
@@ -314,12 +314,12 @@
       <workItem from="1519139627425" duration="2718000" />
       <workItem from="1519144581562" duration="4997000" />
       <workItem from="1519154123092" duration="1683000" />
-      <workItem from="1519155887122" duration="2712000" />
+      <workItem from="1519155887122" duration="2938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44273000" />
+    <option name="totallyTimeSpent" value="44499000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -789,8 +789,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="1110">
+          <caret line="212" column="41" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="355" selection-end-column="0" />
           <folding>
             <element signature="n#SmartImage#0" expanded="false" />
           </folding>
