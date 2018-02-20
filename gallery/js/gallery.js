@@ -4,16 +4,12 @@ function showMeTheMoney(){
     myCollection.inject();
     $('.check').on('change', function(){
         if(this.checked){
-            console.log($(this).attr("id"));
-            console.log(($(this).attr("id")));
             myMenu.select(($(this).attr("id")));
         } else {
             myMenu.deselect(($(this).attr("id")));
         }
         $('#gallery').empty();
         if(myMenu.selected.length > 0){
-            console.log(myMenu.selected);
-            console.log(myCollection.buildSubcollection(myMenu.selected));
             myCollection.buildSubcollection(myMenu.selected).inject();
         }
         else{
@@ -22,8 +18,23 @@ function showMeTheMoney(){
     });
 }
 
-function defaultLoad(filename){
-    loadJsonFile(JSON_URI + filename);
+function defaultLoad(files){
+    loadJson(files[0]);
+}
+
+function loadJson(file){
+    loadJsonFile(JSON_URI + file);
+}
+
+function loadOtherJson(){
+    if(curJsonInd < AVAILABLE_JSON.length-1){
+        curJsonInd++;
+    }
+    else{
+        curJsonInd = 0;
+    }
+    console.log(curJsonInd);
+    loadJson(AVAILABLE_JSON[curJsonInd]);
 }
 
 function setupCollection(jsonFile){
@@ -48,7 +59,10 @@ function loadJsonFile(uri){
 }
 
 function reset(){
-    jsonFile = undefined;
+    $("#menu").empty();
+    $("#gallery").empty();
+    $("#slideshow").empty();
+    // jsonFile = undefined;
     myCollection = new ImageCollection();
     mySlides = new ImageSlides();
     myMenu = new SelectionMenu();
@@ -84,13 +98,13 @@ class ImageCollection{
         return img.injectionSnippet().addClass("img-fluid mx-auto d-block");
     }
 
-    injectModal(img){
-        var cont = $("<div>").addClass("modal").attr("id", "myModal").attr("style", "block");
-        cont.append($("<span>").html("&times;").addClass("close"));
-        cont.append(img.injectionSnippet().attr("id", "img01"));
-        cont.append($("<div>").html(img.caption).addClass("caption"));
-        return cont;
-    }
+    // injectModal(img){
+    //     var cont = $("<div>").addClass("modal").attr("id", "myModal").attr("style", "block");
+    //     cont.append($("<span>").html("&times;").addClass("close"));
+    //     cont.append(img.injectionSnippet().attr("id", "img01"));
+    //     cont.append($("<div>").html(img.caption).addClass("caption"));
+    //     return cont;
+    // }
 
     injectImageDiv(ii, img){
         var cont = $("<div>").addClass("col-lg-4 col-md-10 col-sm-12").attr("id", "gal_el").click(function(){
@@ -98,7 +112,6 @@ class ImageCollection{
             modalViewer(img);
         });;
         cont.append(ii);
-        console.log(cont);
         return cont;
     }
 
@@ -143,6 +156,8 @@ class ImageSlides{
     }
 
     inject(){
+        // $("#indicator").empty();
+        // $("#slideshow").empty();
         for(let img of this.imgs){
             $("#slideshow").append(this.injectImage(img).click(function(){
                 myMenu.clear();
@@ -288,14 +303,14 @@ class SmartImage {
 
 function modalViewer(img) {
     modal.style.display = "block";
-    console.log(img.name);
     modalImg.src = IMAGES_URI + img.name;
     modalCap.innerHTML = img.caption;
-    console.log("click");
 }
 
 const IMAGES_URI = "img/";
 const JSON_URI = "json/";
+const AVAILABLE_JSON = ["1.json", "2.json"];
+var curJsonInd = 0;
 var modal = $("#myModal")[0];
 var modalImg = $("#img01")[0];
 var modalCap = $("#modal-caption")[0];
@@ -303,9 +318,15 @@ var span = $(".close")[0];
 span.onclick = function(){
     modal.style.display = "none";
 };
+
+var jsonSwitch = $(".switch")[0];
+jsonSwitch.onclick = function(){
+    console.log("clicked");
+    loadOtherJson();
+};
 var jsonFile;
 var myCollection = new ImageCollection();
 var mySlides = new ImageSlides();
 var myMenu = new SelectionMenu();
-$("#load").click(defaultLoad('1.json'));
+$("#load").click(defaultLoad(AVAILABLE_JSON));
 
