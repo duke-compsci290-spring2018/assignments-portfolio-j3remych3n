@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jeremy Chen">
+    <title>Not a Trello Clone</title>
+    <link rel="shortcut icon" href="resources/favicon.png">
+
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+    <script src="js/trello.js" async></script>
+</head>
+<div id="navBar"></div>
+
+<div id="board">
+
+    <v-app v-if="login" v-if="signup" id="loginInput">
+        <v-container fill-height>
+            <v-card
+                    v-if="login"
+                    id="existing"
+                    color="grey lighten-3"
+                    style="min-width: 45%; margin:auto;">
+                <v-container fluid grid-list-lg>
+                    <v-layout row>
+                        <v-flex xs12>
+                            <div class="text-xs-center">
+                                <div class="headline">Log in</div>
+                            </div>
+                        </v-flex>
+                    </v-layout>
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center">
+                            <v-text-field
+                                    name="username-input"
+                                    label="Username or email"
+                                    v-model="username"
+                                    style="width: 80%; display: inline-block;"
+                            ></v-text-field>
+                        </v-flex>
+                    </v-layout>
+
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center">
+                            <v-text-field
+                                    name="password-input"
+                                    label="Password"
+                                    v-model="password"
+                                    :append-icon="pwInvisible ? 'visibility' : 'visibility_off'"
+                                    :append-icon-cb="() => (pwInvisible = !pwInvisible)"
+                                    :type="pwInvisible ? 'password' : 'text'"
+                                    style="width: 80%; display: inline-block;"
+                            ></v-text-field>
+                        </v-flex>
+                    </v-layout>
+                        <v-flex xs12 style="width: 93%;" class="text-xs-right">
+                        <v-btn>next</v-btn>
+                        </v-flex>
+                </v-container>
+            </v-card>
+
+            <v-card
+                    v-if="signup"
+                    id="new"
+                    color="grey lighten-3"
+                    style="min-width: 45%; margin:auto;">
+                <v-container fluid grid-list-lg>
+                    <v-layout row>
+                        <v-flex xs12>
+                            <div class="text-xs-center">
+                                <div class="headline">Sign up!</div>
+                            </div>
+                        </v-flex>
+                    </v-layout>
+
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center">
+                            <v-text-field
+                                    name="firstname"
+                                    label="First name"
+                                    v-model="name"
+                                    style="width: 80%; display: inline-block;"
+                            ></v-text-field>
+                        </v-flex>
+                    </v-layout>
+
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center">
+                            <v-text-field
+                                    name="username-input"
+                                    label="Username or email"
+                                    v-model="username"
+                                    style="width: 80%; display: inline-block;"
+                            ></v-text-field>
+                        </v-flex>
+                    </v-layout>
+
+                    <v-layout row>
+                        <v-flex xs12 class="text-xs-center">
+                            <v-text-field
+                                    name="password-input"
+                                    label="Password"
+                                    v-model="password"
+                                    :append-icon="pwInvisible ? 'visibility' : 'visibility_off'"
+                                    :append-icon-cb="() => (pwInvisible = !pwInvisible)"
+                                    :type="pwInvisible ? 'password' : 'text'"
+                                    style="width: 80%; display: inline-block;"
+                            ></v-text-field>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </v-card>
+        </v-container>
+    </v-app>
+</div>
+
+
+<footer>
+
+</footer>
+</html>
