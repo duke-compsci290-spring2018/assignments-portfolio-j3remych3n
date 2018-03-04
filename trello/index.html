@@ -45,10 +45,21 @@
 
         <v-container id="board">
             <v-container id="mainBoard" v-if="loggedIn">
-                <!--<v-layout row>-->
-                    <!--<template v-for="list in lists">-->
-                        <!--&lt;!&ndash;display lists&ndash;&gt;-->
-                    <!--</template>-->
+                <v-layout row>
+                    <template v-for="list in lists">
+                        <toolbar color="list.color">
+                            <v-toolbar-side-icon></v-toolbar-side-icon>
+                            <v-flex xs12 class="text-xs-center">
+                                <v-text-field
+                                        name="list-title"
+                                        label={{list.name}}
+                                        v-model="list.name"
+                                        style="width: 80%; display: inline-block;"
+                                ></v-text-field>
+                            </v-flex>
+                            <v-spacer></v-spacer>
+                        </toolbar>
+                    </template>
                     <v-btn depressed
                            dark
                            color="grey lighten-1"
@@ -57,7 +68,7 @@
                            @click="addList"
                            Large>add a list...
                     </v-btn>
-                <!--</v-layout>-->
+                </v-layout>
             </v-container>
             <v-container id="logins" fill-height>
                 <v-card id="login-existing"

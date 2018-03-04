@@ -17,6 +17,98 @@ Vue.use(Vuetify, {
     }
 })
 
+class cardList{
+    constructor(){
+        this.users=[];
+        this.cards=[];
+        this.color="#1976D2";
+        this.name="unnamed list";
+    }
+
+    set name(newName){
+        this._name=newName;
+    }
+
+    get name(){
+        return this._name;
+    }
+
+    set color(c){
+        this._color=c;
+    }
+
+    get color(){
+        return this._color;
+    }
+
+    addCard(cardName){
+        this.cards.push(cardName);
+    }
+
+    removeCard(cardName){
+        index = this.cards.indexOf(cardName);
+        if(index > -1){
+            this.cards.splice(index, 1);
+        }
+    }
+
+    addUser(username){
+        this.cards.push(username);
+    }
+
+    removeUser(username){
+        index = this.users.indexOf(username);
+        if(index > -1){
+            this.users.splice(index, 1);
+        }
+    }
+}
+
+class card{
+    constructor(){
+        this.name="unnamed card";
+        this.created = this.dateCreated();
+    }
+
+    set name(newName){
+        this._name=newName;
+    }
+
+    get name(){
+        return this._name;
+    }
+
+    get created(){
+        return this._created;
+    }
+
+    dateCreated(){
+        d = new Date();
+        return d.getDate() + " " + d.getMonth() + " " + d.getUTCFullYear() + " " + d.getHours() + ":" + d.getMinutes();
+    }
+}
+
+class user{
+    constructor(name, email, password){
+        this.name=name;
+        this.email=email;
+        this.password=password;
+
+        this.boards = [];
+    }
+
+    addBoard(board){
+        boards.push(board);
+    }
+
+    removeBoard(board){
+        index = this.boards.indexOf(board);
+        if(index > -1){
+            this.boards.splice(index, 1);
+        }
+    }
+}
+
 
 var notTrello = new Vue({
     el: "#notTrello",
@@ -30,7 +122,9 @@ var notTrello = new Vue({
         loggedIn: false,
         pwInvisible: true,
 
-        lists:[]
+        boards:[],
+        lists:[],
+        cards:[]
     },
     watch: {},
     computed: {},
@@ -48,6 +142,10 @@ var notTrello = new Vue({
             }
         },
         logOut: function() {
+            this.loggedIn=false;
+            this.username='';
+            this.password='';
+            this.name='';
             console.log("logging out placeholder");
         },
         closeLogin: function() {

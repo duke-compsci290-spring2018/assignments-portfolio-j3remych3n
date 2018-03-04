@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/trello/index.html" afterPath="$PROJECT_DIR$/trello/index.html" />
       <change beforePath="$PROJECT_DIR$/trello/js/trello.js" afterPath="$PROJECT_DIR$/trello/js/trello.js" />
     </list>
@@ -20,11 +19,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="675">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="618">
-                  <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+                <state relative-caret-position="962">
+                  <caret line="56" column="58" lean-forward="false" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
                   <folding>
                     <element signature="n#style#0;n#v-card#0;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#0;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -33,17 +32,17 @@
                     <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#1;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#2;n#v-container#0;n#v-card#1;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#3;n#v-container#0;n#v-card#1;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <marker date="1520129107647" expanded="true" signature="1262:1831" ph="..." />
+                    <marker date="1520132116345" expanded="true" signature="1262:1831" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1329">
-                  <caret line="65" column="78" lean-forward="false" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
+                <state relative-caret-position="1300">
+                  <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -62,8 +61,8 @@
           <file leaf-file-name="trello.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="719">
-                  <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+                <state relative-caret-position="-16">
+                  <caret line="103" column="23" lean-forward="true" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -88,11 +87,21 @@
           <file leaf-file-name="trello.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1279">
-                  <caret line="55" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+                <state relative-caret-position="444">
+                  <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gallery.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1036">
+                  <caret line="128" column="22" lean-forward="true" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -112,7 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jsonfile</find>
       <find>mySlides.clear</find>
       <find>selectionmenu</find>
       <find>imageslides</find>
@@ -142,6 +150,7 @@
       <find>v-flex</find>
       <find>key</find>
       <find>loadSignu</find>
+      <find>%</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,9 +170,9 @@
         <option value="$PROJECT_DIR$/gallery/gallery.html" />
         <option value="$PROJECT_DIR$/gallery/js/gallery.js" />
         <option value="$PROJECT_DIR$/trello/style.css" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/trello/js/trello.js" />
         <option value="$PROJECT_DIR$/trello/index.html" />
-        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -208,6 +217,27 @@
             <path>
               <item name="assignments-portfolio-j3remych3n" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignments-portfolio-j3remych3n" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignments-portfolio-j3remych3n" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignments-portfolio-j3remych3n" type="462c0819:PsiDirectoryNode" />
+              <item name="gallery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignments-portfolio-j3remych3n" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignments-portfolio-j3remych3n" type="462c0819:PsiDirectoryNode" />
+              <item name="gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignments-portfolio-j3remych3n" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignments-portfolio-j3remych3n" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignments-portfolio-j3remych3n" type="b2602c69:ProjectViewProjectNode" />
+              <item name="assignments-portfolio-j3remych3n" type="462c0819:PsiDirectoryNode" />
+              <item name="trello" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -273,12 +303,12 @@
       <workItem from="1519939608242" duration="7000" />
       <workItem from="1520026160131" duration="759000" />
       <workItem from="1520048392925" duration="5720000" />
-      <workItem from="1520108178013" duration="20292000" />
+      <workItem from="1520108178013" duration="23186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76695000" />
+    <option name="totallyTimeSpent" value="79589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -610,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7659">
-          <caret line="207" column="43" lean-forward="true" selection-start-line="207" selection-start-column="43" selection-end-line="207" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gallery/gallery_favicon.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -659,6 +682,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1300">
+          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trello/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -667,10 +698,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1036">
+          <caret line="128" column="22" lean-forward="true" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="-16">
+          <caret line="103" column="23" lean-forward="true" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -679,8 +718,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trello/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+        <state relative-caret-position="962">
+          <caret line="56" column="58" lean-forward="false" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
           <folding>
             <element signature="n#style#0;n#v-card#0;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#0;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -689,16 +728,8 @@
             <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#1;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#2;n#v-container#0;n#v-card#1;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#3;n#v-container#0;n#v-card#1;n#v-container#1;n#v-container#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1520129107647" expanded="true" signature="1262:1831" ph="..." />
+            <marker date="1520132116345" expanded="true" signature="1262:1831" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1329">
-          <caret line="65" column="78" lean-forward="false" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
