@@ -245,6 +245,22 @@ var notTrello = new Vue({
         shiftCardRight: function(ls){
 
         },
+        deleteList: function(ls){
+            index = this.lists.indexOf(ls);
+            if(index > -1){
+                this.lists.splice(index, 1);
+            }
+        },
+        deleteCard: function(c, ls){
+            index = this.cards.indexOf(c);
+            if(index > -1){
+                this.cards.splice(index, 1);
+            }
+            lindex = ls.cards.indexOf(c.id);
+            if(lindex > -1){
+                ls.cards.splice(lindex, 1);
+            }
+        },
         addNewCard: function(ls){
             var c = new card;
             this.cards.push(c);

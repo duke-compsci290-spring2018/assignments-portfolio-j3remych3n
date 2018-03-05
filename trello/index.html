@@ -36,7 +36,6 @@
             </v-toolbar-items>
         </v-toolbar>
         <div id="gradBackground" style="min-height:100%">
-
             <v-container center fluid id="welcome" v-if="!loggedIn&&!login&&!signup">
                 <img src="resources/loljumbo.png" style="width:100%;">
             </v-container>
@@ -113,15 +112,24 @@
                                             <v-btn icon v-if="card.naming"  @click="card.rename()">
                                                 <v-icon>check</v-icon>
                                             </v-btn>
+                                            <v-spacer></v-spacer>
+                                            <v-btn @click="deleteCard(card, list)" icon>
+                                                <v-icon>delete</v-icon>
+                                            </v-btn>
                                         </v-toolbar>
                                     </v-card>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
 
-                            <v-btn v-if="!list.hidden" @click="addNewCard(list)" icon fab small color="red lighten-1">
-                                <v-icon color="white">add</v-icon>
-                            </v-btn>
-
+                            <v-toolbar v-if="!list.hidden" dense flat color="grey lighten-3">
+                                <v-btn @click="addNewCard(list)" icon fab small color="red lighten-1">
+                                    <v-icon color="white">add</v-icon>
+                                </v-btn>
+                                <v-spacer></v-spacer>
+                                <v-btn @click="deleteList(list)" icon>
+                                    <v-icon>delete</v-icon>
+                                </v-btn>
+                            </v-toolbar>
                         </v-card>
                     </v-flex>
 
