@@ -2,3 +2,45 @@ v-text-field{
     display:inline-block;
     width: 50%;
 }
+
+/*
+ * Below is a rainbow gradient animation, credit to: Ian Forrest
+ */
+#gradBackground {
+    background: linear-gradient(173deg, #2fd9ad, #24a6da, #c324da, #da8024, #e64646);
+    background-size: 1000% 1000%;
+    -webkit-animation: AnimationName 35s ease infinite;
+    -moz-animation: AnimationName 35s ease infinite;
+    -o-animation: AnimationName 35s ease infinite;
+    animation: AnimationName 35s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:47% 0%}
+    50%{background-position:54% 100%}
+    100%{background-position:47% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:47% 0%}
+    50%{background-position:54% 100%}
+    100%{background-position:47% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:47% 0%}
+    50%{background-position:54% 100%}
+    100%{background-position:47% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:47% 0%}
+    50%{background-position:54% 100%}
+    100%{background-position:47% 0%}
+}
+/*
+ * Ian Forrest's gradient code ends here
+ */
+
+#gradBackground{
+    overflow-x: scroll;
+    width: auto;
+    white-space: nowrap;
+}
