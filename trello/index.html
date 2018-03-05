@@ -114,20 +114,20 @@
                                             </v-btn>
                                             <v-spacer></v-spacer>
                                             <v-btn @click="deleteCard(card, list)" icon>
-                                                <v-icon>delete</v-icon>
+                                                <v-icon  color="grey darken-2">delete</v-icon>
                                             </v-btn>
                                         </v-toolbar>
                                     </v-card>
                                 </v-expansion-panel-content>
                             </v-expansion-panel>
 
-                            <v-toolbar v-if="!list.hidden" dense flat color="grey lighten-3">
+                            <v-toolbar v-if="!list.hidden" dense flat color="grey lighten-4">
                                 <v-btn @click="addNewCard(list)" icon fab small color="red lighten-1">
                                     <v-icon color="white">add</v-icon>
                                 </v-btn>
                                 <v-spacer></v-spacer>
                                 <v-btn @click="deleteList(list)" icon>
-                                    <v-icon>delete</v-icon>
+                                    <v-icon color="grey darken-2">delete</v-icon>
                                 </v-btn>
                             </v-toolbar>
                         </v-card>
