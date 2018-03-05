@@ -6,7 +6,7 @@ Worked on for: (basic) 10 hours
 Collaborators: None
 Consulted: Vuetify & Vue.js API/docs
 Assets: My own, used gradient animation from Ian Forrest's gradient animation generator
-Bugs/concerns: No persistent data
+Bugs/concerns: No persistent data, COLOR PALETTE, is hard to find, bottom right
 Extra Credit: N/A
 
-Impressions: Took forever, but satisfying when it came together
+Impressions: Took me togetherforever, but satisfying when it ca

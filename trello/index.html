@@ -109,8 +109,8 @@
                                             <v-btn icon @click="card.rename()" v-if="!card.naming">
                                                 <v-icon >mode_edit</v-icon>
                                             </v-btn>
-                                            <v-btn icon v-if="card.naming"  @click="card.rename()">
-                                                <v-icon>check</v-icon>
+                                            <v-btn icon v-if="card.naming" fab small color="grey darken-2" @click="card.rename()">
+                                                <v-icon color="white">check</v-icon>
                                             </v-btn>
                                             <v-spacer></v-spacer>
                                             <v-btn @click="deleteCard(card,list)" icon>
@@ -145,8 +145,20 @@
                             </v-toolbar>
                         </v-card>
                     </v-flex>
-
                 </v-layout>
+                    <v-menu absolute left top origin="center center"
+                            transition="scale-transition">
+                        <v-btn absolute bottom right icon slot="activator">
+                            <v-icon color="white" large>palette</v-icon>
+                        </v-btn>
+                        <v-list>
+                            <v-list-tile v-for="color in colors" :key="color" @click="changeColor(color)">
+                                <v-list-tile-title>
+                                    <v-icon  normal v-bind:color="color">fiber_manual_record</v-icon>
+                                </v-list-tile-title>
+                            </v-list-tile>
+                        </v-list>
+                    </v-menu>
             </v-container>
 
             <v-container id="logins" v-if="!loggedIn" fill-height>

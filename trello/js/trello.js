@@ -183,7 +183,8 @@ var notTrello = new Vue({
         listIDs: [],
         boardIDs: [],
         cardIDs: [],
-        cards: []
+        cards: [],
+        colors: ["red lighten-1", "deep-purple darken-2", "indigo darken-2", "teal darken-1", "blue-grey darken-2"]
     },
     watch: {
 
@@ -192,6 +193,16 @@ var notTrello = new Vue({
 
     },
     methods: {
+        changeColor: function(color){
+            console.log("previous " + document.getElementById("gradBackground").style.background);
+            console.log("tried changing to " + color);
+            var tempCols = {"red lighten-1": "#EF5350",
+                            "deep-purple darken-2": "#512DA8",
+                            "indigo darken-2": "#303F9F",
+                            "teal darken-1": "#00897B",
+                            "blue-grey darken-2": "#455A64"};
+            document.getElementById("gradBackground").style.background = tempCols[color];
+        },
         temptester: function() {
             console.log("hey");
         },
