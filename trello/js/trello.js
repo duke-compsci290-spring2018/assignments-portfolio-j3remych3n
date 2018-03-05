@@ -242,6 +242,7 @@ var notTrello = new Vue({
         enterSignup: function (){
             console.log("Attempted signup with username: " + this.username + ", and password: "+ this.password);
             this.signup = false;
+            this.login = false;
             this.loggedIn = true;
         },
         shiftListLeft: function(ls){
