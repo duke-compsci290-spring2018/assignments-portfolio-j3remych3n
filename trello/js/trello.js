@@ -164,6 +164,14 @@ class user{
 }
 
 
+class board{
+    constructor(){
+        this.lists = [];
+        this.listOrder = [];
+    }
+}
+
+
 var notTrello = new Vue({
     el: "#notTrello",
     data: {

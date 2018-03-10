@@ -5,8 +5,6 @@
     <meta name="author" content="Jeremy Chen">
     <title>Not a Trello Clone</title>
     <link rel="shortcut icon" href="resources/favicon.png">
-    <!--<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/boot;;lstrap.min.css"/>-->
-    <!--<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -43,7 +41,7 @@
             <v-container center fluid grid-list-lg id="mainBoard" v-if="loggedIn" fill-height>
                 <v-layout row>
 
-                    <v-flex lg3 md3 sm12 v-for="list in lists" :key="list.id">
+                    <v-flex lg3 md3 sm10 v-for="list in lists" :key="list.id">
                         <v-card color="grey lighten-3">
                             <v-toolbar color="grey lighten-5" dense>
                                 <v-toolbar-title v-if="!list.naming">{{list.name}}</v-toolbar-title>
@@ -69,8 +67,8 @@
                                 <v-btn v-if="list.hidden" icon @click="list.toggleVis()">
                                     <v-icon color="red darken-5">add</v-icon>
                                 </v-btn>
-                                <v-btn icon v-if="!(list.hidden)" color="grey darken-1" @click="list.toggleVis()">
-                                    <v-icon color="white">remove</v-icon>
+                                <v-btn icon v-if="!(list.hidden)" @click="list.toggleVis()">
+                                    <v-icon >remove</v-icon>
                                 </v-btn>
                                 <v-btn icon>
                                     <v-icon>more_vert</v-icon>
@@ -88,19 +86,21 @@
                                             name="card-name-input"
                                             label="Card name"
                                             v-model="card.name"
+                                            solo
                                     ></v-text-field>
 
                                     </div>
                                     <v-card>
                                         <v-card-text v-if="!card.naming">{{card.description}}</v-card-text>
-                                        <v-card-text v-if="card.naming"><v-text-field
-                                                multi-line
+                                        <v-card-text v-if="card.naming">
+                                            <v-text-field
                                                 name="card-name-input"
                                                 label="Card description"
                                                 value="card.description"
                                                 v-model="card.description"
-                                        ></v-text-field></v-card-text>
-
+                                                textarea
+                                            ></v-text-field>
+                                        </v-card-text>
                                         <v-toolbar dense flat color="grey lighten-5">
                                             <v-btn icon>
                                                 <v-icon>chevron_left</v-icon>
@@ -267,7 +267,6 @@
                     </v-container>
                 </v-card>
             </v-container>
-
         </div>
     </v-app>
 </div>
