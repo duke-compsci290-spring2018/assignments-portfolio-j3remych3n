@@ -24,6 +24,8 @@
 
 <div id="notTrello">
     <v-app id="board-vuetify">
+        <!--activity tester-->
+        <!--<v-btn @click="activity_add('asdf')">click me </v-btn>-->
         <v-toolbar color="grey lighten-5" light>
             <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
             <v-spacer></v-spacer>
@@ -174,7 +176,7 @@
                                     <v-icon>more_vert</v-icon>
                                 </v-btn>
                             </v-toolbar>
-                            <v-expansion-panel expand v-if="!list.isHidden" popout>
+                            <v-expansion-panel expand v-if="!list.isHidden" popout style="overflow-y: scroll; max-height: 72vh;">
                                 <v-expansion-panel-content v-for="card in card_getCards(list, '')" :key="card.id" color="grey lighten-3">
 
                                     <div v-if="!card.beingNamed" slot="header">
@@ -248,11 +250,11 @@
                                             <v-btn icon @click="card_moveRight(card, list, board_lists())">
                                                 <v-icon color="grey darken-2">chevron_right</v-icon>
                                             </v-btn>
-                                            <v-btn icon @click="card_comment(card)">
-                                                <v-icon color="grey darken-2">comment</v-icon>
-                                            </v-btn>
                                             <v-btn icon>
                                                 <v-icon color="grey darken-2">playlist_add_check</v-icon>
+                                            </v-btn>
+                                            <v-btn icon @click="card_comment(card)">
+                                                <v-icon color="grey darken-2">comment</v-icon>
                                             </v-btn>
                                             <v-spacer></v-spacer>
                                             <v-chip disabled outline small>
@@ -321,9 +323,32 @@
                                         <v-icon normal v-bind:color="color">lens</v-icon>
                                     </v-list-tile-title>
                                 </v-list-tile>
-                                <v-list-tile>
+                                <v-list-tile @click="">
                                     <v-list-tile-title>
-                                        <v-icon normal>image</v-icon>
+                                        <v-dialog persistent v-model="backdialog" max-width="42%">
+                                            <v-icon normal slot="activator">image</v-icon>
+                                            <v-card>
+                                                <v-container fluid center grid-list-lg>
+                                                    <v-layout row wrap>
+                                                        <v-card-text class="headline">New background image</v-card-text>
+                                                        <v-flex lg10 md10 sm10>
+                                                            <v-flex id="#gradBackground" xs12 class="text-xs-center">
+                                                                <v-btn block @click="changeBkClick()">
+                                                                    Choose Image
+                                                                </v-btn>
+                                                                <input style="display: none;" ref="changeBkButton" type="file" id="filesbk" accept="image/*" name="files[]"/>
+                                                            </v-flex>
+                                                        </v-flex>
+                                                        <v-card-actions>
+                                                            <v-btn @click="board_changeImage(currentBoard)">
+                                                                done
+                                                            </v-btn>
+                                                        </v-card-actions>
+                                                    </v-layout>
+                                                </v-container>
+                                                </v-layout>
+                                            </v-card>
+                                        </v-dialog>
                                     </v-list-tile-title>
                                 </v-list-tile>
                             </v-list>

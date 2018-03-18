@@ -54,7 +54,7 @@ v-text-field{
     white-space: nowrap;
 }
 
-#notTrello {
+html {
     overflow-y: hidden;
 }
 

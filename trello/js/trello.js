@@ -22,6 +22,7 @@ var cardsRef = db.ref('cards');
 var listsRef = db.ref('lists');
 var boardsRef = db.ref('boards');
 var imagesRef = db.ref('images');
+var activityRef = db.ref('activity');
 
 Vue.use(VueFire);
 
@@ -56,7 +57,7 @@ class card{
 class todo{
     constructor(card){
         this.task = "";
-        this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+        this.longcreated = new Date().toDateString(); + " at " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
         this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
         this.done = false;
     }
@@ -66,7 +67,7 @@ class user{
     constructor(name, email, password, imgUrl){
         this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
         this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
-        this.name=name;
+        this.myName=name;
         this.avatar = imgUrl;
         this.email=email;
         this.password=password;
@@ -76,9 +77,10 @@ class user{
 class board{
     constructor(){
         this.name = '';
-        this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+        this.longcreated = new Date().toDateString() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
         this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
         this.starred = false;
+        this.backGround = "";
     }
 }
 
@@ -89,7 +91,7 @@ var notTrello = new Vue({
         inusername: "",
         inpassword: "",
         inname: "",
-        inavatar: "",
+        inavatar: "a",
 
         currentUser: "",
         currentBoard: "temp",
@@ -101,6 +103,7 @@ var notTrello = new Vue({
         namedialog:false,
         userdialog:false,
         picdialog:false,
+        backdialog:false,
 
         invalidInput: false,
         login: false,
@@ -128,6 +131,19 @@ var notTrello = new Vue({
 
     },
     methods: {
+        activity_add: function(text){
+            var time = new Date().toDateString() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+            var name = "";
+            var parent = this;
+            usersRef.once('value').then(function(snapshot) {
+                name = snapshot.child(parent.currentUser).child("myName").val();
+            }).then(function(){
+                var str = text + " by " + name + " on " + time;
+                console.log("ACTIVITY " + str);
+                activityRef.push(str);
+            });
+        },
+
         addNewImage (u, url) {
             imagesRef.push({
                 title: u,
@@ -135,6 +151,7 @@ var notTrello = new Vue({
             });
             u.avatar=url;
         },
+
         changeImage(u, url) {
             var updates = {};
             return imagesRef.once('value').then(function(snapshot) {
@@ -155,6 +172,11 @@ var notTrello = new Vue({
             return this.lists.filter(list => list.parent === this.currentBoard);
         },
 
+        board_changeImage(currentBoard){
+            // make image and color changes persistent?
+            this.backdialog=false;
+        },
+
         card_getCards: function (ls, category){
             // TODO change category code
             return this.cards.filter(card => card.parent === ls.id && card.category == category);
@@ -162,11 +184,12 @@ var notTrello = new Vue({
 
         card_addNew: function(ls){
             cardsRef.push(new card(ls.id)).then((data, err) => { if (err) {console.log(err)}});
+            this.activity_add("New card created");
         },
 
         card_delete: function(card){
             cardsRef.child(card['.key']).remove();
-
+            this.activity_add("Card named " + card.myName + " deleted");
             index = this.cards.indexOf(card);
             if(index > -1){
                 this.cards.splice(index, 1);
@@ -190,6 +213,7 @@ var notTrello = new Vue({
         },
 
         card_move(card, list){
+            this.activity_add("Card named " + card.myName + " moved to list named " + list.myName);
             updates = {};
             updates['/' + card['.key'] + "/parent"] = list.id;
             cardsRef.update(updates);
@@ -202,6 +226,7 @@ var notTrello = new Vue({
             console.log(card.beingNamed);
 
             if(!card.beingNamed){
+                this.activity_add("Card named " + card.myName + " renamed to " + this.currCardName);
                 card.myName = this.currCardName;
                 var update = {};
                 update['/' + card['.key'] + "/myName"] = this.currCardName;
@@ -220,6 +245,7 @@ var notTrello = new Vue({
                 card.description = this.currCardDescription;
                 var update = {};
                 update['/' + card['.key'] + "/description"] = this.currCardDescription;
+                this.activity_add("Description of card " + card.myName + " changed/added");
                 cardsRef.update(update);
             }
         },
@@ -230,6 +256,7 @@ var notTrello = new Vue({
                 var update = {};
                 update['/' + card['.key'] + "/deadline"] = this.currCardDeadline;
                 cardsRef.update(update);
+                this.activity_add("Deadline " + this.currCardDeadline + " added to card named " + card.myName);
                 this.currCardDeadline="";
             }
         },
@@ -269,6 +296,7 @@ var notTrello = new Vue({
 
         list_addNew: function(board){
             listsRef.push(new cardList(board)).then((data, err) => { if (err) {console.log(err)}});
+            this.activity_add("New list created");
         },
 
         list_rename: function(list) {
@@ -277,6 +305,7 @@ var notTrello = new Vue({
             console.log(list.beingNamed);
 
             if(!list.beingNamed){
+                this.activity_add("List named " + list.myName + " renamed to " + this.currListName);
                 list.myName = this.currListName;
                 var update = {};
 
@@ -298,12 +327,13 @@ var notTrello = new Vue({
             if(index > -1){
                 this.lists.splice(index, 1);
             }
+            this.activity_add("List named " + ls.myName + "removed");
         },
 
         user_changeName: function(user, newName) {
             this.namedialog=false;
             var updates = {};
-            updates['/' + user + '/' + "name"] = newName;
+            updates['/' + user + '/' + "myName"] = newName;
             usersRef.update(updates);
         },
 
@@ -364,6 +394,10 @@ var notTrello = new Vue({
 
         changeImgClick: function(){
             this.$refs.changeImgButton.click();
+        },
+
+        changeBkClick: function(){
+            this.$refs.changeBkButton.click();
         },
 
         user_makeNew: function(){
