@@ -25,7 +25,7 @@
 <div id="notTrello">
     <v-app id="board-vuetify">
         <v-toolbar color="grey lighten-5" light>
-            <v-toolbar-side-icon></v-toolbar-side-icon>
+            <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
             <v-spacer></v-spacer>
             <v-toolbar-title>
                 <b-img src="resources/logo.png" center fluid width="100%"/>
@@ -141,7 +141,7 @@
 
             <v-container center fluid grid-list-lg id="mainBoard" v-if="loggedIn" fill-height>
                 <v-layout row>
-                    <v-flex lg4 md4 sm11 v-for="list in board_lists()" :key="list.id">
+                    <v-flex lg6 md6 sm11 v-for="list in board_lists()" :key="list.id">
                         <v-card color="grey lighten-3">
                             <v-toolbar color="grey lighten-5" dense>
                                 <v-toolbar-title v-if="!list.beingNamed">{{list.myName}}</v-toolbar-title>
@@ -242,10 +242,10 @@
                                             <!--</v-list>-->
                                         </v-card>
                                         <v-toolbar dense flat color="grey lighten-5">
-                                            <v-btn icon>
+                                            <v-btn icon @click="card_moveLeft(card, list, board_lists())">
                                                 <v-icon color="grey darken-2">chevron_left</v-icon>
                                             </v-btn>
-                                            <v-btn icon>
+                                            <v-btn icon @click="card_moveRight(card, list, board_lists())">
                                                 <v-icon color="grey darken-2">chevron_right</v-icon>
                                             </v-btn>
                                             <v-btn icon @click="card_comment(card)">

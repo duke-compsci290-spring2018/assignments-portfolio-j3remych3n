@@ -173,6 +173,29 @@ var notTrello = new Vue({
             }
         },
 
+        card_moveRight(card, list, lists){
+            var i = lists.indexOf(list);
+            if(i<lists.length - 1){
+                var j = i + 1;
+                this.card_move(card, lists[j]);
+            }
+        },
+
+        card_moveLeft(card, list, lists){
+            var i = lists.indexOf(list);
+            if(i > 0){
+                var j = i - 1;
+                this.card_move(card, lists[j]);
+            }
+        },
+
+        card_move(card, list){
+            updates = {};
+            updates['/' + card['.key'] + "/parent"] = list.id;
+            cardsRef.update(updates);
+            notTrello.$forceUpdate();
+        },
+
         card_rename(card){
             console.log(card.beingNamed);
             card.beingNamed = !card.beingNamed;
@@ -207,6 +230,7 @@ var notTrello = new Vue({
                 var update = {};
                 update['/' + card['.key'] + "/deadline"] = this.currCardDeadline;
                 cardsRef.update(update);
+                this.currCardDeadline="";
             }
         },
 
@@ -396,8 +420,6 @@ var notTrello = new Vue({
             this.invalidInput = false;
         },
 
-
-
         changeColor: function(color){
             console.log("previous " + document.getElementById("gradBackground").style.background);
             console.log("tried changing to " + color);
@@ -463,33 +485,6 @@ var notTrello = new Vue({
             });
 
         },
-        shiftCardLeft: function(ls){
-
-        },
-        shiftCardRight: function(ls){
-
-        },
-
-        deleteCard: function(c, ls){
-            cardsRef.child(c['.key']).remove();
-
-            index = this.cards.indexOf(c);
-            if(index > -1){
-                this.cards.splice(index, 1);
-            }
-            lindex = ls.cards.indexOf(c.id);
-            if(lindex > -1){
-                ls.cards.splice(lindex, 1);
-            }
-        },
-        addNewCard: function(ls){
-            var c = new card(ls.id);
-            this.cards.push(c).then((data, err) => { if (err) {console.log(err)}});
-
-            // this.cards.push(c);
-            // // ls.addCard(c.id);
-            // this.cardIDs.push[c.id];
-        }
     },
     directives: {}
 })
