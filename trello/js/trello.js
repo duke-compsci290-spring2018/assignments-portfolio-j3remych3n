@@ -164,7 +164,22 @@ var notTrello = new Vue({
             });
             u.avatar=url;
         },
-
+        changeImage(u, url) {
+            var updates = {};
+            return imagesRef.once('value').then(function(snapshot) {
+                try{
+                    snapshot.forEach(function(img){
+                        console.log(img);
+                        console.log(img.key);
+                        if(img.child('title').val()==u){
+                            updates['/' + img.key + '/url'] = url;
+                            throw updates;
+                        }
+                    })} catch(e){
+                    imagesRef.update(updates);
+                }
+            });
+        },
         board_lists: function(){
             return this.lists.filter(list => list.parent === this.currentBoard);
         },
@@ -281,6 +296,7 @@ var notTrello = new Vue({
         },
 
         user_changeImage(userID){
+            console.log("THIS IS BEING CALLED");
             this.picdialog = false;
             var input = document.getElementById('files1');
             var parent = this;
@@ -290,8 +306,10 @@ var notTrello = new Vue({
                 storageRef.child('images/' + file.name)
                     .put(file)
                     .then(function(snapshot){
-                        parent.addNewImage(parent.currentUser, snapshot.downloadURL);
+                        parent.changeImage(parent.currentUser, snapshot.downloadURL);
                         updates['/' + parent.currentUser + "/avatar"] = snapshot.downloadURL;
+                        usersRef.update(updates);
+                        console.log(snapshot.downloadURL);
                         parent.user_successLogIn();
                         notTrello.$forceUpdate();
                     })
