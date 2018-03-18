@@ -28,68 +28,44 @@ Vue.use(VueFire);
 class cardList{
     constructor(board){
         this.parent=board;
-        // this.cards=[];
         this.myName="unnamed list";
         this.isHidden=false;
         this.created = new Date().toDateString() + " " + new Date().getHours() + new Date().getMinutes() + new Date().getSeconds();
         this.beingNamed = false;
         this.id="list"+ parseInt(Math.random()*parseInt(Date.now()))+this.created;
     }
-    //
-    // set name(newName){this._name=newName;}
-    // get name(){return this._name;}
-    //
-    // get cards(){return this._cards;}
-    // set cards(c){this._cards = c;}
-    //
-    // get naming(){return this._naming;}
-    // set naming(n){this._naming = n;}
-    //
-    // set hidden(h){this._hidden=h;}
-    // get hidden(){return this._hidden;}
-    //
-    // toggleVis(){this.hidden = !this.hidden;}
-    //
-    // set color(c){this._color=c;}
-    // get color(){return this._color;}
-    //
-    // rename(){
-    //     this.naming = !this.naming;
-    // }
-    //
-    // addCard(cardID){
-    //     this.cards.push(cardID);
-    // }
-    //
-    // removeCard(cardName){
-    //     ezRemove(cardName, this.cards);
-    // }
-    //
-    // addUser(username){
-    //     this.cards.push(username);
-    // }
-    //
-    // removeUser(username){
-    //     ezRemove(username, this.users);
-    // }
 }
 
 class card{
     constructor(list){
         this.parent = list;
+        this.category = "";
         this.myName="unnamed card";
         this.created = new Date().toDateString();
         this.longcreated = this.created + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
         this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
-        this.description="";
+        this.description="Add a description";
+        this.deadline = "Add a deadline";
         this.beingNamed = false;
+        this.describing = false;
+        this.todoing = false;
         this.commenting = false;
     }
 }
 
+class todo{
+    constructor(card){
+        this.task = "";
+        this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+        this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
+        this.done = false;
+    }
+}
 
 class user{
     constructor(name, email, password, imgUrl){
+        this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+        this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
         this.name=name;
         this.avatar = imgUrl;
         this.email=email;
@@ -99,16 +75,10 @@ class user{
 
 class board{
     constructor(){
-        this.lists = [];
         this.name = '';
-    }
-
-    get lists() {
-        return this._lists;
-    }
-
-    set lists(ls) {
-        this._lists = ls;
+        this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
+        this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
+        this.starred = false;
     }
 }
 
@@ -119,17 +89,18 @@ var notTrello = new Vue({
         inusername: "",
         inpassword: "",
         inname: "",
-        inavatar: "a",
+        inavatar: "",
 
         currentUser: "",
         currentBoard: "temp",
-        currListName: "unnamed list",
+        currListName: "",
+        currCardName: "",
+        currCardDescription: "",
+        currCardDeadline: "",
 
         namedialog:false,
         userdialog:false,
         picdialog:false,
-
-
 
         invalidInput: false,
         login: false,
@@ -184,8 +155,59 @@ var notTrello = new Vue({
             return this.lists.filter(list => list.parent === this.currentBoard);
         },
 
-        cards_all: function (ls){
+        card_getCards: function (ls, category){
+            // TODO change category code
+            return this.cards.filter(card => card.parent === ls.id && card.category == category);
+        },
 
+        card_addNew: function(ls){
+            cardsRef.push(new card(ls.id)).then((data, err) => { if (err) {console.log(err)}});
+        },
+
+        card_delete: function(card){
+            cardsRef.child(card['.key']).remove();
+
+            index = this.cards.indexOf(card);
+            if(index > -1){
+                this.cards.splice(index, 1);
+            }
+        },
+
+        card_rename(card){
+            console.log(card.beingNamed);
+            card.beingNamed = !card.beingNamed;
+            console.log(card.beingNamed);
+
+            if(!card.beingNamed){
+                card.myName = this.currCardName;
+                var update = {};
+                update['/' + card['.key'] + "/myName"] = this.currCardName;
+                cardsRef.update(update);
+                this.currCardName = "";
+                // notTrello.$forceUpdate();
+            }
+        },
+
+        card_describe(card) {
+            console.log(card.describing);
+            card.describing = !card.describing;
+            console.log(card.describing);
+
+            if(!card.describing){
+                card.description = this.currCardDescription;
+                var update = {};
+                update['/' + card['.key'] + "/description"] = this.currCardDescription;
+                cardsRef.update(update);
+            }
+        },
+
+        card_deadline(card) {
+            if(this.currCardDeadline != ""){
+                card.deadline= this.currCardDeadline;
+                var update = {};
+                update['/' + card['.key'] + "/deadline"] = this.currCardDeadline;
+                cardsRef.update(update);
+            }
         },
 
         list_swapLeft: function(list, lists){
@@ -236,7 +258,7 @@ var notTrello = new Vue({
 
                 update['/' + list['.key'] + "/myName"] = this.currListName;
                 listsRef.update(update);
-                currListName = "";
+                this.currListName = "";
                 notTrello.$forceUpdate();
             }
         },
@@ -244,7 +266,7 @@ var notTrello = new Vue({
         list_toggleVis: function(ls){
             ls.isHidden = !ls.isHidden;
         },
-
+        // TODO remove children
         list_delete: function(ls){
             listsRef.child(ls['.key']).remove();
 
@@ -252,10 +274,6 @@ var notTrello = new Vue({
             if(index > -1){
                 this.lists.splice(index, 1);
             }
-        },
-
-        card_addNew: function(ls){
-          this.cards.push(new card(ls)).then((data, err) => { if (err) {console.log(err)}});
         },
 
         user_changeName: function(user, newName) {
