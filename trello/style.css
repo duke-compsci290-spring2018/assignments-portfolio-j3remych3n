@@ -1,3 +1,9 @@
+/*
+ * Jeremy Chen jc587
+ */
+
+
+
 v-text-field{
     display:inline-block;
     width: 50%;
@@ -9,28 +15,28 @@ v-text-field{
 #gradBackground {
     background: linear-gradient(173deg, #2fd9ad, #24a6da, #c324da, #da8024, #e64646);
     background-size: 1000% 1000%;
-    -webkit-animation: AnimationName 35s ease infinite;
-    -moz-animation: AnimationName 35s ease infinite;
-    -o-animation: AnimationName 35s ease infinite;
-    animation: AnimationName 35s ease infinite;
+    -webkit-animation: WavyGrad 35s ease infinite;
+    -moz-animation: WavyGrad 35s ease infinite;
+    -o-animation: WavyGrad 35s ease infinite;
+    animation: WavyGrad 35s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes WavyGrad {
     0%{background-position:47% 0%}
     50%{background-position:54% 100%}
     100%{background-position:47% 0%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes WavyGrad {
     0%{background-position:47% 0%}
     50%{background-position:54% 100%}
     100%{background-position:47% 0%}
 }
-@-o-keyframes AnimationName {
+@-o-keyframes WavyGrad {
     0%{background-position:47% 0%}
     50%{background-position:54% 100%}
     100%{background-position:47% 0%}
 }
-@keyframes AnimationName {
+@keyframes WavyGrad {
     0%{background-position:47% 0%}
     50%{background-position:54% 100%}
     100%{background-position:47% 0%}
@@ -39,8 +45,19 @@ v-text-field{
  * Ian Forrest's gradient code ends here
  */
 
+/*
+ * allow for horizontal scrolling
+ */
 #gradBackground{
     overflow-x: scroll;
     width: auto;
     white-space: nowrap;
 }
+
+#notTrello {
+    overflow-y: hidden;
+}
+
+/*input {*/
+    /*visibility: hidden;*/
+/*}*/
