@@ -247,6 +247,7 @@ var notTrello = new Vue({
                 update['/' + card['.key'] + "/description"] = this.currCardDescription;
                 this.activity_add("Description of card " + card.myName + " changed/added");
                 cardsRef.update(update);
+                this.currCardDescription = "";
             }
         },
 

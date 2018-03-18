@@ -210,7 +210,7 @@
                                     <v-card>
                                         <v-card color="grey lighten-4" id="description">
                                             <v-toolbar dense color="transparent" flat>
-                                                <v-card-text v-if="!card.describing">{{card.description}}</v-card-text>
+                                                <v-card-text v-if="!card.describing" v-html="card.description"></v-card-text>
                                                 <v-card-text v-if="card.describing">
                                                     <v-text-field
                                                             name="card-description-input"
