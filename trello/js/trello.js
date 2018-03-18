@@ -111,6 +111,8 @@ var notTrello = new Vue({
         loggedIn: false,
         pwInvisible: true,
 
+        drawer: false,
+
         colors: ["red lighten-1", "deep-purple darken-2", "indigo darken-2", "teal darken-1", "blue-grey darken-2"],
         colorDict: {"red lighten-1": "#EF5350",
             "deep-purple darken-2": "#512DA8",
@@ -459,6 +461,7 @@ var notTrello = new Vue({
             console.log("previous " + document.getElementById("gradBackground").style.background);
             console.log("tried changing to " + color);
             document.getElementById("gradBackground").style.background = this.colorDict[color];
+            document.getElementById("gradBar").style.background = this.colorDict[color];
         },
         loadLogin: function(){
             this.signup=false;

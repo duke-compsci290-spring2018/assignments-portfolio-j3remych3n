@@ -27,7 +27,7 @@
         <!--activity tester-->
         <!--<v-btn @click="activity_add('asdf')">click me </v-btn>-->
         <v-toolbar color="grey lighten-5" light>
-            <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
+            <v-toolbar-side-icon @click.stop="drawer = !drawer" v-if="loggedIn"></v-toolbar-side-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title>
                 <b-img src="resources/logo.png" center fluid width="100%"/>
@@ -134,6 +134,17 @@
             </v-toolbar-items>
         </v-toolbar>
         <div id="gradBackground" style="min-height:100%">
+            <v-navigation-drawer
+                    temporary
+                    v-model="drawer"
+                    absolute
+            >
+             <v-toolbar id="gradBar">
+                <v-btn icon @click.stop="drawer = !drawer" absolute right>
+                    <v-icon color="grey lighten-5">menu</v-icon>
+                </v-btn>
+             </v-toolbar>
+            </v-navigation-drawer>
             <v-container center fluid id="welcome" v-if="!loggedIn&&!login&&!signup">
                 <img src="resources/loljumbo.png" style="width:100%;">
             </v-container>
@@ -314,6 +325,7 @@
                         <v-spacer></v-spacer>
                         <v-menu v-if="loggedIn" top left offset-y origin="top top"
                                 transition="scale-transition">
+
                             <v-btn absolute bottom right icon slot="activator">
                                 <v-icon color="white" large>palette</v-icon>
                             </v-btn>
