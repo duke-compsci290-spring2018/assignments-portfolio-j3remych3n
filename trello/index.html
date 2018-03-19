@@ -54,6 +54,7 @@
 
                                             <v-flex lg10 md10 sm10>
                                                 <v-text-field
+                                                        @keyup.enter = "user_changeName(currentUser, inname)"
                                                         value="inname"
                                                         v-model="inname"
                                                 ></v-text-field>
@@ -81,6 +82,7 @@
 
                                                 <v-flex lg10 md10 sm10>
                                                     <v-text-field
+                                                            @keyup.enter = "user_changeEmail(currentUser, inusername)"
                                                             value="inusername"
                                                             v-model="inusername"
                                                     ></v-text-field>
@@ -128,9 +130,12 @@
                                 </v-dialog>
                             </v-list-tile-title>
                         </v-list-tile>
+                        <v-list-tile color="red darken-2" v-if="loggedIn" @click="logOut">
+                            Sign out
+                        </v-list-tile>
                     </v-list>
                 </v-menu>
-                <v-btn v-if="loggedIn" flat small @click="logOut">Sign out</v-btn>
+                <!--<v-btn v-if="loggedIn" flat small @click="logOut">Sign out</v-btn>-->
             </v-toolbar-items>
         </v-toolbar>
         <div id="gradBackground" style="min-height:100%">
@@ -138,12 +143,106 @@
                     temporary
                     v-model="drawer"
                     absolute
+                    width="450"
+                    style="overflow-y:hidden; background: #EEEEEE;"
+                    color="grey lighten-3"
             >
-             <v-toolbar id="gradBar">
+             <v-toolbar dark id="gradBar">
+                 <v-toolbar-title>
+                     {{currentBoard}}
+                 </v-toolbar-title>
+                 <v-spacer></v-spacer>
                 <v-btn icon @click.stop="drawer = !drawer" absolute right>
                     <v-icon color="grey lighten-5">menu</v-icon>
                 </v-btn>
              </v-toolbar>
+                    <v-card style="overflow-x:hidden; overflow-y:hidden;" color="grey lighten-3" flat tile >
+                            <v-card tile flat color="grey lighten-3">
+                                <v-toolbar dense color="grey lighten-5">
+                                    <v-toolbar-title> Starred Boards</v-toolbar-title>
+                                    <v-spacer></v-spacer>
+                                    <v-btn icon>
+                                        <v-icon color="grey darken-1">add</v-icon>
+                                    </v-btn>
+                                </v-toolbar>
+                                <v-list style="overflow-y:scroll; max-height: 22vh; min-height: 22vh;">
+                                <v-list-tile>
+                                    <v-toolbar flat dense>
+                                        <v-spacer></v-spacer>
+                                        <v-btn icon small>
+                                            <v-icon color="grey darken-1">folder_open</v-icon>
+                                        </v-btn>
+                                        <v-btn icon small>
+                                            <v-icon color="grey darken-1">archive</v-icon>
+                                        </v-btn>
+                                            <v-btn icon small>
+                                                <v-icon color="amber lighten-3">star</v-icon>
+                                            </v-btn>
+                                    </v-toolbar>
+                                </v-list-tile>
+                            </v-list>
+                            </v-card>
+
+                        <v-card tile flat color="grey lighten-3">
+                            <v-toolbar dense>
+                                <v-toolbar-title> Normie Boards</v-toolbar-title>
+                                <v-spacer></v-spacer>
+                                <v-btn icon>
+                                    <v-icon color="grey darken-1">add</v-icon>
+                                </v-btn>
+                            </v-toolbar>
+                            <v-list style="overflow-y:scroll; max-height: 22vh; min-height: 22vh;">
+                            <v-list-tile>
+                                <v-toolbar flat dense>
+                                    <v-spacer></v-spacer>
+                                    <v-btn icon small>
+                                        <v-icon color="grey darken-1">folder_open</v-icon>
+                                    </v-btn>
+                                    <v-btn icon small>
+                                        <v-icon color="grey darken-1">archive</v-icon>
+                                    </v-btn>
+                                    <v-btn icon small>
+                                        <v-icon color="grey darken-1">star_border</v-icon>
+                                    </v-btn>
+                                </v-toolbar>
+                            </v-list-tile>
+                            </v-list>
+                        </v-card>
+                        <v-card tile flat color="grey lighten-3">
+                            <v-toolbar dense>
+                                <v-toolbar-title> Archived Boards</v-toolbar-title>
+                                <v-spacer></v-spacer>
+                                <v-btn icon>
+                                    <v-icon color="grey darken-1">add</v-icon>
+                                </v-btn>
+                            </v-toolbar>
+                            <v-list style="overflow-y:scroll; max-height: 22vh; min-height: 22vh;">
+                                <v-list-tile>
+                                    <v-toolbar flat dense>
+                                        <v-spacer></v-spacer>
+                                        <v-btn icon small>
+                                            <v-icon color="grey darken-1">unarchive</v-icon>
+                                        </v-btn>
+                                    </v-toolbar>
+                                </v-list-tile>
+                            </v-list>
+                        </v-card>
+                    </v-card>
+                <!--<v-toolbar dense class="grad">-->
+                <v-layout row center>
+                    <v-flex xs1></v-flex>
+                    <v-flex xs10>
+                    <v-btn block flat dark class="grad">
+                        <v-icon color="white">
+                            history
+                        </v-icon>
+                        <v-spacer></v-spacer>
+                    Project activity
+                    <v-spacer></v-spacer></v-btn>
+                    </v-flex>
+                    <v-flex xs1></v-flex>
+                </v-layout>
+                <!--</v-toolbar>-->
             </v-navigation-drawer>
             <v-container center fluid id="welcome" v-if="!loggedIn&&!login&&!signup">
                 <img src="resources/loljumbo.png" style="width:100%;">
@@ -151,7 +250,6 @@
 
             <!-- BOARD SELECTION: TO DO -->
             <v-container center fluid grid-list-lg id="boardSelection" v-if="1==0" fill-height></v-container>
-
             <v-container center fluid grid-list-lg id="mainBoard" v-if="loggedIn" fill-height>
                 <v-layout row>
                     <v-flex lg6 md6 sm11 v-for="list in board_lists()" :key="list.id">
@@ -160,6 +258,7 @@
                                 <v-toolbar-title v-if="!list.beingNamed">{{list.myName}}</v-toolbar-title>
                                 <v-toolbar-title v-if="list.beingNamed">
                                     <v-text-field
+                                            @keyup.enter="list_rename(list)"
                                             name="list-name-input"
                                             v-model="currListName"
                                     ></v-text-field>
@@ -183,9 +282,9 @@
                                 <v-btn icon v-if="!(list.isHidden)" @click="list_toggleVis(list)">
                                     <v-icon>remove</v-icon>
                                 </v-btn>
-                                <v-btn icon>
-                                    <v-icon>more_vert</v-icon>
-                                </v-btn>
+                                <!--<v-btn icon>-->
+                                    <!--<v-icon>more_vert</v-icon>-->
+                                <!--</v-btn>-->
                             </v-toolbar>
                             <v-expansion-panel expand v-if="!list.isHidden" popout style="overflow-y: scroll; max-height: 72vh;">
                                 <v-expansion-panel-content v-for="card in card_getCards(list, '')" :key="card.id" color="grey lighten-3">
@@ -206,6 +305,7 @@
                                     <div v-if="card.beingNamed" slot="header">
                                         <v-toolbar dense flat color="transparent">
                                             <v-text-field
+                                                    @keyup.enter = "card_rename(card)"
                                                     name="card-name-input"
                                                     label="Card name"
                                                     v-model="currCardName"
@@ -224,6 +324,7 @@
                                                 <v-card-text v-if="!card.describing" v-html="card.description"></v-card-text>
                                                 <v-card-text v-if="card.describing">
                                                     <v-text-field
+                                                            @keyup.enter = "card_describe(card)"
                                                             name="card-description-input"
                                                             label="Description"
                                                             value="card.description"
@@ -401,6 +502,7 @@
                                 <v-text-field v-if="invalidInput"
                                               name="password-input"
                                               error
+                                              @keyup.enter = "enterLogin"
                                               :rules="[() => 'Incorrect username or password. Try again']"
                                               label="Password"
                                               v-model="inpassword"
@@ -412,6 +514,7 @@
                                 <v-text-field v-else
                                               name="password-input"
                                               label="Password"
+                                              @keyup.enter = "enterLogin"
                                               v-model="inpassword"
                                               :append-icon="pwInvisible ? 'visibility' : 'visibility_off'"
                                               :append-icon-cb="() => (pwInvisible = !pwInvisible)"

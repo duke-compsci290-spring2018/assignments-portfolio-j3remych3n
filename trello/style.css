@@ -12,7 +12,7 @@ v-text-field{
 /*
  * Below is a rainbow gradient animation, credit to: Ian Forrest
  */
-#gradBackground, #gradBar {
+#gradBackground, #gradBar, .grad {
     background: linear-gradient(173deg, #2fd9ad, #24a6da, #c324da, #da8024, #e64646);
     background-size: 1000% 1000%;
     -webkit-animation: WavyGrad 35s ease infinite;
