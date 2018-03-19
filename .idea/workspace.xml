@@ -4,7 +4,7 @@
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/trello/index.html" afterPath="$PROJECT_DIR$/trello/index.html" />
-      <change beforePath="$PROJECT_DIR$/trello/style.css" afterPath="$PROJECT_DIR$/trello/style.css" />
+      <change beforePath="$PROJECT_DIR$/trello/js/trello.js" afterPath="$PROJECT_DIR$/trello/js/trello.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,34 +17,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.615625">
+    <splitter split-orientation="horizontal" split-proportion="0.6166667">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="675">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1413">
-                  <caret line="242" column="41" lean-forward="false" selection-start-line="242" selection-start-column="41" selection-end-line="242" selection-end-column="41" />
+                <state relative-caret-position="784">
+                  <caret line="349" column="44" lean-forward="false" selection-start-line="349" selection-start-column="44" selection-end-line="349" selection-end-column="44" />
                   <folding>
-                    <element signature="n#style#0;n#v-flex#0;n#v-list-tile-title#0;n#v-dialog#0;n#v-list-tile#0;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#1;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-list#0;n#v-card#0;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-list#0;n#v-card#1;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-list#0;n#v-card#2;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#1;n#v-list#0;n#v-menu#0;n#v-layout#0;n#v-footer#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-text-field#1;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#2;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-text-field#1;n#v-flex#0;n#v-layout#2;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#3;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#0;n#v-flex#1;n#v-layout#4;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-card#0;n#v-card#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -53,7 +36,7 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/trello/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-243">
+                <state relative-caret-position="518">
                   <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
                   <folding />
                 </state>
@@ -67,8 +50,8 @@
           <file leaf-file-name="trello.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3670">
-                  <caret line="278" column="17" lean-forward="false" selection-start-line="278" selection-start-column="17" selection-end-line="278" selection-end-column="17" />
+                <state relative-caret-position="1369">
+                  <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -91,12 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user_exists</find>
-      <find>v-card-t</find>
-      <find>v-model=</find>
-      <find>getimage</find>
-      <find>currentUser</find>
-      <find>closeSignup</find>
       <find>input</find>
       <find>value=</find>
       <find>ddnew</find>
@@ -121,6 +98,12 @@
       <find>navig</find>
       <find>gradbu</find>
       <find>nav</find>
+      <find>userdialog</find>
+      <find>getelementbyId</find>
+      <find>list named</find>
+      <find>activity</find>
+      <find>comment</find>
+      <find>getimage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,8 +124,8 @@
         <option value="$PROJECT_DIR$/gallery/js/gallery.js" />
         <option value="$PROJECT_DIR$/trello/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/trello/js/trello.js" />
         <option value="$PROJECT_DIR$/trello/style.css" />
+        <option value="$PROJECT_DIR$/trello/js/trello.js" />
         <option value="$PROJECT_DIR$/trello/index.html" />
       </list>
     </option>
@@ -160,7 +143,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
+    <option name="x" value="1150" />
+    <option name="y" value="-52" />
     <option name="width" value="2077" />
     <option name="height" value="2082" />
   </component>
@@ -279,12 +263,14 @@
       <workItem from="1521300028168" duration="50237000" />
       <workItem from="1521389949134" duration="23886000" />
       <workItem from="1521416077816" duration="1365000" />
-      <workItem from="1521422233624" duration="8142000" />
+      <workItem from="1521422233624" duration="8501000" />
+      <workItem from="1521432222392" duration="51000" />
+      <workItem from="1521436127278" duration="5595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227634000" />
+    <option name="totallyTimeSpent" value="233639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -658,48 +644,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trello/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3670">
-          <caret line="278" column="17" lean-forward="false" selection-start-line="278" selection-start-column="17" selection-end-line="278" selection-end-column="17" />
+        <state relative-caret-position="1369">
+          <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trello/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trello/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1413">
-          <caret line="242" column="41" lean-forward="false" selection-start-line="242" selection-start-column="41" selection-end-line="242" selection-end-column="41" />
+        <state relative-caret-position="784">
+          <caret line="349" column="44" lean-forward="false" selection-start-line="349" selection-start-column="44" selection-end-line="349" selection-end-column="44" />
           <folding>
-            <element signature="n#style#0;n#v-flex#0;n#v-list-tile-title#0;n#v-dialog#0;n#v-list-tile#0;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#1;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-list#0;n#v-card#0;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-list#0;n#v-card#1;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-list#0;n#v-card#2;n#v-card#0;n#v-navigation-drawer#0;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#1;n#v-list#0;n#v-menu#0;n#v-layout#0;n#v-footer#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-text-field#1;n#v-flex#0;n#v-layout#1;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#2;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-text-field#1;n#v-flex#0;n#v-layout#2;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#v-text-field#0;n#v-flex#0;n#v-layout#3;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#v-flex#1;n#v-layout#4;n#v-container#0;n#v-card#1;n#v-container#3;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-card#0;n#v-card#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-flex#0;n#v-layout#0;n#v-card#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

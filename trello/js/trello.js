@@ -19,6 +19,7 @@ var db = firebase.initializeApp(config).database();
 var storageRef = firebase.storage().ref();
 var usersRef = db.ref('users');
 var cardsRef = db.ref('cards');
+var commentsRef = db.ref('comments');
 var listsRef = db.ref('lists');
 var boardsRef = db.ref('boards');
 var imagesRef = db.ref('images');
@@ -51,6 +52,14 @@ class card{
         this.describing = false;
         this.todoing = false;
         this.commenting = false;
+    }
+}
+
+class comment{
+    constructor(user, card, t){
+        this.parent = card;
+        this.text = t;
+        this.userID = user;
     }
 }
 
@@ -98,12 +107,15 @@ var notTrello = new Vue({
         currListName: "",
         currCardName: "",
         currCardDescription: "",
+        currCardComment:"",
         currCardDeadline: "",
+        currComment:"",
 
         namedialog:false,
         userdialog:false,
         picdialog:false,
         backdialog:false,
+        activitydialog:false,
 
         invalidInput: false,
         login: false,
@@ -125,7 +137,9 @@ var notTrello = new Vue({
         lists: listsRef,
         cards: cardsRef,
         boards: boardsRef,
-        images: imagesRef
+        images: imagesRef,
+        activity: activityRef,
+        comments: commentsRef
     },
     watch: {
     },
@@ -146,7 +160,29 @@ var notTrello = new Vue({
             });
         },
 
-        addNewImage (u, url) {
+        card_comments(card){
+            return this.comments.filter(comment => comment.parent === card.id);
+        },
+
+        card_startStopCommenting(card){
+            if(card.commenting){
+
+            }
+            card.commenting=!card.commenting;
+        },
+
+        card_addComment(card){
+            commentsRef.push(new comment(this.currentUser, card.id, this.currCardComment));
+            card.commenting=false;
+            this.currCardComment="";
+            this.activity_add("Comment added to card named " + card.myName);
+        },
+
+        activity_allActivity: function(){
+            return this.activity.slice().reverse();
+        },
+
+        addNewImage: function(u, url) {
             imagesRef.push({
                 title: u,
                 url: url
@@ -154,7 +190,7 @@ var notTrello = new Vue({
             u.avatar=url;
         },
 
-        changeImage(u, url) {
+        changeImage: function(u, url) {
             var updates = {};
             return imagesRef.once('value').then(function(snapshot) {
                 try{
@@ -330,7 +366,7 @@ var notTrello = new Vue({
             if(index > -1){
                 this.lists.splice(index, 1);
             }
-            this.activity_add("List named " + ls.myName + "removed");
+            this.activity_add("List named " + ls.myName + " removed");
         },
 
         user_changeName: function(user, newName) {
@@ -366,6 +402,16 @@ var notTrello = new Vue({
             var a = this.currentUser;
             db.ref('users/' + this.currentUser).once('value', function (snapshot) {
                    url = snapshot.val().avatar;
+            });
+            return url;
+        },
+
+        getImage: function(user) {
+            var url = "resources/low res andy.jpg";
+            console.log(this.currentUser);
+            var a = user
+            db.ref('users/' + user).once('value', function (snapshot) {
+                url = snapshot.val().avatar;
             });
             return url;
         },

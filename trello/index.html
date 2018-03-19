@@ -135,7 +135,6 @@
                         </v-list-tile>
                     </v-list>
                 </v-menu>
-                <!--<v-btn v-if="loggedIn" flat small @click="logOut">Sign out</v-btn>-->
             </v-toolbar-items>
         </v-toolbar>
         <div id="gradBackground" style="min-height:100%">
@@ -232,14 +231,29 @@
                 <v-layout row center>
                     <v-flex xs1></v-flex>
                     <v-flex xs10>
-                    <v-btn block flat dark class="grad">
-                        <v-icon color="white">
-                            history
-                        </v-icon>
-                        <v-spacer></v-spacer>
-                    Project activity
-                    <v-spacer></v-spacer></v-btn>
+                        <v-btn @click.native.stop="activitydialog = true" block flat dark class="grad">
+                            <v-icon color="white">
+                                history
+                            </v-icon>
+                            <v-spacer></v-spacer>
+                            Activity
+                            <v-spacer></v-spacer>
+                        </v-btn>
                     </v-flex>
+                    <v-dialog v-model="activitydialog" max-width="50%">
+                        <v-card>
+                            <v-container fluid center grid-list-lg>
+                                <v-list>
+                                    <v-list-tile v-for="activity in activity_allActivity()">
+                                        {{activity[".value"]}}
+                                    </v-list-tile>
+                                </v-list>
+                            </v-container>
+                </v-layout>
+                </v-card>
+                </v-dialog>
+
+
                     <v-flex xs1></v-flex>
                 </v-layout>
                 <!--</v-toolbar>-->
@@ -321,40 +335,59 @@
                                     <v-card>
                                         <v-card color="grey lighten-4" id="description">
                                             <v-toolbar dense color="transparent" flat>
+                                                <v-toolbar-title style="color: darkgrey;">
+                                                    Description
+                                                </v-toolbar-title>
+                                                <v-spacer></v-spacer>
+                                                <v-btn small icon @click="card_describe(card)" v-if="!card.describing">
+                                                    <v-icon small color="grey darken-1">mode_edit</v-icon>
+                                                </v-btn>
+                                                <v-btn small icon v-if="card.describing" fab small color="grey darken-1"
+                                                       @click="card_describe(card)">
+                                                    <v-icon small color="white">check</v-icon>
+                                                </v-btn>
+                                            </v-toolbar>
+                                            <v-toolbar dense color="transparent" flat>
                                                 <v-card-text v-if="!card.describing" v-html="card.description"></v-card-text>
                                                 <v-card-text v-if="card.describing">
                                                     <v-text-field
                                                             @keyup.enter = "card_describe(card)"
                                                             name="card-description-input"
-                                                            label="Description"
                                                             value="card.description"
                                                             v-model="currCardDescription"
                                                     ></v-text-field>
                                                 </v-card-text>
-                                                    <v-btn small icon @click="card_describe(card)" v-if="!card.describing">
-                                                        <v-icon small color="grey darken-1">mode_edit</v-icon>
-                                                    </v-btn>
-                                                    <v-btn small icon v-if="card.describing" fab small color="grey darken-1"
-                                                           @click="card_describe(card)">
-                                                        <v-icon small color="white">check</v-icon>
-                                                    </v-btn>
+
                                             </v-toolbar>
 
                                         </v-card>
+                                                <v-layout row wrap>
+                                                    <v-flex xs12>
+                                                        <v-toolbar dense flat color="">
+                                                            <v-toolbar-title style="color: darkgrey;">Comments</v-toolbar-title>
+                                                            <v-spacer></v-spacer>
+                                                            <v-btn small icon v-if="!card.commenting" @click="card_startStopCommenting(card)">
+                                                                <v-icon small color="grey darken-1">comment</v-icon>
+                                                            </v-btn>
+                                                            <v-flex xs10 v-if="card.commenting">
+                                                                <v-text-field
+                                                                        @keyup.enter="card_addComment(card)"
+                                                                        v-model="currCardComment"
+                                                                ></v-text-field>
+                                                            </v-flex>
+                                                        </v-toolbar></v-flex>
+                                                    <v-list>
+                                                    <v-list-tile v-for="comment in card_comments(card)">
+                                                        <v-flex xs12>
+                                                            <v-chip disabled>
+                                                                <v-avatar> <img v-bind:src="getImage(comment.userId)"></v-avatar>
+                                                                {{comment.text}}
+                                                            </v-chip>
+                                                        </v-flex>
+                                                    </v-list-tile>
+                                                    </v-list>
 
-                                        <v-card id="todos">
-
-                                        </v-card>
-
-                                        <v-card id="comments">
-                                            <!--<v-list dense>-->
-                                                <!--<v-list-tile v-for="comment in card.comments" inactive>-->
-                                                    <!--<v-chip disabled color="grey lighten-1">-->
-                                                        <!--{{comment.text}}-->
-                                                    <!--</v-chip>-->
-                                                <!--</v-list-tile>-->
-                                            <!--</v-list>-->
-                                        </v-card>
+                                                </v-layout>
                                         <v-toolbar dense flat color="grey lighten-5">
                                             <v-btn icon @click="card_moveLeft(card, list, board_lists())">
                                                 <v-icon color="grey darken-2">chevron_left</v-icon>
@@ -362,12 +395,9 @@
                                             <v-btn icon @click="card_moveRight(card, list, board_lists())">
                                                 <v-icon color="grey darken-2">chevron_right</v-icon>
                                             </v-btn>
-                                            <v-btn icon>
-                                                <v-icon color="grey darken-2">playlist_add_check</v-icon>
-                                            </v-btn>
-                                            <v-btn icon @click="card_comment(card)">
-                                                <v-icon color="grey darken-2">comment</v-icon>
-                                            </v-btn>
+                                            <!--<v-btn icon>-->
+                                                <!--<v-icon color="grey darken-2">playlist_add_check</v-icon>-->
+                                            <!--</v-btn>-->
                                             <v-spacer></v-spacer>
                                             <v-chip disabled outline small>
                                                 Created {{card.created}}
