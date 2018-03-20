@@ -207,8 +207,13 @@
 
                     </v-list-tile>
                 </v-list>
-                <v-dialog v-model="activitydialog" max-width="50%">
-                    <v-card>
+                <v-dialog style="overflow-y: hidden;" v-model="activitydialog" max-width="50%">
+                    <v-toolbar dark dense class="grad">
+                        <!--<v-spacer></v-spacer>-->
+                        <v-toolbar-title>Project Activity</v-toolbar-title>
+                        <!--<v-spacer></v-spacer>-->
+                    </v-toolbar>
+                    <v-card  style="overflow-y: scroll; max-height:50%;">
                         <v-container fluid center grid-list-lg>
                             <v-list>
                                 <v-list-tile v-for="activity in activity_allActivity()">
@@ -250,11 +255,12 @@
                                 <v-list style="overflow-y:scroll; max-height: 22vh; min-height: 22vh;">
                                 <v-list-tile v-for="sboard in board_starred()">
                                     <v-toolbar dark class="grad" flat dense v-if="sboard.id == currentBoard">
+                                        <v-btn icon small disabled color="transparent">
+                                            <v-icon color="transparent">folder_open</v-icon>
+                                        </v-btn>
                                         <v-toolbar-title>{{sboard.name}}</v-toolbar-title>
                                         <v-spacer></v-spacer>
-                                        <v-btn icon small @click="board_changeboard(sboard)">
-                                            <v-icon color="white">folder_open</v-icon>
-                                        </v-btn>
+
                                         <v-btn icon small disabled color="transparent">
                                             <v-icon color="transparent">archive</v-icon>
                                         </v-btn>
@@ -263,11 +269,11 @@
                                         </v-btn>
                                     </v-toolbar>
                                     <v-toolbar flat dense v-else>
-                                        <v-toolbar-title>{{sboard.name}}</v-toolbar-title>
-                                        <v-spacer></v-spacer>
                                         <v-btn icon small @click="board_changeboard(sboard)">
                                             <v-icon color="grey darken-1">folder_open</v-icon>
                                         </v-btn>
+                                        <v-toolbar-title>{{sboard.name}}</v-toolbar-title>
+                                        <v-spacer></v-spacer>
                                         <v-btn icon small @click="board_close(sboard)">
                                             <v-icon color="grey darken-1">archive</v-icon>
                                         </v-btn>
@@ -287,11 +293,11 @@
                             <v-list style="overflow-y:scroll; max-height: 22vh; min-height: 22vh;">
                             <v-list-tile v-for="nboard in board_normie()">
                                 <v-toolbar dark class="grad" flat dense v-if="nboard.id == currentBoard">
+                                        <v-btn icon small disabled >
+                                            <v-icon color="transparent">folder_open</v-icon>
+                                        </v-btn>
                                         <v-toolbar-title>{{nboard.name}}</v-toolbar-title>
                                         <v-spacer></v-spacer>
-                                        <v-btn icon small @click="board_changeboard(nboard)">
-                                            <v-icon color="white">folder_open</v-icon>
-                                        </v-btn>
                                         <v-btn small icon disabled color="transparent">
                                             <v-icon color="transparent">archive</v-icon>
                                         </v-btn>
@@ -300,11 +306,11 @@
                                         </v-btn>
                                     </v-toolbar>
                                 <v-toolbar flat dense v-else>
-                                    <v-toolbar-title>{{nboard.name}}</v-toolbar-title>
-                                    <v-spacer></v-spacer>
                                     <v-btn icon small @click="board_changeboard(nboard)">
                                         <v-icon color="grey darken-1">folder_open</v-icon>
                                     </v-btn>
+                                    <v-toolbar-title>{{nboard.name}}</v-toolbar-title>
+                                    <v-spacer></v-spacer>
                                     <v-btn icon small @click="board_close(nboard)">
                                         <v-icon color="grey darken-1">archive</v-icon>
                                     </v-btn>
