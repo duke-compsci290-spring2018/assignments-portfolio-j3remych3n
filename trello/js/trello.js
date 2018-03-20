@@ -359,24 +359,38 @@ var notTrello = new Vue({
         board_close: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/closed'] = true;
+            updates['/' + board['.key'] + '/starred'] = false;
             boardsRef.update(updates);
+            this.activity_add("Board named " + board.name + " closed");
         },
 
         board_star: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/starred'] = true;
             boardsRef.update(updates);
+            this.activity_add("Board named " + board.name + " starred");
+        },
+
+        board_delete: function(board){
+            boardsRef.child(board['.key']).remove();
+            this.activity_add("Board named " + board.name + " deleted");
+            index = this.boards.indexOf(board);
+            if(index > -1){
+                this.boards.splice(index, 1);
+            }
         },
 
         board_unarchive: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/closed'] = false;
+            this.activity_add("Board named " + board.name + " unarchived");
             boardsRef.update(updates);
         },
 
         board_unstar: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/starred'] = false;
+            this.activity_add("Board named " + board.name + " unstarred");
             boardsRef.update(updates);
         },
 

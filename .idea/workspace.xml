@@ -22,8 +22,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1057">
-                  <caret line="293" column="40" lean-forward="true" selection-start-line="293" selection-start-column="44" selection-end-line="295" selection-end-column="52" />
+                <state relative-caret-position="599">
+                  <caret line="331" column="48" lean-forward="false" selection-start-line="331" selection-start-column="48" selection-end-line="331" selection-end-column="48" />
                   <folding>
                     <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -62,8 +62,8 @@
           <file leaf-file-name="trello.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1154">
-                  <caret line="186" column="50" lean-forward="true" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
+                <state relative-caret-position="784">
+                  <caret line="374" column="33" lean-forward="false" selection-start-line="374" selection-start-column="33" selection-end-line="374" selection-end-column="33" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -86,7 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>card_attach</find>
       <find>addImage</find>
       <find>activity</find>
       <find>navigation</find>
@@ -116,6 +115,7 @@
       <find>dialog</find>
       <find>archive</find>
       <find>this.currentBoard</find>
+      <find>board_close</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,8 +137,8 @@
         <option value="$PROJECT_DIR$/trello/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/trello/style.css" />
-        <option value="$PROJECT_DIR$/trello/js/trello.js" />
         <option value="$PROJECT_DIR$/trello/index.html" />
+        <option value="$PROJECT_DIR$/trello/js/trello.js" />
       </list>
     </option>
   </component>
@@ -279,12 +279,12 @@
       <workItem from="1521432222392" duration="51000" />
       <workItem from="1521436127278" duration="5699000" />
       <workItem from="1521492044513" duration="4781000" />
-      <workItem from="1521500159790" duration="15418000" />
+      <workItem from="1521500159790" duration="16014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253942000" />
+    <option name="totallyTimeSpent" value="254538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -666,20 +666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1154">
-          <caret line="186" column="50" lean-forward="true" selection-start-line="186" selection-start-column="50" selection-end-line="186" selection-end-column="50" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trello/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1057">
-          <caret line="293" column="40" lean-forward="true" selection-start-line="293" selection-start-column="44" selection-end-line="295" selection-end-column="52" />
+        <state relative-caret-position="599">
+          <caret line="331" column="48" lean-forward="false" selection-start-line="331" selection-start-column="48" selection-end-line="331" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -696,6 +686,16 @@
             <element signature="n#style#0;n#v-toolbar-title#0;n#v-toolbar#0;n#v-flex#0;n#v-layout#2;n#v-card#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#v-btn#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-layout#2;n#v-card#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-card#0;n#v-flex#0;n#v-layout#0;n#v-container#2;n#div#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="374" column="33" lean-forward="false" selection-start-line="374" selection-start-column="33" selection-end-line="374" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

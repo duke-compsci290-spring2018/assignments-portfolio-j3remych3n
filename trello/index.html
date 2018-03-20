@@ -254,9 +254,9 @@
                                         <v-btn icon small @click="board_changeboard(sboard)">
                                             <v-icon color="white">folder_open</v-icon>
                                         </v-btn>
-                                        <!--<v-btn icon small @click="board_close(sboard)">-->
-                                            <!--<v-icon color="white">archive</v-icon>-->
-                                        <!--</v-btn>-->
+                                        <v-btn icon small disabled color="transparent">
+                                            <v-icon color="transparent">archive</v-icon>
+                                        </v-btn>
                                         <v-btn icon small @click="board_unstar(sboard)">
                                             <v-icon color="amber lighten-3">star</v-icon>
                                         </v-btn>
@@ -291,9 +291,9 @@
                                         <v-btn icon small @click="board_changeboard(nboard)">
                                             <v-icon color="white">folder_open</v-icon>
                                         </v-btn>
-                                        <!--<v-btn icon small @click="board_close(nboard)">-->
-                                            <!--<v-icon color="white">archive</v-icon>-->
-                                        <!--</v-btn>-->
+                                        <v-btn small icon disabled color="transparent">
+                                            <v-icon color="transparent">archive</v-icon>
+                                        </v-btn>
                                         <v-btn icon small @click="board_star(nboard)">
                                             <v-icon color="white">star_border</v-icon>
                                         </v-btn>
@@ -321,16 +321,12 @@
                             </v-toolbar>
                             <v-list style="overflow-y:scroll; max-height: 22vh; min-height: 22vh;">
                                 <v-list-tile v-for="cboard in board_closed()">
-                                    <v-toolbar dark class="grad" flat dense v-if="cboard.id == currentBoard">
+                                    <v-toolbar flat dense>
                                         <v-toolbar-title>{{cboard.name}}</v-toolbar-title>
                                         <v-spacer></v-spacer>
-                                        <v-btn icon small @click="board_unarchive(cboard)">
-                                            <v-icon color="white">unarchive</v-icon>
+                                        <v-btn icon small @click="board_delete(cboard)">
+                                            <v-icon color="grey darken-1">delete</v-icon>
                                         </v-btn>
-                                    </v-toolbar>
-                                    <v-toolbar flat dense v-if="cboard.id != currentBoard">
-                                        <v-toolbar-title>{{cboard.name}}</v-toolbar-title>
-                                        <v-spacer></v-spacer>
                                         <v-btn icon small @click="board_unarchive(cboard)">
                                             <v-icon color="grey darken-1">unarchive</v-icon>
                                         </v-btn>
