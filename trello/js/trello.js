@@ -93,7 +93,7 @@ class todo{
 class user{
     constructor(name, email, password, imgUrl){
         this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
-        this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
+        this.id="user"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
         this.myName=name;
         this.avatar = imgUrl;
         this.email=email;
@@ -102,11 +102,12 @@ class user{
 }
 
 class board{
-    constructor(){
-        this.name = '';
+    constructor(n){
+        this.name = n;
         this.longcreated = new Date().toDateString() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
-        this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
+        this.id="board"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
         this.starred = false;
+        this.closed = false;
         this.background = "";
     }
 }
@@ -129,7 +130,8 @@ var notTrello = new Vue({
         currCardDeadline: "",
         currCardTodo:"",
         currAttUrl:"",
-        currCardId:"",
+        currCardId: "",
+        currboardname: "",
 
         namedialog:false,
         userdialog:false,
@@ -137,12 +139,18 @@ var notTrello = new Vue({
         backdialog:false,
         activitydialog:false,
         attdialog: false,
+        asdfdialog: false,
+        boarddialog: false,
+
+        newBoardName: "",
 
         invalidInput: false,
         login: false,
         signup: false,
         loggedIn: false,
         pwInvisible: true,
+        currimg: "",
+
 
         drawer: false,
 
@@ -171,6 +179,30 @@ var notTrello = new Vue({
 
     },
     methods: {
+
+        board_addNew: function(){
+            this.boarddialog=false;
+            var b = new board(this.newBoardName);
+            boardsRef.push(b);
+            this.currboardname = this.newBoardName;
+            this.currentBoard = b.id;
+            this.newBoardName = "";
+
+        },
+
+        board_starred: function(){
+            return this.boards.filter(board => board.starred);
+        },
+
+        board_normie: function(){
+            console.log(this.boards);
+            return this.boards.filter(board => !board.starred&&!board.closed);
+        },
+
+        board_closed: function(){
+            return this.boards.filter(board => board.closed)
+        },
+
         activity_add: function(text){
             var time = new Date().toDateString() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
             var name = "";
@@ -210,6 +242,11 @@ var notTrello = new Vue({
             card.todoing=false;
             this.currCardTodo="";
             this.activity_add("Todo addded to card named " + card.myName);
+        },
+
+        asdftoggle(img){
+            this.currimg = img.image;
+            this.asdfdialog = !this.asdfdialog;
         },
 
         todo_check(todo){
@@ -312,6 +349,35 @@ var notTrello = new Vue({
         },
         board_lists: function(){
             return this.lists.filter(list => list.parent === this.currentBoard);
+        },
+
+        board_changeboard: function(board){
+            this.currboardname = board.name;
+            this.currentBoard = board.id;
+        },
+
+        board_close: function(board){
+            var updates = {};
+            updates['/' + board['.key'] + '/closed'] = true;
+            boardsRef.update(updates);
+        },
+
+        board_star: function(board){
+            var updates = {};
+            updates['/' + board['.key'] + '/starred'] = true;
+            boardsRef.update(updates);
+        },
+
+        board_unarchive: function(board){
+            var updates = {};
+            updates['/' + board['.key'] + '/closed'] = false;
+            boardsRef.update(updates);
+        },
+
+        board_unstar: function(board){
+            var updates = {};
+            updates['/' + board['.key'] + '/starred'] = false;
+            boardsRef.update(updates);
         },
 
         board_changeImage(currentBoard){
@@ -437,8 +503,8 @@ var notTrello = new Vue({
             notTrello.$forceUpdate();
         },
 
-        list_addNew: function(board){
-            listsRef.push(new cardList(board)).then((data, err) => { if (err) {console.log(err)}});
+        list_addNew: function(){
+            listsRef.push(new cardList(this.currentBoard)).then((data, err) => { if (err) {console.log(err)}});
             this.activity_add("New list created");
         },
 
@@ -669,6 +735,8 @@ var notTrello = new Vue({
                     parent.invalidInput=true;
                 }
             });
+            this.currentBoard = this.boards[0].id;
+            this.currboardname = this.boards[0].name;
         },
         enterSignup: function (){
             console.log("Attempted signup with username: " + this.username + ", and password: "+ this.password);
@@ -683,6 +751,8 @@ var notTrello = new Vue({
                     parent.user_makeNew();
                 }
             });
+            this.currentBoard = this.boards[0].id;
+            this.currboardname = this.boards[0].name;
 
         },
     },
