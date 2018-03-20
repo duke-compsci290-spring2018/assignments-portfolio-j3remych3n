@@ -24,8 +24,18 @@ var listsRef = db.ref('lists');
 var boardsRef = db.ref('boards');
 var imagesRef = db.ref('images');
 var activityRef = db.ref('activity');
+var todosRef = db.ref('todos');
+var categoryRef = db.ref('categories');
+var attachRef = db.ref('attachments');
 
 Vue.use(VueFire);
+
+class attachment{
+    constructor(card, url){
+        this.parent = card;
+        this.image = url;
+    }
+}
 
 class cardList{
     constructor(board){
@@ -55,6 +65,13 @@ class card{
     }
 }
 
+class category{
+    constructor(n, c){
+        this.name=n;
+        this.color=c;
+    }
+}
+
 class comment{
     constructor(user, card, t){
         this.parent = card;
@@ -64,8 +81,9 @@ class comment{
 }
 
 class todo{
-    constructor(card){
-        this.task = "";
+    constructor(card, text){
+        this.task = text;
+        this.parent = card;
         this.longcreated = new Date().toDateString(); + " at " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
         this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
         this.done = false;
@@ -89,7 +107,7 @@ class board{
         this.longcreated = new Date().toDateString() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
         this.id="card"+parseInt(Math.random()*parseInt(Date.now()))+this.longcreated;
         this.starred = false;
-        this.backGround = "";
+        this.background = "";
     }
 }
 
@@ -109,13 +127,16 @@ var notTrello = new Vue({
         currCardDescription: "",
         currCardComment:"",
         currCardDeadline: "",
-        currComment:"",
+        currCardTodo:"",
+        currAttUrl:"",
+        currCardId:"",
 
         namedialog:false,
         userdialog:false,
         picdialog:false,
         backdialog:false,
         activitydialog:false,
+        attdialog: false,
 
         invalidInput: false,
         login: false,
@@ -139,7 +160,10 @@ var notTrello = new Vue({
         boards: boardsRef,
         images: imagesRef,
         activity: activityRef,
-        comments: commentsRef
+        comments: commentsRef,
+        todos: todosRef,
+        categories: categoryRef,
+        attachments: attachRef
     },
     watch: {
     },
@@ -160,15 +184,87 @@ var notTrello = new Vue({
             });
         },
 
+
+        attachment_addNew: function(card){
+            var input = document.getElementById('card_attachments');
+            var parent = this;
+            // this.currCardID = card.id;
+            console.log(input.files);
+            if(input.files.length>0){
+                console.log("PLS WORKD");
+                var file = input.files[0];
+                storageRef.child('images/' + file.name)
+                    .put(file)
+                    .then(function(snapshot){
+                        parent.genAddNewImage(file.name+parent.currCardId + "_att", snapshot.downloadURL);
+                        var a = new attachment(parent.currCardId, snapshot.downloadURL);
+                        attachRef.push(a);
+                    })
+            }
+            this.attdialog=false;
+            // notTrello.$forceUpdate();
+        },
+
+        todo_addNew(card){
+            todosRef.push(new todo(card.id, this.currCardTodo));
+            card.todoing=false;
+            this.currCardTodo="";
+            this.activity_add("Todo addded to card named " + card.myName);
+        },
+
+        todo_check(todo){
+            var updates = {};
+            updates['/' + todo['.key'] + '/done'] = !todo.done;
+            todo.done = !todo.done;
+            todosRef.update(updates);
+            this.activity_add("Todo checked/unchecked on todo with task " + todo.task);
+        },
+
+        todo_delete(todo){
+            todosRef.child(todo['.key']).remove();
+            this.activity_add("Todo with text " + todo.task + " removed");
+            index = this.todos.indexOf(todo);
+            if(index > -1){
+                this.todos.splice(index, 1);
+            }
+        },
+
+        comment_delete(comment){
+            commentsRef.child(comment['.key']).remove();
+            this.activity_add("Comment with text " + comment.text + " removed");
+            index = this.comments.indexOf(comment);
+            if(index > -1){
+                this.comments.splice(index, 1);
+            }
+        },
+
+        card_hasCategory(card){
+            return !(card.category==="");
+        },
+
+        card_getCategory(card){
+
+        },
+
         card_comments(card){
             return this.comments.filter(comment => comment.parent === card.id);
         },
 
-        card_startStopCommenting(card){
-            if(card.commenting){
+        card_todos(card){
+            return this.todos.filter(todo => todo.parent === card.id);
+        },
 
-            }
+        card_atts(card){
+            // return this.attachments;
+            return this.attachments.filter(att => att.parent == card.id);
+        },
+
+        card_startStopCommenting(card){
             card.commenting=!card.commenting;
+        },
+
+        card_startStopTodoing(card){
+            card.todoing=!card.todoing;
         },
 
         card_addComment(card){
@@ -188,6 +284,14 @@ var notTrello = new Vue({
                 url: url
             });
             u.avatar=url;
+        },
+
+        genAddNewImage: function(u, url) {
+            imagesRef.push({
+                title: u,
+                url: url
+            });
+            // u.avatar=url;
         },
 
         changeImage: function(u, url) {
@@ -435,6 +539,18 @@ var notTrello = new Vue({
                         notTrello.$forceUpdate();
                     })
             }
+        },
+
+        setCurrCard(card){
+            this.currCardId = card.id;
+        },
+
+        newAttachmentClick: function(){
+            console.log("WHY THOUGH " + this.$refs.attachButton);
+            // for (let asdf of this.$refs.attachButton){
+            //     console.log(asdf);
+            // }
+            this.$refs.attachButton.click();
         },
 
         newImgClick: function(){

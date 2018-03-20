@@ -137,6 +137,88 @@
                 </v-menu>
             </v-toolbar-items>
         </v-toolbar>
+        <v-layout row>
+            <v-spacer xs1></v-spacer>
+            <v-navigation-drawer v-if="loggedIn"floating style="background:rgba(255,255,255,0);" right mini-variant mini-variant-width="90px" permanent color="transparent">
+                <v-list>
+                    <v-list-tile v-for="x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]">
+                        <v-btn flat color="transparent" disabled>
+                        </v-btn>
+                    </v-list-tile>
+
+                    <v-list-tile>
+                        <v-flex xs6></v-flex>
+                        <v-btn fab small id="filterButton" icon>
+                            <v-icon color="white large" large>filter_list</v-icon>
+                        </v-btn>
+                    </v-list-tile>
+                    <v-list-tile>
+                        <v-flex xs6></v-flex>
+                        <v-btn fab small @click.native.stop="activitydialog = true" icon>
+                            <v-icon color="white" large>
+                                history
+                            </v-icon>
+                        </v-btn>
+                    </v-list-tile>
+                    <v-list-tile>
+                        <v-flex xs6></v-flex>
+                        <v-menu v-if="loggedIn" top left offset-y origin="top top"
+                                transition="scale-transition">
+                            <v-btn fab small id="palettButton" slot="activator" icon>
+                                <v-icon color="white" large>palette</v-icon>
+                            </v-btn>
+                            <v-list>
+                                <v-list-tile v-for="color in colors" :key="color" @click="changeColor(color)">
+                                    <v-list-tile-title>
+                                        <v-icon normal v-bind:color="color">lens</v-icon>
+                                    </v-list-tile-title>
+                                </v-list-tile>
+                                <v-list-tile @click="">
+                                    <v-list-tile-title>
+                                        <v-dialog persistent v-model="backdialog" max-width="42%">
+                                            <v-icon normal slot="activator">image</v-icon>
+                                            <v-card>
+                                                <v-container fluid center grid-list-lg>
+                                                    <v-layout row wrap>
+                                                        <v-card-text class="headline">New background image</v-card-text>
+                                                        <v-flex lg10 md10 sm10>
+                                                            <v-flex id="#gradBackground" xs12 class="text-xs-center">
+                                                                <v-btn block @click="changeBkClick()">
+                                                                    Choose Image
+                                                                </v-btn>
+                                                                <input style="display: none;" ref="changeBkButton" type="file" id="filesbk" accept="image/*" name="files[]"/>
+                                                            </v-flex>
+                                                        </v-flex>
+                                                        <v-card-actions>
+                                                            <v-btn @click="board_changeImage(currentBoard)">
+                                                                done
+                                                            </v-btn>
+                                                        </v-card-actions>
+                                                    </v-layout>
+                                                </v-container>
+        </v-layout>
+        </v-card>
+        </v-dialog>
+        </v-list-tile-title>
+        </v-list-tile>
+        </v-list>
+        </v-menu>
+
+                    </v-list-tile>
+                </v-list>
+                <v-dialog v-model="activitydialog" max-width="50%">
+                    <v-card>
+                        <v-container fluid center grid-list-lg>
+                            <v-list>
+                                <v-list-tile v-for="activity in activity_allActivity()">
+                                    {{activity[".value"]}}
+                                </v-list-tile>
+                            </v-list>
+                        </v-container>
+                    </v-card>
+                </v-dialog>
+            </v-navigation-drawer>
+        </v-layout>
         <div id="gradBackground" style="min-height:100%">
             <v-navigation-drawer
                     temporary
@@ -228,30 +310,8 @@
                         </v-card>
                     </v-card>
                 <!--<v-toolbar dense class="grad">-->
-                <v-layout row center>
-                    <v-flex xs1></v-flex>
-                    <v-flex xs10>
-                        <v-btn @click.native.stop="activitydialog = true" block flat dark class="grad">
-                            <v-icon color="white">
-                                history
-                            </v-icon>
-                            <v-spacer></v-spacer>
-                            Activity
-                            <v-spacer></v-spacer>
-                        </v-btn>
-                    </v-flex>
-                    <v-dialog v-model="activitydialog" max-width="50%">
-                        <v-card>
-                            <v-container fluid center grid-list-lg>
-                                <v-list>
-                                    <v-list-tile v-for="activity in activity_allActivity()">
-                                        {{activity[".value"]}}
-                                    </v-list-tile>
-                                </v-list>
-                            </v-container>
-                </v-layout>
-                </v-card>
-                </v-dialog>
+                <!--</v-card>-->
+                <!--</v-dialog>-->
 
 
                     <v-flex xs1></v-flex>
@@ -301,11 +361,11 @@
                                 <!--</v-btn>-->
                             </v-toolbar>
                             <v-expansion-panel expand v-if="!list.isHidden" popout style="overflow-y: scroll; max-height: 72vh;">
-                                <v-expansion-panel-content v-for="card in card_getCards(list, '')" :key="card.id" color="grey lighten-3">
+                                <v-expansion-panel-content v-for="card in card_getCards(list, '')" style="overflow-x: hidden;" :key="card.id" color="grey lighten-3">
 
                                     <div v-if="!card.beingNamed" slot="header">
                                         <v-toolbar dense flat color="transparent">
-                                            {{card.myName}}
+                                            <v-toolbar-title style="color:#424242; font-size:18px;">{{card.myName}}</v-toolbar-title>
                                             <v-btn icon @click="card_rename(card)" v-if="!card.beingNamed">
                                                 <v-icon small color="grey darken-2">mode_edit</v-icon>
                                             </v-btn>
@@ -347,7 +407,7 @@
                                                     <v-icon small color="white">check</v-icon>
                                                 </v-btn>
                                             </v-toolbar>
-                                            <v-toolbar dense color="transparent" flat>
+                                            <v-toolbar dense color="white" flat>
                                                 <v-card-text v-if="!card.describing" v-html="card.description"></v-card-text>
                                                 <v-card-text v-if="card.describing">
                                                     <v-text-field
@@ -361,6 +421,39 @@
                                             </v-toolbar>
 
                                         </v-card>
+                                        <v-layout row wrap>
+                                            <v-flex xs12>
+                                                <v-toolbar dense flat color="">
+                                                    <v-toolbar-title style="color: darkgrey;">Todos</v-toolbar-title>
+                                                    <v-spacer></v-spacer>
+                                                    <v-btn small icon v-if="!card.todoing" @click="card_startStopTodoing(card)">
+                                                        <v-icon small color="grey darken-1">playlist_add</v-icon>
+                                                    </v-btn>
+                                                    <v-flex xs9 v-if="card.todoing">
+                                                        <v-text-field
+                                                                label="Press enter to create your todo"
+                                                                @keyup.enter="todo_addNew(card)"
+                                                                v-model="currCardTodo"
+                                                        ></v-text-field>
+                                                    </v-flex>
+                                                </v-toolbar></v-flex>
+                                            <v-list>
+                                                <v-list-tile v-for="todo in card_todos(card)">
+                                                    <v-chip disabled close @input="todo_delete(todo)" color="grey lighten-4">
+                                                        <v-avatar>
+                                                            <v-btn icon small @click="todo_check(todo)">
+                                                            <v-icon small color="grey darken-1" v-if="todo.done">check_box</v-icon>
+                                                            <v-icon small color="grey darken-1" v-else>check_box_outline_blank</v-icon>
+                                                        </v-btn>
+                                                        </v-avatar>
+                                                        <span v-if="todo.done" style="text-decoration: line-through">{{todo.task}}</span>
+                                                        <span v-else="todo.done">{{todo.task}}</span>
+
+                                                    </v-chip>
+                                                </v-list-tile>
+                                            </v-list>
+
+                                        </v-layout>
                                                 <v-layout row wrap>
                                                     <v-flex xs12>
                                                         <v-toolbar dense flat color="">
@@ -369,8 +462,9 @@
                                                             <v-btn small icon v-if="!card.commenting" @click="card_startStopCommenting(card)">
                                                                 <v-icon small color="grey darken-1">comment</v-icon>
                                                             </v-btn>
-                                                            <v-flex xs10 v-if="card.commenting">
+                                                            <v-flex xs9 v-if="card.commenting">
                                                                 <v-text-field
+                                                                        label="Press enter to create your comment"
                                                                         @keyup.enter="card_addComment(card)"
                                                                         v-model="currCardComment"
                                                                 ></v-text-field>
@@ -378,16 +472,52 @@
                                                         </v-toolbar></v-flex>
                                                     <v-list>
                                                     <v-list-tile v-for="comment in card_comments(card)">
-                                                        <v-flex xs12>
-                                                            <v-chip disabled>
-                                                                <v-avatar> <img v-bind:src="getImage(comment.userId)"></v-avatar>
-                                                                {{comment.text}}
-                                                            </v-chip>
-                                                        </v-flex>
+                                                        <v-chip disabled close @input="comment_delete(comment)" color="grey lighten-4">
+                                                            <!--<v-avatar> <img v-bind:src="getImage(comment.userId)"></v-avatar>-->
+                                                                        <!--user avatars buggy, fix if time-->
+                                                            {{comment.text}}
+                                                        </v-chip>
                                                     </v-list-tile>
                                                     </v-list>
-
                                                 </v-layout>
+                                        <v-layout row wrap>
+                                            <v-flex xs12>
+                                                <v-toolbar dense flat color="">
+                                                    <v-toolbar-title style="color: darkgrey;">Attachments</v-toolbar-title>
+                                                    <v-spacer></v-spacer>
+
+                                                    <v-dialog persistent v-model="attdialog" max-width="42%">
+                                                        <v-btn small icon slot="activator" @click="setCurrCard(card)">
+                                                            <v-icon small color="grey darken-1">attach_file</v-icon>
+                                                        </v-btn>
+                                                        <v-card>
+                                                            <v-container fluid center grid-list-lg>
+                                                                <v-layout row wrap>
+                                                                    <v-card-text class="headline">Image attachment</v-card-text>
+
+                                                                    <v-flex lg10 md10 sm10>
+                                                                            <v-btn block @click="newAttachmentClick()">
+                                                                                Choose Image
+                                                                            </v-btn>
+                                                                    </v-flex>
+                                                                    <v-card-actions>
+                                                                        <v-btn @click="attachment_addNew(card)">
+                                                                            done
+                                                                        </v-btn>
+                                                                    </v-card-actions>
+                                                                </v-layout>
+                                                            </v-container>
+                                                </v-card>
+                                                </v-dialog>
+                                                </v-toolbar></v-flex>
+                                            <v-container grid-list-med fluid>
+                                                <v-layout row wrap>
+                                                <v-flex xs2 v-for="att in card_atts(card)">
+                                                    <v-btn fab> <img v-bind:src="att.image" style="border-radius:50%; max-width: 100%;" ></v-btn>
+                                                </v-flex>
+                                                </v-layout>
+                                            </v-container>
+                                        </v-layout>
                                         <v-toolbar dense flat color="grey lighten-5">
                                             <v-btn icon @click="card_moveLeft(card, list, board_lists())">
                                                 <v-icon color="grey darken-2">chevron_left</v-icon>
@@ -395,9 +525,6 @@
                                             <v-btn icon @click="card_moveRight(card, list, board_lists())">
                                                 <v-icon color="grey darken-2">chevron_right</v-icon>
                                             </v-btn>
-                                            <!--<v-btn icon>-->
-                                                <!--<v-icon color="grey darken-2">playlist_add_check</v-icon>-->
-                                            <!--</v-btn>-->
                                             <v-spacer></v-spacer>
                                             <v-chip disabled outline small>
                                                 Created {{card.created}}
@@ -451,53 +578,6 @@
                         </v-card>
                     </v-flex>
                 </v-layout>
-                <v-footer absolute bottom color="transparent">
-                    <v-layout row>
-                        <v-spacer></v-spacer>
-                        <v-menu v-if="loggedIn" top left offset-y origin="top top"
-                                transition="scale-transition">
-
-                            <v-btn absolute bottom right icon slot="activator">
-                                <v-icon color="white" large>palette</v-icon>
-                            </v-btn>
-                            <v-list>
-                                <v-list-tile v-for="color in colors" :key="color" @click="changeColor(color)">
-                                    <v-list-tile-title>
-                                        <v-icon normal v-bind:color="color">lens</v-icon>
-                                    </v-list-tile-title>
-                                </v-list-tile>
-                                <v-list-tile @click="">
-                                    <v-list-tile-title>
-                                        <v-dialog persistent v-model="backdialog" max-width="42%">
-                                            <v-icon normal slot="activator">image</v-icon>
-                                            <v-card>
-                                                <v-container fluid center grid-list-lg>
-                                                    <v-layout row wrap>
-                                                        <v-card-text class="headline">New background image</v-card-text>
-                                                        <v-flex lg10 md10 sm10>
-                                                            <v-flex id="#gradBackground" xs12 class="text-xs-center">
-                                                                <v-btn block @click="changeBkClick()">
-                                                                    Choose Image
-                                                                </v-btn>
-                                                                <input style="display: none;" ref="changeBkButton" type="file" id="filesbk" accept="image/*" name="files[]"/>
-                                                            </v-flex>
-                                                        </v-flex>
-                                                        <v-card-actions>
-                                                            <v-btn @click="board_changeImage(currentBoard)">
-                                                                done
-                                                            </v-btn>
-                                                        </v-card-actions>
-                                                    </v-layout>
-                                                </v-container>
-                                                </v-layout>
-                                            </v-card>
-                                        </v-dialog>
-                                    </v-list-tile-title>
-                                </v-list-tile>
-                            </v-list>
-                        </v-menu>
-                    </v-layout>
-                </v-footer>
             </v-container>
 
             <v-container id="logins" v-if="!loggedIn" fill-height>
@@ -653,7 +733,8 @@
                     </v-container>
                 </v-card>
             </v-container>
-        </div>
+        </div><input style="display: none;" ref="attachButton" type="file" id="card_attachments" accept="image/*" name="files[]"/>
     </v-app>
 </div>
+
 </html>
