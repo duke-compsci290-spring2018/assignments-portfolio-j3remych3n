@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/trello/index.html" afterPath="$PROJECT_DIR$/trello/index.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,14 +15,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7028646">
+    <splitter split-orientation="horizontal" split-proportion="0.6929687">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="675">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1043">
-                  <caret line="295" column="67" lean-forward="false" selection-start-line="295" selection-start-column="67" selection-end-line="295" selection-end-column="67" />
+                <state relative-caret-position="1390">
+                  <caret line="305" column="48" lean-forward="true" selection-start-line="305" selection-start-column="48" selection-end-line="305" selection-end-column="48" />
                   <folding>
                     <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -63,8 +63,8 @@
           <file leaf-file-name="trello.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="562">
-                  <caret line="169" column="16" lean-forward="false" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="16" />
+                <state relative-caret-position="1136">
+                  <caret line="765" column="17" lean-forward="true" selection-start-line="765" selection-start-column="17" selection-end-line="765" selection-end-column="17" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -137,8 +137,8 @@
         <option value="$PROJECT_DIR$/gallery/js/gallery.js" />
         <option value="$PROJECT_DIR$/trello/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/trello/js/trello.js" />
         <option value="$PROJECT_DIR$/trello/style.css" />
+        <option value="$PROJECT_DIR$/trello/js/trello.js" />
         <option value="$PROJECT_DIR$/trello/index.html" />
       </list>
     </option>
@@ -280,12 +280,12 @@
       <workItem from="1521432222392" duration="51000" />
       <workItem from="1521436127278" duration="5699000" />
       <workItem from="1521492044513" duration="4781000" />
-      <workItem from="1521500159790" duration="17336000" />
+      <workItem from="1521500159790" duration="17596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255860000" />
+    <option name="totallyTimeSpent" value="256120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -659,16 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="169" column="16" lean-forward="false" selection-start-line="169" selection-start-column="8" selection-end-line="169" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trello/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -677,10 +667,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="765" column="17" lean-forward="true" selection-start-line="765" selection-start-column="17" selection-end-line="765" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trello/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1043">
-          <caret line="295" column="67" lean-forward="false" selection-start-line="295" selection-start-column="67" selection-end-line="295" selection-end-column="67" />
+        <state relative-caret-position="1390">
+          <caret line="305" column="48" lean-forward="true" selection-start-line="305" selection-start-column="48" selection-end-line="305" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
