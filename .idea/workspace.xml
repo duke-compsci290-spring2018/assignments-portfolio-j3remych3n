@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/trello/index.html" afterPath="$PROJECT_DIR$/trello/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +22,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1390">
-                  <caret line="305" column="48" lean-forward="true" selection-start-line="305" selection-start-column="48" selection-end-line="305" selection-end-column="48" />
+                <state relative-caret-position="858">
+                  <caret line="474" column="110" lean-forward="true" selection-start-line="474" selection-start-column="85" selection-end-line="474" selection-end-column="110" />
                   <folding>
                     <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -49,7 +50,7 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/trello/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="460">
+                <state relative-caret-position="777">
                   <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
                   <folding />
                 </state>
@@ -63,8 +64,8 @@
           <file leaf-file-name="trello.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1136">
-                  <caret line="765" column="17" lean-forward="true" selection-start-line="765" selection-start-column="17" selection-end-line="765" selection-end-column="17" />
+                <state relative-caret-position="1205">
+                  <caret line="765" column="17" lean-forward="false" selection-start-line="765" selection-start-column="17" selection-end-line="765" selection-end-column="17" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -138,8 +139,8 @@
         <option value="$PROJECT_DIR$/trello/README.md" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/trello/style.css" />
-        <option value="$PROJECT_DIR$/trello/js/trello.js" />
         <option value="$PROJECT_DIR$/trello/index.html" />
+        <option value="$PROJECT_DIR$/trello/js/trello.js" />
       </list>
     </option>
   </component>
@@ -280,16 +281,17 @@
       <workItem from="1521432222392" duration="51000" />
       <workItem from="1521436127278" duration="5699000" />
       <workItem from="1521492044513" duration="4781000" />
-      <workItem from="1521500159790" duration="17596000" />
+      <workItem from="1521500159790" duration="17617000" />
+      <workItem from="1521520302199" duration="148000" />
+      <workItem from="1521599458156" duration="1365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256120000" />
+    <option name="totallyTimeSpent" value="257654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -646,7 +648,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="407">
             <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="63" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -661,7 +662,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trello/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="777">
           <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding />
         </state>
@@ -669,8 +670,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trello/js/trello.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1136">
-          <caret line="765" column="17" lean-forward="true" selection-start-line="765" selection-start-column="17" selection-end-line="765" selection-end-column="17" />
+        <state relative-caret-position="1205">
+          <caret line="765" column="17" lean-forward="false" selection-start-line="765" selection-start-column="17" selection-end-line="765" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -679,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trello/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1390">
-          <caret line="305" column="48" lean-forward="true" selection-start-line="305" selection-start-column="48" selection-end-line="305" selection-end-column="48" />
+        <state relative-caret-position="858">
+          <caret line="474" column="110" lean-forward="true" selection-start-line="474" selection-start-column="85" selection-end-line="474" selection-end-column="110" />
           <folding>
             <element signature="n#style#0;n#v-flex#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#v-flex#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#v-card#0;n#v-dialog#0;n#v-list-tile-title#0;n#v-list-tile#2;n#v-list#0;n#v-menu#0;n#v-toolbar-items#0;n#v-toolbar#0;n#v-app#0;n#div#0;n#html#0;n#!!top" expanded="true" />
