@@ -31,7 +31,7 @@
             <v-toolbar-title v-if="loggedIn">{{currboardname}}</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-title>
-                <b-img src="resources/logo.png" center fluid width="100%"/>
+                <b-img src="resources/logo.png" center fluid width="100%"></b-img>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
@@ -68,7 +68,7 @@
                                         </v-layout>
                                     </v-container>
 
-                                    </v-layout>
+                                    <!--</v-layout>-->
                                 </v-card>
                             </v-dialog>
                         </v-list-tile>
@@ -96,7 +96,7 @@
                                             </v-layout>
                                         </v-container>
 
-                                        </v-layout>
+                                        <!--</v-layout>-->
                                     </v-card>
                                 </v-dialog>
                             </v-list-tile-title>
@@ -126,7 +126,7 @@
                                             </v-layout>
                                         </v-container>
 
-                                        </v-layout>
+                                        <!--</v-layout>-->
                                     </v-card>
                                 </v-dialog>
                             </v-list-tile-title>
@@ -140,7 +140,7 @@
         </v-toolbar>
         <v-layout row>
             <v-spacer xs1></v-spacer>
-            <v-navigation-drawer v-if="loggedIn"floating style="background:rgba(255,255,255,0);" right mini-variant mini-variant-width="90px" permanent color="transparent">
+            <v-navigation-drawer v-if="loggedIn" floating style="background:rgba(255,255,255,0);" right mini-variant mini-variant-width="90px" permanent color="transparent">
                 <v-list>
                     <v-list-tile v-for="x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]">
                         <v-btn flat color="transparent" disabled>
@@ -183,7 +183,7 @@
                                                     <v-layout row wrap>
                                                         <v-card-text class="headline">New background image</v-card-text>
                                                         <v-flex lg10 md10 sm10>
-                                                            <v-flex id="#gradBackground" xs12 class="text-xs-center">
+                                                            <v-flex class="grad text-xs-center" xs12>
                                                                 <v-btn block @click="changeBkClick()">
                                                                     Choose Image
                                                                 </v-btn>
@@ -197,7 +197,7 @@
                                                         </v-card-actions>
                                                     </v-layout>
                                                 </v-container>
-        </v-layout>
+        <!--</v-layout>-->
         </v-card>
         </v-dialog>
         </v-list-tile-title>
@@ -265,7 +265,7 @@
                                             <v-icon color="transparent">archive</v-icon>
                                         </v-btn>
                                         <v-btn icon small @click="board_unstar(sboard)">
-                                            <v-icon color="amber lighten-3">star</v-icon>
+                                            <v-icon color="amber lighten-2">star</v-icon>
                                         </v-btn>
                                     </v-toolbar>
                                     <v-toolbar flat dense v-else>
@@ -278,7 +278,7 @@
                                             <v-icon color="grey darken-1">archive</v-icon>
                                         </v-btn>
                                             <v-btn icon small @click="board_unstar(sboard)">
-                                                <v-icon color="amber lighten-3">star</v-icon>
+                                                <v-icon color="amber lighten-2">star</v-icon>
                                             </v-btn>
                                     </v-toolbar>
                                 </v-list-tile>
@@ -329,13 +329,16 @@
                             <v-list style="overflow-y:scroll; max-height: 22vh; min-height: 22vh;">
                                 <v-list-tile v-for="cboard in board_closed()">
                                     <v-toolbar flat dense>
+                                        <v-btn icon small disabled color="transparent">
+                                            <v-icon color="transparent">folder_open</v-icon>
+                                        </v-btn>
                                         <v-toolbar-title>{{cboard.name}}</v-toolbar-title>
                                         <v-spacer></v-spacer>
-                                        <v-btn icon small @click="board_delete(cboard)">
-                                            <v-icon color="grey darken-1">delete</v-icon>
-                                        </v-btn>
                                         <v-btn icon small @click="board_unarchive(cboard)">
                                             <v-icon color="grey darken-1">unarchive</v-icon>
+                                        </v-btn>
+                                        <v-btn icon small @click="board_delete(cboard)">
+                                            <v-icon color="grey darken-1">delete</v-icon>
                                         </v-btn>
                                     </v-toolbar>
                                 </v-list-tile>
@@ -367,7 +370,7 @@
                                         </v-layout>
                                     </v-container>
 
-                                    </v-layout>
+                                    <!--</v-layout>-->
                                 </v-card>
                             </v-dialog>
                         </v-toolbar>
@@ -379,11 +382,11 @@
 
 
                     <v-flex xs1></v-flex>
-                </v-layout>
+                <!--</v-layout>-->
                 <!--</v-toolbar>-->
             </v-navigation-drawer>
             <v-container center fluid id="welcome" v-if="!loggedIn&&!login&&!signup">
-                <img src="resources/loljumbo.png" style="width:100%;">
+                <img alt="a bad jumbotron" src="resources/loljumbo.png" style="width:100%;">
             </v-container>
 
             <!-- BOARD SELECTION: TO DO -->
@@ -466,7 +469,7 @@
                                                 <v-btn small icon @click="card_describe(card)" v-if="!card.describing">
                                                     <v-icon small color="grey darken-1">mode_edit</v-icon>
                                                 </v-btn>
-                                                <v-btn small icon v-if="card.describing" fab small color="grey darken-1"
+                                                <v-btn icon v-if="card.describing" fab small color="grey darken-1"
                                                        @click="card_describe(card)">
                                                     <v-icon small color="white">check</v-icon>
                                                 </v-btn>
@@ -584,7 +587,7 @@
                                                         </v-card>
                                                     </v-dialog>
                                                 <v-flex xs2 v-for="att in card_atts(card)">
-                                                    <v-btn fab @click.stop="asdftoggle(att)"> <img v-bind:src="att.image" style="border-radius:50%; max-width: 100%;" ></v-btn>
+                                                    <v-btn fab @click.stop="asdftoggle(att)"> <img alt="some attachment" v-bind:src="att.image" style="border-radius:50%; max-width: 100%;" ></v-btn>
                                                 </v-flex>
 
                                                 </v-layout>

@@ -200,7 +200,7 @@ var notTrello = new Vue({
         },
 
         board_closed: function(){
-            return this.boards.filter(board => board.closed)
+            return this.boards.filter(board => board.closed);
         },
 
         activity_add: function(text){
@@ -231,7 +231,7 @@ var notTrello = new Vue({
                         parent.genAddNewImage(file.name+parent.currCardId + "_att", snapshot.downloadURL);
                         var a = new attachment(parent.currCardId, snapshot.downloadURL);
                         attachRef.push(a);
-                    })
+                    });
             }
             this.attdialog=false;
             // notTrello.$forceUpdate();
@@ -260,7 +260,7 @@ var notTrello = new Vue({
         todo_delete(todo){
             todosRef.child(todo['.key']).remove();
             this.activity_add("Todo with text " + todo.task + " removed");
-            index = this.todos.indexOf(todo);
+            var index = this.todos.indexOf(todo);
             if(index > -1){
                 this.todos.splice(index, 1);
             }
@@ -269,14 +269,14 @@ var notTrello = new Vue({
         comment_delete(comment){
             commentsRef.child(comment['.key']).remove();
             this.activity_add("Comment with text " + comment.text + " removed");
-            index = this.comments.indexOf(comment);
+            var index = this.comments.indexOf(comment);
             if(index > -1){
                 this.comments.splice(index, 1);
             }
         },
 
         card_hasCategory(card){
-            return !(card.category==="");
+            return card.category!=="";
         },
 
         card_getCategory(card){
@@ -342,7 +342,7 @@ var notTrello = new Vue({
                             updates['/' + img.key + '/url'] = url;
                             throw updates;
                         }
-                    })} catch(e){
+                    });} catch(e){
                     imagesRef.update(updates);
                 }
             });
@@ -374,7 +374,7 @@ var notTrello = new Vue({
         board_delete: function(board){
             boardsRef.child(board['.key']).remove();
             this.activity_add("Board named " + board.name + " deleted");
-            index = this.boards.indexOf(board);
+            var index = this.boards.indexOf(board);
             if(index > -1){
                 this.boards.splice(index, 1);
             }
@@ -405,14 +405,14 @@ var notTrello = new Vue({
         },
 
         card_addNew: function(ls){
-            cardsRef.push(new card(ls.id)).then((data, err) => { if (err) {console.log(err)}});
+            cardsRef.push(new card(ls.id)).then((data, err) => { if (err) {console.log(err);}});
             this.activity_add("New card created");
         },
 
         card_delete: function(card){
             cardsRef.child(card['.key']).remove();
             this.activity_add("Card named " + card.myName + " deleted");
-            index = this.cards.indexOf(card);
+            var index = this.cards.indexOf(card);
             if(index > -1){
                 this.cards.splice(index, 1);
             }
@@ -436,7 +436,7 @@ var notTrello = new Vue({
 
         card_move(card, list){
             this.activity_add("Card named " + card.myName + " moved to list named " + list.myName);
-            updates = {};
+            var updates = {};
             updates['/' + card['.key'] + "/parent"] = list.id;
             cardsRef.update(updates);
             notTrello.$forceUpdate();
@@ -474,7 +474,7 @@ var notTrello = new Vue({
         },
 
         card_deadline(card) {
-            if(this.currCardDeadline != ""){
+            if(this.currCardDeadline !== ""){
                 card.deadline= this.currCardDeadline;
                 var update = {};
                 update['/' + card['.key'] + "/deadline"] = this.currCardDeadline;
@@ -518,7 +518,7 @@ var notTrello = new Vue({
         },
 
         list_addNew: function(){
-            listsRef.push(new cardList(this.currentBoard)).then((data, err) => { if (err) {console.log(err)}});
+            listsRef.push(new cardList(this.currentBoard)).then((data, err) => { if (err) {console.log(err);}});
             this.activity_add("New list created");
         },
 
@@ -546,7 +546,7 @@ var notTrello = new Vue({
         list_delete: function(ls){
             listsRef.child(ls['.key']).remove();
 
-            index = this.lists.indexOf(ls);
+            var index = this.lists.indexOf(ls);
             if(index > -1){
                 this.lists.splice(index, 1);
             }
@@ -575,7 +575,7 @@ var notTrello = new Vue({
                     if(u.child('email').val()==parent.inusername){
                         ret = true;
                     }
-                })
+                });
                 return ret;
             });
         },
@@ -583,7 +583,7 @@ var notTrello = new Vue({
         user_getImage: function() {
             var url = "resources/low res andy.jpg";
             console.log(this.currentUser);
-            var a = this.currentUser;
+            // var a = this.currentUser;
             db.ref('users/' + this.currentUser).once('value', function (snapshot) {
                    url = snapshot.val().avatar;
             });
@@ -593,7 +593,7 @@ var notTrello = new Vue({
         getImage: function(user) {
             var url = "resources/low res andy.jpg";
             console.log(this.currentUser);
-            var a = user
+            // var a = user;
             db.ref('users/' + user).once('value', function (snapshot) {
                 url = snapshot.val().avatar;
             });
@@ -605,7 +605,7 @@ var notTrello = new Vue({
             this.picdialog = false;
             var input = document.getElementById('files1');
             var parent = this;
-            var updates = {}
+            var updates = {};
             if(input.files.length>0){
                 var file = input.files[0];
                 storageRef.child('images/' + file.name)
@@ -617,7 +617,7 @@ var notTrello = new Vue({
                         console.log(snapshot.downloadURL);
                         parent.user_successLogIn();
                         notTrello.$forceUpdate();
-                    })
+                    });
             }
         },
 
@@ -648,7 +648,7 @@ var notTrello = new Vue({
         user_makeNew: function(){
             var parent = this;
             var input = document.getElementById('files');
-            var imgUrl = "";
+            // var imgUrl = "";
             var u = new user(this.inname, this.inusername, this.inpassword, 'temp');
             var updates = {};
             usersRef.push(u);
@@ -666,17 +666,16 @@ var notTrello = new Vue({
                                     usersRef.update(updates);
                                     parent.logOut();
                                     parent.user_successLogIn();
-                                })
+                                });
                         }
                     }
-                })
-
+                });
             });
             console.log("added new user: " + this.currentUser);
         },
 
         user_existsValidate: function(curuser, login, loggedin, invalid) {
-            var logIn = function(){this.user_successLogIn()};
+            // var logIn = function(){this.user_successLogIn();};
             var us = this.inusername;
             var pw = this.inpassword;
             var parent = this;
@@ -688,7 +687,7 @@ var notTrello = new Vue({
                         console.log(u.key);
                         parent.currentUser = u.key;
                     }
-                })
+                });
                 return b;
             });
         },
@@ -741,7 +740,7 @@ var notTrello = new Vue({
             var parent = this;
             console.log("Attempted login with username: " + this.inusername + ", and password: "+ this.inpassword);
             this.user_existsValidate().then(function(ret) {
-                console.log("final : " + ret)
+                console.log("final : " + ret);
                 if(ret){
                     parent.user_successLogIn();
                 }
@@ -771,4 +770,4 @@ var notTrello = new Vue({
         },
     },
     directives: {}
-})
+});
