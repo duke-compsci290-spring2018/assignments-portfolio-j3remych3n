@@ -9,10 +9,55 @@ v-text-field{
     width: 50%;
 }
 
+.fakeJumbo{
+    width:100%;
+}
+
+.expandableList{
+    overflow-y: scroll;
+    max-height: 72vh;
+}
+
+.cardTitle{
+    color:#424242;
+    font-size:18px;
+}
+
+.rightbar{
+    background:rgba(0,0,0,0.3);
+}
+
+.rightBarSpacer{
+    min-height:57vh;
+}
+
+.darkGreyTitleText{
+    color: darkgrey;
+}
+
+.crossOut{
+    text-decoration: line-through;
+}
+
+.roundedImage{
+    border-radius:50%;
+    max-width: 100%;
+}
+
+.loginModals{
+    min-width: 45%;
+    margin:auto;
+}
+
+.loginTextField{
+    width: 80%;
+    display: inline-block;
+}
+
 /*
  * Below is a rainbow gradient animation, credit to: Ian Forrest
  */
-#gradBackground, #gradBar, .grad {
+#gradBackground, #gradBar, .grad, .gradDrawer {
     background: linear-gradient(173deg, #2fd9ad, #24a6da, #c324da, #da8024, #e64646);
     background-size: 1000% 1000%;
     -webkit-animation: WavyGrad 35s ease infinite;
@@ -48,16 +93,61 @@ v-text-field{
 /*
  * allow for horizontal scrolling
  */
-#gradBackground{
+#gradBackground {
     overflow-x: scroll;
     width: auto;
     white-space: nowrap;
+    min-height: 100%;
 }
+
+.gradDrawerNav{
+    overflow-y:hidden;
+    background: #EEEEEE;
+}
+
+.drawerCard{
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+.drawerUl{
+    overflow-y:scroll;
+    max-height: 22vh;
+    min-height: 22vh;
+}
+
 
 html {
     overflow-y: hidden;
 }
 
+.noHorizScroll {
+    overflow-x: hidden;
+}
+
 /*input {*/
     /*visibility: hidden;*/
 /*}*/
+
+.namedialog, .userdialog, .picdialog{
+    max-width: 20%;
+}
+
+
+/*
+hides input boxes
+ */
+.hiddenInput {
+    display: none;
+}
+
+/*
+defines scrollign behavior of activity log card
+ */
+.activityDialog {
+    overflow-y: hidden;
+}
+.activityScroll {
+    overflow-y: scroll;
+    max-height:600px;
+}

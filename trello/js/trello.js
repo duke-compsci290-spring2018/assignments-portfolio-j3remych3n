@@ -15,6 +15,7 @@ var config = {
     messagingSenderId: "78034298118"
 };
 
+// firebase refs
 var db = firebase.initializeApp(config).database();
 var storageRef = firebase.storage().ref();
 var usersRef = db.ref('users');
@@ -30,6 +31,7 @@ var attachRef = db.ref('attachments');
 
 Vue.use(VueFire);
 
+// class representing attached images on cards
 class attachment{
     constructor(card, url){
         this.parent = card;
@@ -37,6 +39,7 @@ class attachment{
     }
 }
 
+// class representing a list of cards, uses date/name based id
 class cardList{
     constructor(board){
         this.parent=board;
@@ -48,6 +51,7 @@ class cardList{
     }
 }
 
+// class representing trello card, uses date/name based id
 class card{
     constructor(list){
         this.parent = list;
@@ -65,6 +69,7 @@ class card{
     }
 }
 
+// class representing category TODO
 class category{
     constructor(n, c){
         this.name=n;
@@ -72,6 +77,7 @@ class category{
     }
 }
 
+// class represneting comment on a card
 class comment{
     constructor(user, card, t){
         this.parent = card;
@@ -80,6 +86,7 @@ class comment{
     }
 }
 
+// class representing a todo on a card
 class todo{
     constructor(card, text){
         this.task = text;
@@ -90,6 +97,7 @@ class todo{
     }
 }
 
+// class representing a "user"
 class user{
     constructor(name, email, password, imgUrl){
         this.longcreated = new Date().toDateString(); + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
@@ -101,6 +109,7 @@ class user{
     }
 }
 
+// class representing a project board
 class board{
     constructor(n){
         this.name = n;
@@ -112,15 +121,17 @@ class board{
     }
 }
 
-
+// MAIN VUE APP
 var notTrello = new Vue({
     el: "#notTrello",
     data: {
+        // temp user login input vars; kept in memory for current user
         inusername: "",
         inpassword: "",
         inname: "",
         inavatar: "a",
 
+        // more temp variables (I'M SORRY) for keeping track of fields while being edited
         currentUser: "",
         currentBoard: "temp",
         currListName: "",
@@ -133,6 +144,7 @@ var notTrello = new Vue({
         currCardId: "",
         currboardname: "",
 
+        // toggle booleans for displaying certain elements during editing parts of the project
         namedialog:false,
         userdialog:false,
         picdialog:false,
@@ -142,8 +154,10 @@ var notTrello = new Vue({
         asdfdialog: false,
         boarddialog: false,
 
+        // temp var for new board creation
         newBoardName: "",
 
+        // board display logic/validation logic
         invalidInput: false,
         login: false,
         signup: false,
@@ -154,6 +168,7 @@ var notTrello = new Vue({
 
         drawer: false,
 
+        // baked in colors for user selection
         colors: ["red lighten-1", "deep-purple darken-2", "indigo darken-2", "teal darken-1", "blue-grey darken-2"],
         colorDict: {"red lighten-1": "#EF5350",
             "deep-purple darken-2": "#512DA8",
@@ -162,6 +177,7 @@ var notTrello = new Vue({
             "blue-grey darken-2": "#455A64"}
     },
     firebase: {
+        // firebase refs
         users: usersRef,
         lists: listsRef,
         cards: cardsRef,
@@ -180,6 +196,12 @@ var notTrello = new Vue({
     },
     methods: {
 
+        setBoardColor: function(){
+            var input = document.getElementById('pickcolor');
+            console.log("YOLO SWAG " + input);
+        },
+
+        // adds a new board lol
         board_addNew: function(){
             this.boarddialog=false;
             var b = new board(this.newBoardName);
@@ -190,19 +212,23 @@ var notTrello = new Vue({
 
         },
 
+        // filters for starred boards
         board_starred: function(){
             return this.boards.filter(board => board.starred);
         },
 
+        // filters for not starred & not archived boards
         board_normie: function(){
             console.log(this.boards);
             return this.boards.filter(board => !board.starred&&!board.closed);
         },
 
+        // filters for archived project boards
         board_closed: function(){
             return this.boards.filter(board => board.closed);
         },
 
+        // adds new activity/history entry
         activity_add: function(text){
             var time = new Date().toDateString() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
             var name = "";
@@ -216,7 +242,7 @@ var notTrello = new Vue({
             });
         },
 
-
+        // adds new attachment, contains image uploading logic as well
         attachment_addNew: function(card){
             var input = document.getElementById('card_attachments');
             var parent = this;
@@ -237,6 +263,7 @@ var notTrello = new Vue({
             // notTrello.$forceUpdate();
         },
 
+        // adds a todo to a card (& to db)
         todo_addNew(card){
             todosRef.push(new todo(card.id, this.currCardTodo));
             card.todoing=false;
@@ -244,11 +271,13 @@ var notTrello = new Vue({
             this.activity_add("Todo addded to card named " + card.myName);
         },
 
+        // a toggle that will display an attachment in a modal
         asdftoggle(img){
             this.currimg = img.image;
             this.asdfdialog = !this.asdfdialog;
         },
 
+        // Checks off a todo as done when user clicked, stores to db as well
         todo_check(todo){
             var updates = {};
             updates['/' + todo['.key'] + '/done'] = !todo.done;
@@ -257,6 +286,7 @@ var notTrello = new Vue({
             this.activity_add("Todo checked/unchecked on todo with task " + todo.task);
         },
 
+        // deletes a todo from a card
         todo_delete(todo){
             todosRef.child(todo['.key']).remove();
             this.activity_add("Todo with text " + todo.task + " removed");
@@ -266,6 +296,7 @@ var notTrello = new Vue({
             }
         },
 
+        // deletes a comment from a card
         comment_delete(comment){
             commentsRef.child(comment['.key']).remove();
             this.activity_add("Comment with text " + comment.text + " removed");
@@ -275,35 +306,43 @@ var notTrello = new Vue({
             }
         },
 
+        // checks if a card is categorized or not
         card_hasCategory(card){
             return card.category!=="";
         },
 
+        // gett for card category
         card_getCategory(card){
-
+            return card.category;
         },
 
+        // get all the comments that belong to a card, given a card id
         card_comments(card){
             return this.comments.filter(comment => comment.parent === card.id);
         },
 
+        // gets all the todos from a card, given an id
         card_todos(card){
             return this.todos.filter(todo => todo.parent === card.id);
         },
 
+        // retrieves attachments bound to a card, based off of a given card id
         card_atts(card){
             // return this.attachments;
             return this.attachments.filter(att => att.parent == card.id);
         },
 
+        // dumb method to toggle my "commenting" boolean on a card
         card_startStopCommenting(card){
             card.commenting=!card.commenting;
         },
 
+        // dumb method to toggle my "todoing" boolean on a card
         card_startStopTodoing(card){
             card.todoing=!card.todoing;
         },
 
+        // adds a new comment to a card based off of a given id
         card_addComment(card){
             commentsRef.push(new comment(this.currentUser, card.id, this.currCardComment));
             card.commenting=false;
@@ -311,18 +350,18 @@ var notTrello = new Vue({
             this.activity_add("Comment added to card named " + card.myName);
         },
 
+        // will return all activity (in reverse chronological order)
         activity_allActivity: function(){
             return this.activity.slice().reverse();
         },
 
+        // adds a reference to a new image on firebase
         addNewImage: function(u, url) {
-            imagesRef.push({
-                title: u,
-                url: url
-            });
+            this.genAddNewImage(u,url);
             u.avatar=url;
         },
 
+        // a generic version of addNewImage
         genAddNewImage: function(u, url) {
             imagesRef.push({
                 title: u,
@@ -331,6 +370,7 @@ var notTrello = new Vue({
             // u.avatar=url;
         },
 
+        // changes user profile image
         changeImage: function(u, url) {
             var updates = {};
             return imagesRef.once('value').then(function(snapshot) {
@@ -347,15 +387,19 @@ var notTrello = new Vue({
                 }
             });
         },
+
+        // returns all lists tied t a board
         board_lists: function(){
             return this.lists.filter(list => list.parent === this.currentBoard);
         },
 
+        // switched to board based off of user selection
         board_changeboard: function(board){
             this.currboardname = board.name;
             this.currentBoard = board.id;
         },
 
+        // archives a given board
         board_close: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/closed'] = true;
@@ -364,6 +408,7 @@ var notTrello = new Vue({
             this.activity_add("Board named " + board.name + " closed");
         },
 
+        // stars a given board
         board_star: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/starred'] = true;
@@ -371,6 +416,7 @@ var notTrello = new Vue({
             this.activity_add("Board named " + board.name + " starred");
         },
 
+        // removes a given board
         board_delete: function(board){
             boardsRef.child(board['.key']).remove();
             this.activity_add("Board named " + board.name + " deleted");
@@ -380,6 +426,7 @@ var notTrello = new Vue({
             }
         },
 
+        // opens a closed project board
         board_unarchive: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/closed'] = false;
@@ -387,6 +434,7 @@ var notTrello = new Vue({
             boardsRef.update(updates);
         },
 
+        // unstars a project board
         board_unstar: function(board){
             var updates = {};
             updates['/' + board['.key'] + '/starred'] = false;
@@ -394,6 +442,7 @@ var notTrello = new Vue({
             boardsRef.update(updates);
         },
 
+        // changes the board background image
         board_changeImage(currentBoard){
             // make image and color changes persistent?
             this.backdialog=false;
@@ -520,6 +569,10 @@ var notTrello = new Vue({
         list_addNew: function(){
             listsRef.push(new cardList(this.currentBoard)).then((data, err) => { if (err) {console.log(err);}});
             this.activity_add("New list created");
+            console.log("fuck me up yo");
+            var bigDiv = document.getElementById("gradBackground");
+            console.log(bigDiv.scrollWidth);
+            bigDiv.scrollLeft = bigDiv.scrollWidth;
         },
 
         list_rename: function(list) {
@@ -643,6 +696,10 @@ var notTrello = new Vue({
 
         changeBkClick: function(){
             this.$refs.changeBkButton.click();
+        },
+
+        changeBkColorClick: function(){
+            this.$refs.changeBkCol.click();
         },
 
         user_makeNew: function(){
