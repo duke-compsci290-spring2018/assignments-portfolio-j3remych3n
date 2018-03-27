@@ -138,7 +138,15 @@
 
         <v-layout row>
             <v-spacer xs1></v-spacer>
-            <v-navigation-drawer class="rightbar" v-if="loggedIn" floating right mini-variant mini-variant-width="85" permanent color="transparent">
+            <v-navigation-drawer
+                    v-if="loggedIn"
+                    floating
+                    right
+                    mini-variant
+                    mini-variant-width="85"
+                    permanent
+                    color="transparent"
+                    style="background:rgba(0,0,0,0.3);">
                 <v-layout row wrap>
                     <v-flex xs12 class="rightBarSpacer"></v-flex>
                     <v-list>
