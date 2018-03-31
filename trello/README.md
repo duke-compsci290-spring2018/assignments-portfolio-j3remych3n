@@ -5,7 +5,7 @@ Jeremy Chen | JC587
 
 Created: 02.27.18
 
-Completed: (basic) 3.4.18 (final) 3/19/18
+Completed: (basic) 3.4.18 (final) 3/19/18 (final final) 3/26/2018
 
 Worked on for: (basic) 10 hours (final) 20+ hours
 
