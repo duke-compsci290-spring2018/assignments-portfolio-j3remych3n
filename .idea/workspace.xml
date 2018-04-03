@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/quiz/index.html" afterPath="$PROJECT_DIR$/quiz/index.html" />
-      <change beforePath="$PROJECT_DIR$/quiz/package-lock.json" afterPath="$PROJECT_DIR$/quiz/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/quiz/package.json" afterPath="$PROJECT_DIR$/quiz/package.json" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/App.vue" afterPath="$PROJECT_DIR$/quiz/src/App.vue" />
       <change beforePath="$PROJECT_DIR$/quiz/src/assets/duke_questions.json" afterPath="$PROJECT_DIR$/quiz/src/assets/duke_questions.json" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/assets/math_questions.json" afterPath="$PROJECT_DIR$/quiz/src/assets/math_questions.json" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/assets/test_questions.json" afterPath="$PROJECT_DIR$/quiz/src/assets/test_questions.json" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/components/DookQuiz.vue" afterPath="$PROJECT_DIR$/quiz/src/components/Quiz.vue" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/components/MathQuiz.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/components/QuizChooser.vue" afterPath="$PROJECT_DIR$/quiz/src/components/QuizChooser.vue" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/components/TestQuiz.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/quiz/src/main.js" afterPath="$PROJECT_DIR$/quiz/src/main.js" />
+      <change beforePath="$PROJECT_DIR$/quiz/src/components/Quiz.vue" afterPath="$PROJECT_DIR$/quiz/src/components/Quiz.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +21,8 @@
       <file leaf-file-name="duke_questions.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz/src/assets/duke_questions.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="682">
+              <caret line="30" column="6" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -68,21 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quiz/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="111">
-              <caret line="3" column="55" lean-forward="true" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+              <caret line="3" column="69" lean-forward="false" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
               <folding>
                 <element signature="e#295#352#0" expanded="true" />
               </folding>
@@ -95,16 +75,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="74">
               <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quiz/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -123,8 +93,8 @@
       <file leaf-file-name="Quiz.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/quiz/src/components/Quiz.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1570">
-              <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+            <state relative-caret-position="1221">
+              <caret line="155" column="61" lean-forward="false" selection-start-line="155" selection-start-column="61" selection-end-line="155" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -144,10 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>todos</find>
-      <find>card_attachments</find>
-      <find>curratt</find>
-      <find>curratturl</find>
       <find>url</find>
       <find>currCardID</find>
       <find>attach</find>
@@ -174,6 +140,10 @@
       <find>Urllist</find>
       <find>url-list</find>
       <find>inquiz</find>
+      <find>loadJson</find>
+      <find>console.log</find>
+      <find>this.correct</find>
+      <find>center</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,13 +171,15 @@
         <option value="$PROJECT_DIR$/quiz/src/components/TestQuiz.vue" />
         <option value="$PROJECT_DIR$/quiz/src/components/MathQuiz.vue" />
         <option value="$PROJECT_DIR$/quiz/src/components/DookQuiz.vue" />
-        <option value="$PROJECT_DIR$/quiz/src/assets/duke_questions.json" />
         <option value="$PROJECT_DIR$/quiz/index.html" />
         <option value="$PROJECT_DIR$/quiz/src/main.js" />
         <option value="$PROJECT_DIR$/quiz/src/components/QuizChooser.vue" />
         <option value="$PROJECT_DIR$/quiz/src/assets/test_questions.json" />
         <option value="$PROJECT_DIR$/quiz/src/assets/math_questions.json" />
         <option value="$PROJECT_DIR$/quiz/src/App.vue" />
+        <option value="$PROJECT_DIR$/quiz/src/components/Results.vue" />
+        <option value="$PROJECT_DIR$/quiz/src/components/Questions.vue" />
+        <option value="$PROJECT_DIR$/quiz/src/assets/duke_questions.json" />
         <option value="$PROJECT_DIR$/quiz/src/components/Quiz.vue" />
       </list>
     </option>
@@ -419,20 +391,22 @@
       <workItem from="1522732449766" duration="144000" />
       <workItem from="1522732793076" duration="6991000" />
       <workItem from="1522771045104" duration="6306000" />
+      <workItem from="1522788380102" duration="4290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283682000" />
+    <option name="totallyTimeSpent" value="287972000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295516" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -444,7 +418,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -460,7 +433,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18541667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -480,8 +453,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gallery/js/gallery.js" />
-    <entry file="file://$PROJECT_DIR$/gallery/gallery.html" />
     <entry file="file://$PROJECT_DIR$/gallery/json/1.json" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -618,7 +589,7 @@
     <entry file="file://$PROJECT_DIR$/quiz/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -631,22 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example_node/list_urls_webpack/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quiz/src/assets/duke_questions.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quiz/src/assets/math_questions.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
@@ -655,10 +610,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quiz/src/assets/test_questions.json">
+    <entry file="file://$PROJECT_DIR$/quiz/src/components/Results.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        <state relative-caret-position="37">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/src/components/Questions.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example_node/list_urls_webpack/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -671,20 +642,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/src/assets/test_questions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/quiz/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
-          <caret line="3" column="55" lean-forward="true" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+          <caret line="3" column="69" lean-forward="false" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
           <folding>
             <element signature="e#295#352#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/src/assets/duke_questions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="30" column="6" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/quiz/src/components/Quiz.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1570">
-          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+        <state relative-caret-position="1221">
+          <caret line="155" column="61" lean-forward="false" selection-start-line="155" selection-start-column="61" selection-end-line="155" selection-end-column="61" />
           <folding />
         </state>
       </provider>

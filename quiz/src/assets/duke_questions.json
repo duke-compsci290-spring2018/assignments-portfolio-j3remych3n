@@ -30,11 +30,6 @@
       "correctAnswer": 3
     },
     {
-      "question": "How many Final Fours has Duke played in?",
-      "choices": [ "5", "16", "15", "20", "25" ],
-      "correctAnswer": 1
-    },
-    {
       "question": "What is Duke's mascot?",
       "choices": [ "The Demon Deacon", "The Fighting Irish", "The Tar Heel", "The Blue Devil", "The Seminole" ],
       "correctAnswer": 3
