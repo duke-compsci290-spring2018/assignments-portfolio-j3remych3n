@@ -159,15 +159,14 @@
                 // console.log(this.correct);
                 // console.log("next index");
                 var temp = this.index+1;
-                while(temp<this.jsonData['questions'][temp]['choices'].length && this.correct[temp]){
+                while(temp<this.correct.length && this.correct[temp]){
                     temp++;
                     console.log("incrementing");
                 }
 
-                if(temp<this.jsonData['questions'][temp]['choices'].length && !this.correct[temp]){
+                if(temp<this.correct.length && !this.correct[temp]){
                     this.index = temp;
                 }
-
                 this.$forceUpdate();
             },
             // Goes to a previous question
