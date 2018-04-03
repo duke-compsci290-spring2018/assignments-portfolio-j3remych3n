@@ -5,7 +5,8 @@ import 'vuetify/dist/vuetify.css'
 
 Vue.use(Vuetify)
 
-new Vue({
-  el: '#app',
-  render: h => h(App)
+var app = new Vue({
+    el: '#app',
+    render: h => h(App),
+
 })

@@ -1,17 +1,28 @@
-[
-  {
-    "question": "Which one is the 3rd answer",
-    "choices": ["not me", "me neither", "probably me lol", "nah dude", "definitely not"],
-    "correctAnswer": 2
+{
+  "name": "test",
+  "color": "pink darken-3",
+  "scheme": "dark",
+  "scoring":{
+    "none": "lol u failed",
+    "half": "eh u got more than half",
+    "all": "wow ur a superstar"
   },
-  {
-    "question": "Which one is a fruit?",
-    "choices": ["Peachez", "Nugget", "Durian", "idk concrete", "potat"],
-    "correctAnswer": 2
-  },
-  {
-    "question": "What is my grade on this assignment?",
-    "choices": [100, 99, 98, 97, "ferret"],
-    "correctAnswer": 4
-  }
-]
+  "questions":
+  [
+    {
+      "question": "Which one is the 3rd answer",
+      "choices": ["not me", "me neither", "probably me lol", "nah dude", "definitely not"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which one is a fruit?",
+      "choices": ["Peachez", "Nugget", "Durian", "idk concrete", "potat"],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What is my grade on this assignment?",
+      "choices": [100, 99, 98, 97, "ferret"],
+      "correctAnswer": 4
+    }
+  ]
+}
