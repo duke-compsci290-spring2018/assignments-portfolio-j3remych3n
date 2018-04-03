@@ -63,10 +63,10 @@
             <v-btn @click="previousQuestion()" small v-bind:color="jsonData['color']" v-if="hasPrevious()">Previous</v-btn>
             <v-btn small disabled flat v-else>Previous</v-btn>
             <v-spacer></v-spacer>
-            <v-btn v-bind:color="jsonData['color']" @click="quit()">Quit to Menu</v-btn>
-            <v-spacer></v-spacer>
+            <v-btn small v-bind:color="jsonData['color']" @click="quit()">Quit to Menu</v-btn>
             <v-btn small v-bind:color="jsonData['color']" @click="splash()" v-if="inQuiz">Quiz Score</v-btn>
             <v-btn small v-bind:color="jsonData['color']" @click="splash()" v-else>Back to Quiz</v-btn>
+            <v-spacer></v-spacer>
             <v-btn small v-bind:color="jsonData['color']" @click="nextQuestion()" v-if="hasNext()&&inQuiz">Next</v-btn>
             <v-btn small disabled flat v-else>Next</v-btn>
         </v-toolbar>
