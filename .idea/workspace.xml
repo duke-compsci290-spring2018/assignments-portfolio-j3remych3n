@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/quiz/src/components/Quiz.vue" afterPath="$PROJECT_DIR$/quiz/src/components/Quiz.vue" />
-    </list>
+    <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -72,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/quiz/src/components/Quiz.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="962">
-              <caret line="173" column="29" lean-forward="true" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+              <caret line="173" column="29" lean-forward="false" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -411,12 +409,12 @@
       <workItem from="1522732793076" duration="6991000" />
       <workItem from="1522771045104" duration="6306000" />
       <workItem from="1522788380102" duration="4494000" />
-      <workItem from="1522797908762" duration="1137000" />
+      <workItem from="1522797908762" duration="1812000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289313000" />
+    <option name="totallyTimeSpent" value="289988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -687,7 +685,7 @@
     <entry file="file://$PROJECT_DIR$/quiz/src/components/Quiz.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="962">
-          <caret line="173" column="29" lean-forward="true" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+          <caret line="173" column="29" lean-forward="false" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
           <folding />
         </state>
       </provider>

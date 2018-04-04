@@ -1,18 +1,23 @@
-# quiz
+Jeremy Chen | JC587
 
-> Simple quiz using Node, Vue & Vuetify
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+Created: 04.02.18
 
-# serve with hot reload at localhost:8080
-npm run dev
+Completed: 04.03.18
 
-# build for production with minification
-npm run build
-```
+Worked on for: 2 Hours
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Collaborators: Consulted with Diane Hu
+
+Consulted: Vuetify & Vue.js API/docs
+
+Assets: Original
+
+Bugs/concerns: Should be good, some useability things i guess
+
+Extra Credit: N/A
+
+Bonus features: N/A
+
+Impressions: good intro to node/components
