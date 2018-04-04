@@ -138,12 +138,11 @@
             },
             // checks if user can click next
             hasNext: function () {
-                console.log(this.correct);
                 if(this.index >= this.correct.length-1){
                     return false;
                 }
                 var temp = this.index+1;
-                while( temp < this.correct.length && this.correct[temp] ){
+                while(temp<this.correct.length && this.correct[temp]){
                     temp++;
                     if(!this.correct[temp]){
                         return true;
@@ -156,8 +155,6 @@
                 console.log("my current index " + this.index);
                 this.check();
                 this.currentAns = "";
-                // console.log(this.correct);
-                // console.log("next index");
                 var temp = this.index+1;
                 while(temp<this.correct.length && this.correct[temp]){
                     temp++;
