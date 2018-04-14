@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/explore/README.md" afterPath="$PROJECT_DIR$/explore/README.md" />
       <change beforePath="$PROJECT_DIR$/explore/asdf.js" afterPath="$PROJECT_DIR$/explore/asdf.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,8 +40,8 @@
       <file leaf-file-name="asdf.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/explore/asdf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="888">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="333">
+              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -50,8 +51,8 @@
         <entry file="file://$PROJECT_DIR$/explore/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="370">
-                <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <first_editor relative-caret-position="407">
+                <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -174,10 +175,10 @@
         <option value="$PROJECT_DIR$/quiz/.gitignore" />
         <option value="$PROJECT_DIR$/quiz/src/components/Quiz.vue" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/explore/README.md" />
         <option value="$PROJECT_DIR$/explore/style.css" />
         <option value="$PROJECT_DIR$/explore/Checking1.csv" />
         <option value="$PROJECT_DIR$/explore/index.html" />
+        <option value="$PROJECT_DIR$/explore/README.md" />
         <option value="$PROJECT_DIR$/explore/asdf.js" />
       </list>
     </option>
@@ -342,12 +343,12 @@
       <workItem from="1522876094477" duration="53000" />
       <workItem from="1523382116395" duration="582000" />
       <workItem from="1523588490864" duration="601000" />
-      <workItem from="1523647483509" duration="7675000" />
+      <workItem from="1523647483509" duration="8819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301688000" />
+    <option name="totallyTimeSpent" value="302832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -577,17 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/explore/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="370">
-            <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/explore/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
@@ -612,10 +602,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/explore/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="407">
+            <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/explore/asdf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="333">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
           <folding />
         </state>
       </provider>
