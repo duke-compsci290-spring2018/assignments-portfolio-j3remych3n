@@ -72,10 +72,10 @@ var showHeatmap = function() {
 
     // parsing csv
     var percent = d3.format(".1%");
-        // format = d3.time.format("%m/%d/%y");
+        format = d3.time.format("%m/%d/%y");
     // red as darkest, white as lightest
-    console.log(d3.scale);
-    var color = d3.scale.linear().range(["white", "#4c0309"]);
+    var color = d3.scaleLinear().range(["white", '#771d19'])
+        .domain([0, 1]);
 
     // Copied formatting for month labels, takes list of months and adds as labels w/ formatting
     month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -138,7 +138,7 @@ loadData().then(function(){
         dayTotals.dates.reverse();
         dayTotals.spending.reverse();
         console.log(dayTotals.spending);
-        showHeatmap();
+        // showHeatmap();
         showHist();
 
     }
