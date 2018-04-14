@@ -1,7 +1,7 @@
 var rawData = {"dates":[], "amt":[], "description":[]};
-
+var dUrl = "https://raw.githubusercontent.com/duke-compsci290-spring2018/assignments-portfolio-j3remych3n/master/explore/Checking1.csv?token=ALIe7gKFF8ZS3J5vhefAYIbgcoSUAuQqks5a2qoHwA%3D%3D";
 var loadData = function(){
-d3.csv("/Checking1.csv", function(data) {
+d3.csv(dUrl, function(data) {
     data.forEach(function(dt) {
         rawData.dates.push(dt.date);
         rawData.amt.push(+dt.amt);

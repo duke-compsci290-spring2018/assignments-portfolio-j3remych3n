@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/explore/asdf.js" afterPath="$PROJECT_DIR$/explore/asdf.js" />
-      <change beforePath="$PROJECT_DIR$/explore/index.html" afterPath="$PROJECT_DIR$/explore/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,8 +39,8 @@
       <file leaf-file-name="asdf.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/explore/asdf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="888">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -343,12 +342,12 @@
       <workItem from="1522876094477" duration="53000" />
       <workItem from="1523382116395" duration="582000" />
       <workItem from="1523588490864" duration="601000" />
-      <workItem from="1523647483509" duration="7532000" />
+      <workItem from="1523647483509" duration="7675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301545000" />
+    <option name="totallyTimeSpent" value="301688000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
@@ -615,8 +614,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/explore/asdf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="888">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>
