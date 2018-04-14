@@ -7,7 +7,10 @@ d3.csv("/Checking1.csv", function(data) {
         rawData.amt.push(+dt.amt);
         rawData.description.push(dt.description);
     });
+    console.log(rawData);
 });}
+
+loadData();
 
 var showCircles = function() {
     d3.select("#circles");
