@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bde430c-6780-4ba4-a4ab-b8b5e0e0d260" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/explore/README.md" afterPath="$PROJECT_DIR$/explore/README.md" />
+      <change beforePath="$PROJECT_DIR$/explore/Checking1.csv" afterPath="$PROJECT_DIR$/explore/Checking1.csv" />
       <change beforePath="$PROJECT_DIR$/explore/asdf.js" afterPath="$PROJECT_DIR$/explore/asdf.js" />
+      <change beforePath="$PROJECT_DIR$/explore/index.html" afterPath="$PROJECT_DIR$/explore/index.html" />
+      <change beforePath="$PROJECT_DIR$/explore/style.css" afterPath="$PROJECT_DIR$/explore/style.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +22,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/explore/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+            <state relative-caret-position="851">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -30,8 +32,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/explore/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+            <state relative-caret-position="222">
+              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -40,8 +42,18 @@
       <file leaf-file-name="asdf.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/explore/asdf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+            <state relative-caret-position="1300">
+              <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Checking1.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/explore/Checking1.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1443">
+              <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -131,12 +143,12 @@
       <find>url-list</find>
       <find>inquiz</find>
       <find>loadJson</find>
-      <find>console.log</find>
       <find>this.correct</find>
       <find>center</find>
       <find>dist</find>
       <find>dis</find>
       <find>hasNext</find>
+      <find>console.log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,10 +187,10 @@
         <option value="$PROJECT_DIR$/quiz/.gitignore" />
         <option value="$PROJECT_DIR$/quiz/src/components/Quiz.vue" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/explore/style.css" />
         <option value="$PROJECT_DIR$/explore/Checking1.csv" />
-        <option value="$PROJECT_DIR$/explore/index.html" />
         <option value="$PROJECT_DIR$/explore/README.md" />
+        <option value="$PROJECT_DIR$/explore/style.css" />
+        <option value="$PROJECT_DIR$/explore/index.html" />
         <option value="$PROJECT_DIR$/explore/asdf.js" />
       </list>
     </option>
@@ -198,9 +210,8 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/quiz/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1859" />
-    <option name="y" value="-29" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1908" />
     <option name="width" value="1944" />
     <option name="height" value="2082" />
   </component>
@@ -343,18 +354,18 @@
       <workItem from="1522876094477" duration="53000" />
       <workItem from="1523382116395" duration="582000" />
       <workItem from="1523588490864" duration="601000" />
-      <workItem from="1523647483509" duration="8819000" />
+      <workItem from="1523647483509" duration="18089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302832000" />
+    <option name="totallyTimeSpent" value="312102000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="-14" width="3868" height="2098" extended-state="6" />
+    <frame x="1908" y="0" width="1944" height="2082" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21223958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.598643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295516" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -551,22 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="69" column="78" lean-forward="false" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trello/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trello/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -578,26 +573,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/explore/style.css">
+    <entry file="file://$PROJECT_DIR$/trello/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/explore/Checking1.csv">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/explore/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        <state relative-caret-position="1422">
+          <caret line="69" column="78" lean-forward="false" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -613,10 +600,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/explore/Checking1.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1443">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/explore/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/explore/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/explore/asdf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        <state relative-caret-position="1300">
+          <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
           <folding />
         </state>
       </provider>
